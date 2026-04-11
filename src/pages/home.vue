@@ -8,7 +8,7 @@ import NavCard from "../components/NavCard.vue";
       <h1>Introduction</h1>
       <div class="styled-box">
         <p>
-          Bienvenue sur mon portfolio de stage de deuxième année de BUT Informatique.Ce site retrace mon expérience de
+          Bienvenue sur mon portfolio de stage de deuxième année de BUT Informatique. Ce site retrace mon expérience de
           10 semaines au sein de l'Institut Curie. Vous y trouverez une analyse détaillée des compétences et des
           savoir-faire que j'ai pu mobiliser et développer au cours de cette immersion professionnelle.
           Ce site se divise en trois sections principales :
@@ -17,7 +17,7 @@ import NavCard from "../components/NavCard.vue";
           <li><b>L'environnement du stage</b>: une présentation de l'Institut Curie et de l'équipe qui m'a accueilli.
           </li>
           <li><strong>Le projet</strong>: une explication détaillée de mon sujet d'étude et des objectifs fixés.</li>
-          <li><strong>Bilan des compétences</strong>: un inventaire des savoir-faire techniques et transversaux acquis
+          <li><strong>La description des savoir-faire généraux</strong>: un inventaire des savoir-faire techniques et transversaux acquis
             durant cette période.
           </li>
         </ul>
@@ -31,9 +31,9 @@ import NavCard from "../components/NavCard.vue";
     <hr class="separator">
 
     <section class="nav-grid">
-      <NavCard title="Contexte stage" to="/contexte-stage"/>
-      <NavCard title="Contexte sujet" to="/contexte-sujet"/>
-      <NavCard title="Description des savoirs-faire généraux" to="/savoir-faire"/>
+      <NavCard title="L'environnement du stage" to="/contexte-stage"/>
+      <NavCard title="Le projet" to="/contexte-sujet"/>
+      <NavCard title="La description des savoirs-faire généraux" to="/savoir-faire"/>
     </section>
   </div>
 </template>
