@@ -8,17 +8,23 @@ import NavCard from "../components/NavCard.vue";
       <h1>Introduction</h1>
       <div class="intro-box">
         <p>
-          Bienvenue sur mon portfolio de stage de deuxième année de BUT informatique. Ce site fait office de portfolio dans lequel je retrace et analyse
-          les compétences et les savoir-faire que j'ai utilisé et/ou développé durant mon stage de 10 semaines à l'institut Curie.
+          Bienvenue sur mon portfolio de stage de deuxième année de BUT Informatique.Ce site retrace mon expérience de
+          10 semaines au sein de l'Institut Curie. Vous y trouverez une analyse détaillée des compétences et des
+          savoir-faire que j'ai pu mobiliser et développer au cours de cette immersion professionnelle.
           Ce site se divise en trois sections principales :
         </p>
         <ul>
-          <li><b>Contexte du stage</b>: dans laquelle je présente l'Institut Curie et l'équipe qui m'a accueilli,</li>
-          <li><strong>Contexte du sujet</strong>: dans laquelle j'explique mon sujet et les objectifs de mon stage,</li>
-          <li><strong>Description des savoir-faire généraux</strong>: dans laquelle je liste les savoir-faire et
-            compétences que mon stage m'a permis d'acquérir et de mettre en oeuvre.
+          <li><b>L'environnement du stage</b>: une présentation de l'Institut Curie et de l'équipe qui m'a accueilli.
+          </li>
+          <li><strong>Le projet</strong>: une explication détaillée de mon sujet d'étude et des objectifs fixés.</li>
+          <li><strong>Bilan des compétences</strong>: un inventaire des savoir-faire techniques et transversaux acquis
+            durant cette période.
           </li>
         </ul>
+        <p>
+          Ce portfolio témoigne de mon évolution en tant que futur développeur et m'a fait découvrir la bio-informatique
+          et l'application du développement, des graphes et des probabilités dans la recherche médicale.
+        </p>
       </div>
     </section>
 
@@ -66,14 +72,6 @@ import NavCard from "../components/NavCard.vue";
 
 .intro-section li {
   margin-top: 10px;
-}
-
-.separator {
-  border: 0;
-  height: 2px;
-  background: linear-gradient(to right, #e8803d, transparent);
-  margin: 50px 0;
-  border-radius: 2px;
 }
 
 .nav-grid {
