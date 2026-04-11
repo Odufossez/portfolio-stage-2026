@@ -23,13 +23,11 @@ a,
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    display: block; /* Retire le flex centering qui peut décaler les éléments fixés */
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: block; /* Retire la grille à deux colonnes par défaut */
     padding: 0 2rem;
   }
 }

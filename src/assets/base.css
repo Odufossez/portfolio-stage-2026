@@ -55,18 +55,20 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
 }
 
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background-color: #fffaf5; /* Fond crème très léger et propre */
+  margin: 0;
+  overflow-x: hidden; /* Empêche les barres de défilement dues aux bandes */
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    'Nunito Sans',
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -83,4 +85,36 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  text-align: justify;
+}
+
+/* Bande en haut à droite */
+body::before {
+  content: "";
+  position: fixed;
+  top: -150px;
+  right: -150px;
+  width: 600px;
+  height: 300px;
+  background: linear-gradient(90deg, rgba(232, 128, 61, 0.06), rgba(232, 128, 61, 0.02));
+  transform: rotate(-45deg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Bande en bas à gauche */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -150px;
+  left: -150px;
+  width: 600px;
+  height: 300px;
+  background: linear-gradient(-90deg, rgba(232, 128, 61, 0.06), rgba(232, 128, 61, 0.02));
+  transform: rotate(-45deg);
+  z-index: -1;
+  pointer-events: none;
 }

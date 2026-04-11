@@ -1,25 +1,26 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import NavBar from "./components/NavBar.vue";
+import Footer from "./components/Footer.vue";
+import BackgroundGraph from "./components/BackgroundGraph.vue";
 </script>
 
 <template>
+  <BackgroundGraph />
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <NavBar />
   </header>
 
   <main>
-    <TheWelcome />
+    <router-view />
   </main>
+
+  <Footer />
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
+  width: 100%;
 }
 
 .logo {
@@ -32,16 +33,15 @@ header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+    pointer-events: none; /* Empeche le header de bloquer les clics sur le reste de la page */
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  main {
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
 }
 </style>
