@@ -17,17 +17,19 @@ import NavCard from "@/components/NavCard.vue";
     </header>
 
     <section class="content">
-      <p>Au travers des trois pages accessibles ci-dessous, je vais vous présenter l'Institut Curie, l'unité dans
-        laquelle j'ai effectué mes dix semaines de stage ainsi que les moyens que j'avais à ma disposition afin de mener à bien
-        la mission qui m'a été confiée.</p>
+      <p>Au travers des pages accessibles ci-dessous, je vais vous présenter l'environnement global de mon stage, de
+      l'Institut Curie aux moyens techniques. J'ai également rédigé une page centrée sur la recherche médicale et le
+      rôle que joue la bio-informatique au sein de celle-ci, mon stage se déroulant dans un contexte de recherche médicale.
+      </p>
     </section>
 
     <hr class="separator">
 
     <section class="nav-grid">
       <NavCard title="Présentation de l'Institut Curie" to="/institut-curie"/>
-      <NavCard title="L'unité 1331" to="/unit-1331"/>
-      <NavCard title="Les moyens" to="/moyens"/>
+      <NavCard title="Unité 1331" to="/unit-1331"/>
+      <NavCard title="Environnement technique" to="/moyens"/>
+      <NavCard title="Recherche médicale et bio-informatique" to="/recherche-medicale"/>
     </section>
   </div>
 </template>
@@ -37,21 +39,6 @@ import NavCard from "@/components/NavCard.vue";
   padding: 100px 20px 40px;
   max-width: 900px;
   margin: 0 auto;
-}
-
-.back-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #e8803d;
-  text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 30px;
-  transition: transform 0.2s ease;
-}
-
-.back-link:hover {
-  transform: translateX(-5px);
 }
 
 .page-header h1 {

@@ -23,21 +23,6 @@
   margin: 0 auto;
 }
 
-.back-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #e8803d;
-  text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 30px;
-  transition: transform 0.2s ease;
-}
-
-.back-link:hover {
-  transform: translateX(-5px);
-}
-
 .page-header h1 {
   font-size: 2.5rem;
   color: #412817;

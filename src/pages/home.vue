@@ -6,7 +6,7 @@ import NavCard from "../components/NavCard.vue";
   <div class="home">
     <section class="intro-section">
       <h1>Introduction</h1>
-      <div class="intro-box">
+      <div class="styled-box">
         <p>
           Bienvenue sur mon portfolio de stage de deuxième année de BUT Informatique.Ce site retrace mon expérience de
           10 semaines au sein de l'Institut Curie. Vous y trouverez une analyse détaillée des compétences et des
@@ -50,14 +50,6 @@ import NavCard from "../components/NavCard.vue";
   color: #412817;
   margin-bottom: 25px;
   font-weight: 800;
-}
-
-.intro-box {
-  background-color: #fff5e6; /* Même couleur que le footer */
-  border: 1px solid #ffe6cc;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .intro-section p, .intro-section li {
