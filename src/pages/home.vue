@@ -74,9 +74,5 @@ import NavCard from "../components/NavCard.vue";
   margin-top: 10px;
 }
 
-.nav-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
+
 </style>

@@ -1,17 +1,33 @@
+<script setup>
+import NavCard from "@/components/NavCard.vue";
+</script>
 <template>
   <div class="page-container">
     <router-link to="/home" class="back-link">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
       Retour à l'accueil
     </router-link>
-    
+
     <header class="page-header">
-      <h1>Contexte du stage</h1>
+      <h1>Environnement du stage</h1>
     </header>
 
     <section class="content">
-      <p>Bienvenue sur la page dédiée au contexte de mon stage à l'Institut Curie.</p>
-      <p>Ici, je détaillerai l'environnement, l'équipe et les enjeux de cette expérience professionnelle.</p>
+      <p>Au travers des trois pages accessibles ci-dessous, je vais vous présenter l'Institut Curie, l'unité dans
+        laquelle j'ai effectué mes dix semaines de stage ainsi que les moyens que j'avais à ma disposition afin de mener à bien
+        la mission qui m'a été confiée.</p>
+    </section>
+
+    <hr class="separator">
+
+    <section class="nav-grid">
+      <NavCard title="Présentation de l'Institut Curie" to="/institut-curie"/>
+      <NavCard title="L'unité 1331" to="/unit-1331"/>
+      <NavCard title="Les moyens" to="/moyens"/>
     </section>
   </div>
 </template>

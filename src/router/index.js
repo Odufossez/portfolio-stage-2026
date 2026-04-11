@@ -6,6 +6,9 @@ import Social from '../pages/social.vue'
 import ContexteStage from '../pages/contexte-stage.vue'
 import ContexteSujet from '../pages/contexte-sujet.vue'
 import SavoirFaire from '../pages/savoir-faire.vue'
+import InstitutCurie from '../pages/institut-curie.vue'
+import Unit1331 from '../pages/unit-1331.vue'
+import Moyens from '../pages/moyens.vue'
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -16,6 +19,9 @@ const routes = [
     { path: '/contexte-stage', component: ContexteStage },
     { path: '/contexte-sujet', component: ContexteSujet },
     { path: '/savoir-faire', component: SavoirFaire },
+    { path: '/institut-curie', component: InstitutCurie },
+    { path: '/unit-1331', component: Unit1331 },
+    { path: '/moyens', component: Moyens },
 ]
 
 const router = createRouter({
