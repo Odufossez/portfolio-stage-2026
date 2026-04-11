@@ -9,6 +9,7 @@ import SavoirFaire from '../pages/savoir-faire.vue'
 import InstitutCurie from '../pages/institut-curie.vue'
 import Unit1331 from '../pages/unit-1331.vue'
 import Moyens from '../pages/moyens.vue'
+import RechercheMedicale from "@/pages/recherche-medicale.vue";
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -22,6 +23,7 @@ const routes = [
     { path: '/institut-curie', component: InstitutCurie },
     { path: '/unit-1331', component: Unit1331 },
     { path: '/moyens', component: Moyens },
+    { path: '/recherche-medicale', component: RechercheMedicale },
 ]
 
 const router = createRouter({
