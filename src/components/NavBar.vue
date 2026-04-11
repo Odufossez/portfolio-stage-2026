@@ -68,6 +68,8 @@ export default {
   transition: all 0.3s;
   padding: 8px 15px;
   display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .navbar-links a:hover {
