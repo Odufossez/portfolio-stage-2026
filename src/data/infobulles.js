@@ -8,6 +8,11 @@ export const infobullesData = [
     id: 'stochastique',
     title: 'Stochastique',
     content: 'Se dit d\'un processus dont l\'évolution est aléatoire dans le temps, par opposition à un processus déterministe.'
+  },
+  {
+    id: 'uml',
+    title: 'Diagramme UML',
+    content: 'Moyen de visualiser des systèmes et des logiciels à l\'aide du langage UML (Unified Modeling Language).'
   }
 ];
 

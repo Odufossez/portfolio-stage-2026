@@ -1,6 +1,9 @@
 <script setup>
-
+import { ref } from 'vue';
 import BackButton from "@/components/BackButton.vue";
+import InfoHover from "@/components/InfoHover.vue";
+
+const showDetails = ref(false);
 </script>
 
 <template>
@@ -11,9 +14,47 @@ import BackButton from "@/components/BackButton.vue";
   </header>
 
   <div class="styled-box">
-    <h2>MaBoSS</h2>
+    <div class="box-header-with-tab">
+      <h2>MaBoSS</h2>
+      <button @click="showDetails = !showDetails" class="details-tab" :class="{ active: showDetails }">
+        {{ showDetails ? 'Cacher les détails' : 'Comment ça marche ?' }}
+      </button>
+    </div>
+
     <p>
-      [présenter MaBoSS]
+      MaBoss signifie : <b>Markovian Boolean Stochastic Simulator</b>. C'est un outil de simulation
+      <InfoHover id="stochastique">stochastique</InfoHover> qui permet de simuler l'influence de certaines molécules
+      sur des cellules.
+    </p>
+
+    <Transition name="expand">
+      <div v-if="showDetails" class="details-content">
+        <div class="inner-details">
+          <h3>Principe de fonctionnement</h3>
+          <p>
+            MaBoSS utilise des modèles booléens pour représenter les interactions entre gènes et protéines. 
+            Chaque "nœud" du système est soit actif (1) soit inactif (0).
+          </p>
+          <ul>
+            <li><strong>Modèle de Markov</strong> : L'état futur du système ne dépend que de son état présent.</li>
+            <li><strong>Simulation de Gillespie</strong> : Un algorithme utilisé pour simuler l'évolution temporelle des réactions chimiques.</li>
+            <li><strong>Probabilités</strong> : MaBoSS calcule les probabilités d'atteindre tel ou tel état Phénotypique (ex: survie, mort cellulaire).</li>
+          </ul>
+        </div>
+      </div>
+    </Transition>
+
+    <h3>L'existant</h3>
+    <p>
+      MaBoSS est un logiciel déjà fonctionnel et déjà utilisé depuis plusieurs année par de nombreux chercheurs et chercheuses.
+      On peut constater sa mention dans certains papiers scientifiques comme ceux-ci :
+      <a href="https://pubmed.ncbi.nlm.nih.gov/22932419/" target="_blank">Continuous time Boolean modeling for biological signaling</a> ou encore
+      <a href="https://pubmed.ncbi.nlm.nih.gov/28881959/" target="_blank">MaBoSS 2.0: an environment for stochastic Boolean modeling</a>.
+    </p>
+    <h3>Ce qu'il manque</h3>
+    <p>
+      Malheureusement, MaBoSS n'a pas un code très documenté. Il y a des milliers lignes, réparties dans plein de classe et de fichiers
+      mais aucunes n'est commenté pour expliquer son rôle ou son fonctionnement. Également, il n'y a pas de <InfoHover id="uml">diagramme UML</InfoHover> de l'application.
     </p>
   </div>
 
@@ -28,5 +69,79 @@ import BackButton from "@/components/BackButton.vue";
 </template>
 
 <style scoped>
+.box-header-with-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
 
+.box-header-with-tab h2 {
+  margin-bottom: 0;
+}
+
+.details-tab {
+  background-color: var(--curie-box-border);
+  border: none;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--curie-brown-soft);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: -5px;
+}
+
+.details-tab:hover {
+  background-color: #ffd8b3;
+  color: var(--curie-orange);
+}
+
+.details-tab.active {
+  background-color: var(--curie-orange);
+  color: white;
+}
+
+.details-content {
+  overflow: hidden;
+}
+
+.inner-details {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  border: 1px dashed var(--curie-box-border);
+}
+
+.inner-details h3 {
+  font-size: 1rem;
+  color: var(--curie-brown);
+  margin-bottom: 10px;
+}
+
+.inner-details ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.inner-details li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Transitions */
+.expand-enter-active,
+.expand-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 500px;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-10px);
+}
 </style>

@@ -13,15 +13,15 @@ import NavCard from "../components/NavCard.vue";
           Bienvenue sur mon portfolio de stage de deuxième année de BUT Informatique. Ce site retrace mon expérience de
           10 semaines au sein de l'Institut Curie. Vous y trouverez une analyse détaillée des compétences et des
           savoir-faire que j'ai pu mobiliser et développer au cours de cette immersion professionnelle.
-          Ce site se divise en trois sections principales :
+          Ce site se divise en quatre sections principales :
         </p>
         <ul>
-          <li><b>L'environnement du stage</b>: une présentation de l'Institut Curie et de l'équipe qui m'a accueilli.
+          <li><b>Une introduction générale du stage</b>: une présentation de l'Institut Curie et de l'équipe qui m'a
+            accueilli, du projet et une description des savoir-faire généraux mobilisés pendant cette période.
           </li>
-          <li><strong>Le projet</strong>: une explication détaillée de mon sujet d'étude et des objectifs fixés.</li>
-          <li><strong>La description des savoir-faire généraux</strong>: un inventaire des savoir-faire techniques et transversaux acquis
-            durant cette période.
-          </li>
+          <li><strong>Un onglet technique</strong>: [todo].</li>
+          <li><strong>Une vue sur la gestion de projet</strong>: [todo].</li>
+          <li><strong>Un volet sur mon intégration en entreprise</strong>: [todo].</li>
         </ul>
         <p>
           Ce portfolio témoigne de mon évolution en tant que futur développeur et m'a fait découvrir la bio-informatique
