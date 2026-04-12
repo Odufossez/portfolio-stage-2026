@@ -1,5 +1,6 @@
 <script setup>
 import TeamCard from "@/components/TeamCard.vue";
+import { teamData } from "@/data/team";
 </script>
 
 <template>
@@ -54,7 +55,7 @@ import TeamCard from "@/components/TeamCard.vue";
       approches innovantes d'intelligence artificielle et de modélisation de réseaux biologiques. L'institut Curie offre
       un cadre idéal pour atteindre ces objectifs, grâce aux nombreuses collaborations possibles avec des biologistes et
       cliniciens, ainsi qu'à l'accès à un plateau technique de pointe. Nous sommes également engagés dans de nombreuses
-      collaborations nationales et internationales, notamment avec des laboratoires en Espagne, Allemagne, Italie,
+      collaborations nationales et internationales, notamment avec des laboratories en Espagne, Allemagne, Italie,
       Norvège, Pays-Bas, États-Unis et Japon. De plus, nous développons des logiciels disponibles publiquement sur le
       répertoire GitHub de l'équipe : <a href="https://github.com/sysbio-curie">https://github.com/sysbio-curie</a>.
       </p>
@@ -73,43 +74,13 @@ import TeamCard from "@/components/TeamCard.vue";
         celles et ceux avec qui j'ai interagi assez régulièrement :</p>
 
       <TeamCard
-          description="Directeur d'unité de recherche et co-directeur de mon stage."
-          name="Emmanuel BARILLOT"
-          photo="../src/assets/team/barillot.jpg"
-          relationship=""
+          v-for="member in teamData"
+          :key="member.id"
+          :name="member.name"
+          :description="member.description"
+          :photo="member.photo"
+          :relationship="member.relationship"
       />
-
-      <TeamCard
-          description="Ingénieure en recherche et ma co-tutrice pendant ce stage."
-          name="Florence CALZONE"
-          photo="../src/assets/team/calzone.webp"
-          relationship="tutor"
-      />
-
-      <TeamCard
-          description="Bio-informaticien et mon tuteur pendant ce stage. Il est à l'origine du logiciel MaBoSS, sur lequel j'ai eu à travailler."
-          name="Gautier STOLL"
-          relationship="tutor"
-          photo="../src/assets/team/stoll.png"
-      />
-
-      <TeamCard
-          description="Ingénieur en recherche. Il a fait une refonte de MaBoSS pour rendre le code plus clair et plus optimisé. J'ai eu à travailler avec lui régulièrement."
-          name="Vincent NOEL"
-          photo="../src/assets/team/noel.jpg"
-          relationship="close"/>
-
-      <TeamCard
-          description="Doctorante. Elle utilise souvent MaBoSS donc j'ai eu à lui poser des questions. Egalement, elle s'est beaucoup investie pour que je sois bien intégré."
-          name="Lucie GASPARD-BOULINC" relationship="close" photo="../src/assets/team/gaspard-boulinc.jpg"/>
-
-      <TeamCard
-          description="Chercheur post-doctorant. Il m'a permis de mieux comprendre comment fonctionnait MaBoSS et ce qu'on attendait de ce logiciel. De même que Lucie, il m'a aidé à m'intégrer."
-          name="Saran PANKAEW" relationship="close" photo="../src/assets/team/pankaew.png"/>
-
-      <TeamCard
-          description="Assistante administrative. Elle s'est assurée que mon intégration et mon arrivée se passent bien."
-          name="Emma Kaufmann" photo="../src/assets/team/kaufmann.jpg" relationship="close"/>
     </section>
   </div>
 </template>
