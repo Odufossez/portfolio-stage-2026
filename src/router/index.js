@@ -10,6 +10,9 @@ import InstitutCurie from '../pages/institut-curie.vue'
 import Unit1331 from '../pages/unit-1331.vue'
 import Moyens from '../pages/moyens.vue'
 import RechercheMedicale from "@/pages/recherche-medicale.vue";
+import Enjeux from "@/pages/stage-enjeux.vue"
+import Existant from "@/pages/stage-existant.vue"
+import Sujet from "@/pages/stage-sujet.vue"
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -24,6 +27,9 @@ const routes = [
     { path: '/unit-1331', component: Unit1331 },
     { path: '/moyens', component: Moyens },
     { path: '/recherche-medicale', component: RechercheMedicale },
+    { path: '/stage-enjeux', component: Enjeux },
+    { path: '/stage-existant', component: Existant },
+    { path: '/stage-sujet', component: Sujet },
 ]
 
 const router = createRouter({
