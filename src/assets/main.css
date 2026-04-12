@@ -18,6 +18,7 @@ a,
 @media (hover: hover) {
   a:hover {
     background-color: #ffe6cc;
+    border-radius: 12px;
   }
 }
 

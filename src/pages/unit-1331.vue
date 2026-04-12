@@ -47,6 +47,7 @@ import TeamCard from "@/components/TeamCard.vue";
 
     <div class="styled-box">
       <h2>L'équipe SYSBIO</h2>
+      <p>
       La recherche se concentre sur le décryptage des déterminants moléculaires du cancer, avec pour objectif de fournir
       les connaissances nécessaires pour améliorer la prise en charge des patients. Elle repose sur des analyses de
       données multi-omiques de haute dimension, caractérisant les tumeurs à différents niveaux, ainsi que sur des
@@ -55,10 +56,18 @@ import TeamCard from "@/components/TeamCard.vue";
       cliniciens, ainsi qu'à l'accès à un plateau technique de pointe. Nous sommes également engagés dans de nombreuses
       collaborations nationales et internationales, notamment avec des laboratoires en Espagne, Allemagne, Italie,
       Norvège, Pays-Bas, États-Unis et Japon. De plus, nous développons des logiciels disponibles publiquement sur le
-      répertoire GitHub de l'équipe : <a>https://github.com/sysbio-curie</a>.
+      répertoire GitHub de l'équipe : <a href="https://github.com/sysbio-curie">https://github.com/sysbio-curie</a>.
+      </p>
     </div>
 
-    <section class="team-section">
+    <div class="sources-box">
+    <p>
+      Sources : <a href="https://curie.fr/unite/u1331">L'unité 1331</a> <a href="https://curie.fr/equipe/barillot">L'équipe SYSBIO</a>
+    </p>
+    </div>
+    <hr class="separator">
+
+    <section class="styled-box">
       <h2>Le personnel de l'unité</h2>
       <p style="margin-bottom: 25px; color: #5c4033;">Une liste non exhaustive du personnel de cette unité, notamment
         celles et ceux avec qui j'ai interagi assez régulièrement :</p>
@@ -95,8 +104,8 @@ import TeamCard from "@/components/TeamCard.vue";
           name="Lucie GASPARD-BOULINC" relationship="close" photo="../src/assets/team/gaspard-boulinc.jpg"/>
 
       <TeamCard
-          description="Chercheur post-doctorant. Il m'a permis de mieux comprendre comment fonctionnait MaBoSS et ce qu'on attendait de ce logiciel. De même que Lucie, il m'a aidé à m'intégré."
-          name="Saran PANKAEW" photo="" relationship="close"/>
+          description="Chercheur post-doctorant. Il m'a permis de mieux comprendre comment fonctionnait MaBoSS et ce qu'on attendait de ce logiciel. De même que Lucie, il m'a aidé à m'intégrer."
+          name="Saran PANKAEW" relationship="close" photo="../src/assets/team/pankaew.png"/>
 
       <TeamCard
           description="Assistante administrative. Elle s'est assurée que mon intégration et mon arrivée se passent bien."
@@ -120,10 +129,4 @@ import TeamCard from "@/components/TeamCard.vue";
   padding-left: 20px;
 }
 
-h2 {
-  color: #333333;
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  font-weight: 700;
-}
 </style>
