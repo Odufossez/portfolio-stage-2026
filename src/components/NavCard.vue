@@ -32,7 +32,7 @@ defineProps({
   display: block;
   text-decoration: none;
   background-color: white;
-  border: 3px solid #ffe6cc;
+  border: 3px solid var(--curie-box-border);
   border-radius: 12px;
   padding: 25px;
   transition: all 0.3s ease;
@@ -45,18 +45,18 @@ defineProps({
 
 .nav-card:hover {
   transform: translateY(-5px);
-  border-color: #e8803d; /* Your main orange color */
+  border-color: var(--curie-orange);
   box-shadow: 0 10px 25px rgba(232, 128, 61, 0.1);
 }
 
 .nav-card:hover .nav-card-title {
-  color: #e8803d;
+  color: var(--curie-orange);
 }
 
 .nav-card-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #412817;
+  color: var(--curie-brown);
   margin: 0 0 15px 0;
   transition: color 0.3s ease;
   line-height: 1.3;
@@ -68,13 +68,13 @@ defineProps({
   gap: 8px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #8b5e3c;
+  color: var(--curie-brown-soft);
   transition: gap 0.3s ease;
 }
 
 .nav-card:hover .nav-card-footer {
   gap: 12px;
-  color: #e8803d;
+  color: var(--curie-orange);
 }
 
 .arrow-icon {

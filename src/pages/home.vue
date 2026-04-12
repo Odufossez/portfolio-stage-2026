@@ -3,9 +3,11 @@ import NavCard from "../components/NavCard.vue";
 </script>
 
 <template>
-  <div class="home">
+  <div class="page-container home-container">
     <section class="intro-section">
-      <h1>Introduction</h1>
+      <header class="page-header">
+        <h1>Introduction</h1>
+      </header>
       <div class="styled-box">
         <p>
           Bienvenue sur mon portfolio de stage de deuxième année de BUT Informatique. Ce site retrace mon expérience de
@@ -28,7 +30,7 @@ import NavCard from "../components/NavCard.vue";
       </div>
     </section>
 
-    <hr class="separator">
+    <hr class="separator minimal">
 
     <section class="nav-grid">
       <NavCard title="L'environnement du stage" to="/contexte-stage"/>
@@ -39,32 +41,35 @@ import NavCard from "../components/NavCard.vue";
 </template>
 
 <style scoped>
-.home {
-  padding: 100px 20px 40px;
+.home-container {
   max-width: 1100px;
-  margin: 0 auto;
-}
-
-.intro-section h1 {
-  font-size: 2rem;
-  color: #412817;
-  margin-bottom: 25px;
-  font-weight: 800;
 }
 
 .intro-section p, .intro-section li {
   font-size: 1.1rem;
-  color: #5c4033;
+  color: var(--curie-text);
   line-height: 1.7;
 }
 
 .intro-section ul {
   padding-left: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .intro-section li {
   margin-top: 10px;
 }
 
+.separator.minimal {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(232, 128, 61, 0.4), rgba(0, 0, 0, 0));
+  margin: 40px 0;
+}
 
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
 </style>

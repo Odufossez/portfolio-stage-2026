@@ -1,19 +1,13 @@
 <script setup>
 import { ref } from 'vue';
+import BackButton from "@/components/BackButton.vue";
 
 const activeMission = ref('overview');
 </script>
 
 <template>
   <div class="page-container">
-    <router-link to="/contexte-stage" class="back-link">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-      Retour au contexte
-    </router-link>
+    <BackButton to="/contexte-stage" />
 
     <header class="page-header">
       <h1>L'Institut Curie</h1>
@@ -118,20 +112,6 @@ const activeMission = ref('overview');
 </template>
 
 <style scoped>
-.page-container {
-  padding: 100px 20px 40px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.page-header h1 {
-  font-size: 2.5rem;
-  color: #412817;
-  margin-bottom: 40px;
-  border-left: 5px solid #e8803d;
-  padding-left: 20px;
-}
-
 .logo-placeholder {
   float: right;
   width: 180px;
@@ -139,15 +119,10 @@ const activeMission = ref('overview');
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e8803d;
+  color: var(--curie-orange);
   font-weight: 600;
   margin-left: 20px;
   margin-bottom: 10px;
-}
-
-h2 {
-  margin-bottom: 20px;
-  color: #e8803d;
 }
 
 ul {
@@ -161,7 +136,7 @@ li {
 
 /* Styles pour les onglets */
 .missions-section {
-  margin-bottom: 30px;
+  margin-bottom: var(--section-margin);
 }
 
 .tabs-list {
@@ -171,16 +146,15 @@ li {
 }
 
 .tab-item {
-  background-color: #ffe6cc;
-  border: 1px solid #ffe6cc;
+  background-color: var(--curie-box-border);
+  border: 1px solid var(--curie-box-border);
   border-bottom: none;
   padding: 10px 20px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   cursor: pointer;
-  color: #8b5e3c;
+  color: var(--curie-brown-soft);
   font-weight: 600;
-  font-family: 'Nunito Sans', sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -189,16 +163,16 @@ li {
 }
 
 .tab-item.active {
-  background-color: #fff5e6;
-  color: #e8803d;
-  height: 45px; /* Légèrement plus haut pour l'effet classeur */
+  background-color: var(--curie-box-bg);
+  color: var(--curie-orange);
+  height: 45px;
   margin-top: -5px;
-  border-color: #ffe6cc;
+  border-color: var(--curie-box-border);
 }
 
 .mission-content {
-  margin-top: -1px; /* Colle les onglets à la boîte */
-  border-top-left-radius: 0; /* Aligne avec l'onglet si c'est le premier */
+  margin-top: -1px;
+  border-top-left-radius: 0;
   min-height: 250px;
 }
 
@@ -217,7 +191,7 @@ li {
 
 .external-resources p {
   font-size: 0.95rem;
-  color: #8b5e3c;
+  color: var(--curie-brown-soft);
   margin-bottom: 15px;
   text-align: center;
 }
@@ -226,7 +200,7 @@ li {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #e8803d;
+  background-color: var(--curie-orange);
   color: white;
   padding: 12px 25px;
   border-radius: 30px;
@@ -237,7 +211,7 @@ li {
 }
 
 .external-link:hover {
-  background-color: #412817;
+  background-color: var(--curie-brown);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(65, 40, 23, 0.25);
 }

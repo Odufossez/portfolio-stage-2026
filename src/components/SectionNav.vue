@@ -77,11 +77,11 @@ onUnmounted(() => {
   position: sticky;
   top: 70px; /* Sits below the main NavBar (60px + buffer) */
   z-index: 100;
-  margin-bottom: 30px;
+  margin-bottom: var(--section-margin);
   background-color: rgba(255, 250, 245, 0.95);
   backdrop-filter: blur(8px);
   padding: 10px 0;
-  border-bottom: 1px solid rgba(232, 128, 61, 0.2);
+  border-bottom: 1px solid var(--curie-orange-soft);
   transition: all 0.3s ease;
 }
 
@@ -90,7 +90,7 @@ onUnmounted(() => {
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: var(--page-max-width);
   margin: 0 auto;
 }
 
@@ -101,15 +101,15 @@ onUnmounted(() => {
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease;
-  color: #5c4033;
+  color: var(--curie-text);
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: 8px;
 }
 
 .nav-btn:hover, .nav-btn.is-active {
-  background-color: rgba(232, 128, 61, 0.1);
-  color: #e8803d;
+  background-color: var(--curie-orange-soft);
+  color: var(--curie-orange);
 }
 
 .active-indicator {
@@ -119,7 +119,7 @@ onUnmounted(() => {
   transform: translateX(-50%);
   width: 0;
   height: 3px;
-  background-color: #e8803d;
+  background-color: var(--curie-orange);
   transition: width 0.3s ease;
   border-radius: 2px;
 }

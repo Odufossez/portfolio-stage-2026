@@ -1,53 +1,30 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* Curie Project Design System */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
-
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+  /* Colors */
+  --curie-orange: #e8803d;
+  --curie-orange-hover: #ff6300;
+  --curie-orange-soft: rgba(232, 128, 61, 0.1);
+  --curie-brown: #412817;
+  --curie-brown-soft: #8b5e3c;
+  --curie-text: #5c4033;
+  --curie-cream: #fffaf5;
+  --curie-box-bg: #fff5e6;
+  --curie-box-border: #ffe6cc;
+  
+  --curie-green: #4CAF50;
+  --curie-green-soft: rgba(76, 175, 80, 0.1);
+  
+  /* Layout */
+  --page-max-width: 900px;
+  --nav-height: 60px;
+  --container-padding-top: 100px;
+  --container-padding-bottom: 40px;
+  --section-margin: 30px;
+  
+  /* Shared Defaults */
+  --color-background: var(--curie-cream);
+  --color-text: var(--curie-text);
+  --color-heading: var(--curie-brown);
 }
 
 *,
@@ -60,83 +37,100 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background-color: #fffaf5; /* Fond crème très léger et propre */
+  background-color: var(--color-background);
   margin: 0;
-  overflow-x: hidden; /* Empêche les barres de défilement dues aux bandes */
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  overflow-x: hidden;
+  transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family:
-    'Nunito Sans',
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: 'Nunito Sans', Inter, -apple-system, sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
   text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* Common Layout Components */
+.page-container {
+  padding: var(--container-padding-top) 20px var(--container-padding-bottom);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: var(--curie-brown);
+  margin-bottom: 40px;
+  border-left: 5px solid var(--curie-orange);
+  padding-left: 20px;
 }
 
 .styled-box {
-  background-color: #fff5e6;
-  border: 1px solid #ffe6cc;
+  background-color: var(--curie-box-bg);
+  border: 1px solid var(--curie-box-border);
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-  margin-bottom: 30px;
-  color: #5c4033; /* Forcer une couleur sombre pour la lisibilité sur fond clair */
+  margin-bottom: var(--section-margin);
+  color: var(--curie-text);
 }
 
 .styled-box h2 {
-  color: #e8803d;
+  color: var(--curie-orange);
   margin-top: 0;
+  margin-bottom: 1.2rem;
 }
 
 .sources-box {
-  background-color: #5d5c5c;
-  border: 1px solid #ffe6cc;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-  margin-bottom: 30px;
-  color: #ffe6cc;
+  background-color: var(--curie-orange-soft);
+  border-left: 4px solid var(--curie-orange);
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-bottom: var(--section-margin);
+  font-size: 0.9rem;
+  color: var(--curie-brown-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.sources-box p {
+  margin: 0;
+}
 
+.sources-box a {
+  color: var(--curie-orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sources-box a:hover {
+  text-decoration: underline;
+}
 
 .back-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #e8803d;
+  color: var(--curie-orange);
   text-decoration: none;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 5px 12px;
   border-radius: 20px;
   transition: all 0.2s ease;
 }
 
 .back-link:hover {
-  background-color: #ffe6cc;
+  background-color: var(--curie-box-border);
   transform: translateX(-5px);
 }
 
-/* Bande en haut à droite */
+/* Decorative Band Backgrounds */
 body::before {
   content: "";
   position: fixed;
@@ -150,7 +144,6 @@ body::before {
   pointer-events: none;
 }
 
-/* Bande en bas à gauche */
 body::after {
   content: "";
   position: fixed;
