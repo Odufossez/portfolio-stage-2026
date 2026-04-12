@@ -19,6 +19,7 @@ import { teamData } from "@/data/team";
     </header>
 
     <div class="styled-box">
+      <h2>L'Unité d'Oncologie Computationnelle</h2>
       <p>
         Mon stage s'est déroulé au sein de l'Unité d'Oncologie Computationnelle (U1331) de l'Institut Curie.
         Cette unité étudie les différents aspects de la pathologie cancéreuse et de ses traitements en s'intéressant

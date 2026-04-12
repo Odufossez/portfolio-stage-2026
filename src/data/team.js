@@ -8,7 +8,7 @@ export const teamData = [
   },
   {
     id: 'calzone',
-    name: "Florence CALZONE",
+    name: "Laurence CALZONE",
     description: "Ingénieure en recherche et ma co-tutrice pendant ce stage.",
     photo: new URL('@/assets/team/calzone.webp', import.meta.url).href,
     relationship: "tutor"
@@ -50,12 +50,7 @@ export const teamData = [
   }
 ];
 
-export const getTeamMember = (idOrName) => {
-  const normalizedSearch = idOrName.toLowerCase();
-  return teamData.find(member => 
-    member.id.toLowerCase() === normalizedSearch || 
-    member.name.toLowerCase().includes(normalizedSearch) ||
-    // Special case for the "Laurence/Florence" typo or common names
-    (normalizedSearch === 'laurence' && member.id === 'calzone')
-  );
+export const getTeamMember = (id) => {
+  const normalizedId = id.toLowerCase();
+  return teamData.find(member => member.id.toLowerCase() === normalizedId);
 };
