@@ -6,7 +6,7 @@ Avril - Juin 2026
 - do `npm install`
 - wait for it to install
 - then `npm run dev`
-- click on the link in the console
+- click on the link in the console (Local : ...) NOT devtools
 
 ## Contexte
 
