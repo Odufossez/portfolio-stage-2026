@@ -30,7 +30,7 @@ export const teamData = [
   {
     id: 'gaspard',
     name: "Lucie GASPARD-BOULINC",
-    description: "Doctorante. Elle utilise souvent MaBoSS donc j'ai eu à lui poser des questions. Egalement, elle s'est beaucoup investie pour que je sois bien intégré.",
+    description: "Doctorante. Elle est dans le groupe avec qui je mange tous les midis, elle m'a aidé à m'intégré.",
     photo: new URL('@/assets/team/gaspard-boulinc.jpg', import.meta.url).href,
     relationship: "close"
   },
