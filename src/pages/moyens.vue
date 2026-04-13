@@ -4,6 +4,7 @@ import Trace from "@/components/Trace.vue";
 import TraceHover from "@/components/TraceHover.vue";
 import BackButton from "@/components/BackButton.vue";
 import SectionNav from "@/components/SectionNav.vue";
+import SourcesSection from "@/components/SourcesSection.vue";
 import { tracesData } from "@/data/traces.js";
 
 const sections = [
@@ -93,10 +94,7 @@ const sections = [
         afin de pouvoir modifier/effacer/valider mon travail sans qu'il n'y ait d'impact sur la branche principale.
       </p>
       <br>
-      <p class="sources-box">
-        Lien vers le Github : <a href="https://github.com/sysbio-curie"
-                                 target="_blank">https://github.com/sysbio-curie</a>
-      </p>
+      <SourcesSection ids="github-sysbio" />
     </div>
 
     <div class="styled-box" id="languages">

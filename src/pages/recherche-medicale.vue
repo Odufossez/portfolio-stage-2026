@@ -1,6 +1,7 @@
 <script setup>
 import BackButton from "@/components/BackButton.vue";
 import InfoHover from "@/components/InfoHover.vue";
+import SourcesSection from "@/components/SourcesSection.vue";
 </script>
 
 <template>
@@ -54,11 +55,7 @@ import InfoHover from "@/components/InfoHover.vue";
       </p>
     </div>
 
-    <div class="sources-box">
-      <p>
-        Sources : <a href="https://fr.wikipedia.org/wiki/Bio-informatique">Wikipédia de la bioinformatique</a>
-      </p>
-    </div>
+    <SourcesSection ids="wikipedia-bioinfo" />
 
   </div>
 </template>

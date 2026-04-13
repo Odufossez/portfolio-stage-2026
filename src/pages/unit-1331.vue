@@ -1,6 +1,7 @@
 <script setup>
 import TeamCard from "@/components/TeamCard.vue";
 import BackButton from "@/components/BackButton.vue";
+import SourcesSection from "@/components/SourcesSection.vue";
 import { teamData } from "@/data/team";
 </script>
 
@@ -56,11 +57,8 @@ import { teamData } from "@/data/team";
       </p>
     </div>
 
-    <div class="sources-box">
-    <p>
-      Sources : <a href="https://curie.fr/unite/u1331">L'unité 1331</a> <a href="https://curie.fr/equipe/barillot">L'équipe SYSBIO</a>
-    </p>
-    </div>
+    <SourcesSection :ids="['u1331', 'sysbio']" />
+
     <hr class="separator">
 
     <section class="styled-box">

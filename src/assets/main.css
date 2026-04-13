@@ -54,3 +54,52 @@ a,
   border-left: 5px solid #e8803d;
   padding-left: 20px;
 }
+
+.separator.minimal {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(232, 128, 61, 0.4), rgba(0, 0, 0, 0));
+  margin-bottom: 25px;
+}
+
+.external-resources {
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+/* External Link Styles */
+.external-resources p {
+  font-size: 0.95rem;
+  color: var(--curie-brown-soft);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--curie-orange);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 128, 61, 0.2);
+}
+
+.external-link:hover {
+  background-color: var(--curie-brown);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(65, 40, 23, 0.25);
+}
+
+.external-link svg {
+  transition: transform 0.3s ease;
+}
+
+.external-link:hover svg {
+  transform: translate(2px, -2px);
+}
