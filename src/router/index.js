@@ -13,6 +13,8 @@ import RechercheMedicale from "@/pages/recherche-medicale.vue";
 import Enjeux from "@/pages/stage-enjeux.vue"
 import Existant from "@/pages/stage-existant.vue"
 import Sujet from "@/pages/stage-sujet.vue"
+import Lexical from "@/pages/lexcial.vue"
+import Sources from "@/pages/sources.vue"
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -30,6 +32,8 @@ const routes = [
     { path: '/stage-enjeux', component: Enjeux },
     { path: '/stage-existant', component: Existant },
     { path: '/stage-sujet', component: Sujet },
+    { path: '/lexcial', component: Lexical },
+    { path: '/sources', component: Sources }
 ]
 
 const router = createRouter({

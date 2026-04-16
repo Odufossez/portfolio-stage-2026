@@ -60,8 +60,15 @@ const showDetails = ref(false);
 
   <div class="styled-box">
     <h2>MaBoSStest</h2>
-    <p>
+    <p class="todo">
       [parler de MaBoSS test]
+    </p>
+  </div>
+
+  <div class="styled-box">
+    <h2>pyMaboss</h2>
+    <p class="todo">
+      [parler de pyMaboss]
     </p>
   </div>
 

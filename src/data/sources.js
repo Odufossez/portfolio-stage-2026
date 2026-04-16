@@ -18,5 +18,17 @@ export const sourcesData = [
         id: 'github-sysbio',
         name: 'GitHub SysBio-Curie',
         link: 'https://github.com/sysbio-curie'
+    },
+    {
+        id: 'github-maboss',
+        name: 'GitHub MaBoSS',
+        link: 'https://github.com/sysbio-curie/MaBoSS'
+    },
+    {
+        id:'github-colomoto-pymaboss',
+        name: 'GitHub Colomoto-PyMaBoSS',
+        link: 'https://github.com/colomoto/pyMaboss'
     }
 ]
+
+export const getSource = (id) => sourcesData.find(source => source.id === id);

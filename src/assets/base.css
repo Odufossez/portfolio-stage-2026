@@ -156,3 +156,8 @@ body::after {
   z-index: -1;
   pointer-events: none;
 }
+
+.todo {
+  color: red;
+  font-weight: bold;
+}

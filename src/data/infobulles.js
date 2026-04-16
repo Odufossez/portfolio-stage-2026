@@ -48,6 +48,11 @@ export const infobullesData = [
     id:'mdp',
     title:'Markov Decision Process',
     content: ''
+  },
+  {
+    id: 'pymaboss',
+    title: 'pyMaboss',
+    content: 'Interface python pour MaBoSS permettant de traiter graphiquement les résultats dans un notebook jupyter.'
   }
 ];
 

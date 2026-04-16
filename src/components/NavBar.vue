@@ -6,6 +6,17 @@
 
     <ul class="navbar-links">
       <li>
+        <router-link to="/lexical" class="icon-link" title="Lexique">
+          📖
+        </router-link>
+      </li>
+      <li class="separator">
+        <router-link to="/sources" class="icon-link" title="Sources">
+          @
+        </router-link>
+      </li>
+
+      <li>
         <router-link to="/home">Accueil</router-link>
       </li>
       <li>
@@ -56,10 +67,11 @@ export default {
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navbar-links li {
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .navbar-links a {
@@ -72,9 +84,25 @@ export default {
   font-weight: 600;
 }
 
+.navbar-links li a[title] {
+  font-size: 1.3rem;
+}
+
 .navbar-links a:hover {
   color: #ff6300;
   background-color: #412817;
   border-radius: 8px;
 }
+
+.separator {
+  /* On crée la barre orange foncée à droite du logo @ */
+  border-right: 2px solid #a34d1a; /* Orange foncé */
+  padding-right: 15px;
+  margin-right: 10px;
+  height: 30px; /* Hauteur de la barre */
+  display: flex;
+  align-items: center;
+}
+
+
 </style>
