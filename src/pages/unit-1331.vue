@@ -1,16 +1,16 @@
 <script setup>
-import TeamCard from "@/components/TeamCard.vue";
+
 import BackButton from "@/components/BackButton.vue";
 import SourcesSection from "@/components/SourcesSection.vue";
-import { teamData } from "@/data/team";
 </script>
 
 <template>
   <div class="page-container">
     <BackButton to="/contexte-stage" />
 
-    <header class="page-header">
-      <h1>L'Unité 1331</h1>
+    <header class="page-header" style="display: flex; align-items: center; gap: 20px; margin-bottom: 40px;">
+      <h1 style="margin-bottom: 0;">L'Unité 1331</h1>
+      <router-link to="/members" class="btn btn-primary">Voir les membres</router-link>
     </header>
 
     <div class="styled-box">
@@ -59,22 +59,7 @@ import { teamData } from "@/data/team";
 
     <SourcesSection :ids="['u1331', 'sysbio']" />
 
-    <hr class="separator">
 
-    <section class="styled-box">
-      <h2>Le personnel de l'unité</h2>
-      <p style="margin-bottom: 25px; color: #5c4033;">Une liste non exhaustive du personnel de cette unité, notamment
-        celles et ceux avec qui j'ai interagi assez régulièrement :</p>
-
-      <TeamCard
-          v-for="member in teamData"
-          :key="member.id"
-          :name="member.name"
-          :description="member.description"
-          :photo="member.photo"
-          :relationship="member.relationship"
-      />
-    </section>
   </div>
 </template>
 

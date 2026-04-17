@@ -6,8 +6,13 @@
 
     <ul class="navbar-links">
       <li>
+        <router-link to="/traces-compilation" class="icon-link" title="Savoir-faire" style="display: flex; align-items: center;">
+          <img src="@/assets/galerie-dimages.png" alt="Traces" style="height: 24px; width: 24px; object-fit: contain; filter: brightness(0) invert(1);">
+        </router-link>
+      </li>
+      <li>
         <router-link to="/lexical" class="icon-link" title="Lexique">
-          📖
+          <img src="@/assets/book.png" alt="Lexique" style="height: 24px; width: 24px; object-fit: contain; filter: brightness(0) invert(1);">
         </router-link>
       </li>
       <li class="separator">

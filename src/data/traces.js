@@ -10,7 +10,13 @@ export const tracesData = [
         identification: 2,
         caption: "Capture d'écran des proportions de langages dans le projet.",
         image: new URL('@/assets/traces/screen_langages_maboss.png', import.meta.url).href,
-    }
+    },
+    {
+        id: 'jupyter-maboss',
+        identification: 3,
+        caption: "Capture d'écran d'un notebook Jupyter avec des exemples d'application de MaBoSS.",
+        image: new URL('@/assets/traces/jupyter_metastasis.png', import.meta.url).href,
+    },
 ];
 
 export const getTrace = (id) => {

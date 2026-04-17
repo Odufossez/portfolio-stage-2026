@@ -130,6 +130,65 @@ p {
   transform: translateX(-5px);
 }
 
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--curie-orange);
+  color: white;
+  box-shadow: 0 4px 12px rgba(232, 128, 61, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--curie-orange-hover);
+  box-shadow: 0 6px 16px rgba(232, 128, 61, 0.3);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--curie-brown);
+  color: white;
+  box-shadow: 0 4px 12px rgba(65, 40, 23, 0.15);
+}
+
+.btn-secondary:hover {
+  background-color: #5d3a21;
+  box-shadow: 0 6px 16px rgba(65, 40, 23, 0.25);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--curie-orange);
+  color: var(--curie-orange);
+}
+
+.btn-outline:hover {
+  background-color: var(--curie-orange-soft);
+  transform: translateY(-2px);
+}
+
 /* Decorative Band Backgrounds */
 body::before {
   content: "";
@@ -160,4 +219,14 @@ body::after {
 .todo {
   color: red;
   font-weight: bold;
+}
+
+.exemple {
+  color: var(--curie-green);
+  background-color: var(--curie-box-bg);
+  border: 1px solid var(--curie-green);
+  border-radius: 6px; /* Optionnel : pour adoucir les angles */
+  padding: 2px 8px;   /* Optionnel : pour donner de l'air au texte */
+  font-weight: 600;   /* Optionnel : pour une meilleure lisibilité en vert */
+  display: inline-block; /* Recommandé pour que le padding s'applique bien sur un span */
 }

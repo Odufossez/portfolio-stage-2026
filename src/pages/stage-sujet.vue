@@ -7,7 +7,7 @@ import BackButton from "@/components/BackButton.vue";
 <div class="page-container">
   <BackButton to="/contexte-sujet" />
   <header class="page-header">
-    <h1>Présentation du sujet</h1>
+    <h1>Présentation des attendus</h1>
   </header>
 
 
