@@ -3,6 +3,7 @@ import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
 import InfoHover from "@/components/InfoHover.vue";
 import SourcesSection from "@/components/SourcesSection.vue";
+import Trace from "@/components/Trace.vue";
 
 const activeRoot = ref('branches');
 </script>
@@ -54,7 +55,18 @@ const activeRoot = ref('branches');
           </p>
           <h3>Comment cela se présente ?</h3>
           <div class="side-by-side">
-
+            <div class="trace-content">
+              <Trace trace-id="branches-github"/>
+            </div>
+            <div class="text-content">
+              <p>
+                Un <InfoHover id="repo">repository Github</InfoHover> est composé d'une branche principale (la branche
+                centrale "main" de la <b>trace 7</b>). Il est possible de créer une ou plusieurs branche (<span class="blue">branche A</span> et <span class="purple">branche B</span>)
+                et de fusionner cette branche avec le contenu de la branche principale (<span class="red">merge</span> en rouge).
+                A partir de ce point, le contenu de la branche <b>main</b> contient les modifications de la <span class="purple">branche B </span>et
+                les modifications de la branche <b>main</b> antérieures à la fusion.
+              </p>
+            </div>
           </div>
         </div>
         <div v-if="activeRoot === 'pull-requests'">
@@ -73,5 +85,17 @@ const activeRoot = ref('branches');
 </template>
 
 <style scoped>
+.red {
+  color: red;
+  font-weight: bold;
+}
+.purple {
+  color: purple;
+  font-weight: bold;
+}
+.blue {
+  color: blue;
+  font-weight: bold;
+}
 
 </style>

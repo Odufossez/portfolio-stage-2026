@@ -359,3 +359,31 @@ a,
 .external-link:hover svg {
   transform: translate(2px, -2px);
 }
+
+/* Layout utilities for traces and text */
+.side-by-side {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.trace-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 850px) {
+  .side-by-side {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
