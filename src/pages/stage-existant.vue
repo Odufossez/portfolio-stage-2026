@@ -2,6 +2,9 @@
 import {ref} from 'vue';
 import BackButton from "@/components/BackButton.vue";
 import InfoHover from "@/components/InfoHover.vue";
+import Trace from "../components/Trace.vue";
+import MembersPages from "./members-pages.vue";
+import ColleagueHover from "../components/ColleagueHover.vue";
 
 const showDetails = ref(false);
 const showDetailspy = ref(false);
@@ -35,12 +38,14 @@ const showDetailspy = ref(false);
             <h3>Principe de fonctionnement</h3>
             <p>
               MaBoSS utilise des modèles booléens pour représenter les interactions entre gènes et protéines.
-              Chaque "nœud" du système représente un vecteur composé de diverses protéines/hormones... dont chaque élément
+              Chaque "nœud" du système représente un vecteur composé de diverses protéines/hormones... dont chaque
+              élément
               est soit actif (1) soit inactif (0). Ce vecteur booléen représente alors en soi un état qui peut avoir un
-              nom s'il est caractérisé, soit est défini par les éléments actifs de son vecteur les uns à la suite des autres.
+              nom s'il est caractérisé, soit est défini par les éléments actifs de son vecteur les uns à la suite des
+              autres.
             </p>
             <p class="exemple">
-              <b>Exemple</b> : un vecteur qui a trois composant A, B et C mais seulement A et B d'actif sera
+              <b>Exemple</b> : un vecteur qui a trois composant A, B et C mais seulement A et B d'actifs sera
               représenté : A -- B.
             </p>
             <ul>
@@ -93,20 +98,43 @@ const showDetailspy = ref(false);
         <div v-if="showDetailspy" class="details-content">
           <div class="inner-details">
             <h3>Principe de fonctionnement</h3>
-
+            <p> Grâce à l'intégration de pyMaboss directement dans un notebook Jupyter et à avoir MaBoSS installé sur le
+              poste
+              il est possible de lancer des simulations directement dans le notebook et d'afficher les résultats de
+              celles-ci
+              dans ce même document comme on peut le voir en exemple de la trace 3.
+            </p>
+            <p>
+              La simulation de la trace montre une simulation dans le cadre d'une métastase. Le graphique montre la
+              probabilité soit d'arriver à un noeud qui n'a que le gène CDH1 d'actif avec une
+              probabilité de 80.9% soit à un noeud qui a d'actif toute la liste de gène et de protéines d'actifs. On
+              peut
+              noter la présence de "CellCyclArrest" qui est un label qui caractérise lui-même qu'un certain nombre de
+              gène ou de protéines sont actifs.
+            </p>
+            <Trace trace-id="jupyter-maboss"/>
           </div>
         </div>
       </Transition>
 
       <h3>L'existant</h3>
       <p>
-        pyMaboss est un outil largement utilisé, avec de nombreux exemples.
+        pyMaboss est un outil largement utilisé, avec de nombreux exemples ou applications diverses,
+        <ColleagueHover name="pankaew">Saran</ColleagueHover>
+        par exemple aime bien étudier l'état des
+        <InfoHover id="noeuds">noeuds</InfoHover>
+        au cours du
+        temps, il réalise des GIF avec les résultats de simulation.
       </p>
 
-
       <h3>Ce qu'il manque</h3>
-      Cependant, ses fonctionnalités actuelles font que les chercheurs doivent simuler, récupérer, lire et exploiter
-      les résultats eux même, ce qui rend le travail très long.
+      <p>
+        Cependant, ses fonctionnalités actuelles font que les chercheurs doivent simuler, récupérer, lire et exploiter
+        les résultats eux même, ce qui rend le travail très long surtout lorsqu'ils recherchent un marqueur en particulier
+        qu'iels souhaiteraient faire
+        <InfoHover id="mutate">muter</InfoHover>
+        pour arriver à un résultat désiré.
+      </p>
 
     </div>
 

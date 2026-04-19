@@ -106,8 +106,11 @@ onUnmounted(() => {
 
 <style scoped>
 .trace-wrapper {
-  display: inline-block;
-  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .trace-card {

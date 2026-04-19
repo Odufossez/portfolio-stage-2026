@@ -221,12 +221,141 @@ body::after {
   font-weight: bold;
 }
 
+/* ------------------------
+   Global Component Styles 
+   ------------------------ */
+
+/* Content Text Styling */
+.content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--curie-text);
+}
+
+.content p, .content li {
+  margin-bottom: 20px;
+}
+
+/* Tabs (Classeur) Styling */
+.missions-section {
+  margin-bottom: var(--section-margin);
+}
+
+.tabs-list {
+  display: flex;
+  gap: 5px;
+  padding-left: 10px;
+}
+
+.tab-item {
+  background-color: var(--curie-box-border);
+  border: 1px solid var(--curie-box-border);
+  border-bottom: none;
+  padding: 10px 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  cursor: pointer;
+  color: var(--curie-brown-soft);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tab-item:hover {
+  background-color: #ffd8b3;
+}
+
+.tab-item.active {
+  background-color: var(--curie-box-bg);
+  color: var(--curie-orange);
+  height: 45px;
+  margin-top: -5px;
+  border-color: var(--curie-box-border);
+}
+
+.mission-content {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  min-height: 250px;
+}
+
 .exemple {
   color: var(--curie-green);
   background-color: var(--curie-box-bg);
   border: 1px solid var(--curie-green);
-  border-radius: 6px; /* Optionnel : pour adoucir les angles */
-  padding: 2px 8px;   /* Optionnel : pour donner de l'air au texte */
-  font-weight: 600;   /* Optionnel : pour une meilleure lisibilité en vert */
-  display: inline-block; /* Recommandé pour que le padding s'applique bien sur un span */
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Typography & Links (Moved from main.css) */
+a,
+.green {
+  text-decoration: none;
+  color: var(--curie-orange);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: var(--curie-box-border);
+    border-radius: 12px;
+  }
+}
+
+/* UI Elements (Moved from main.css) */
+.separator {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--curie-orange), transparent);
+  margin: 50px 0;
+  border-radius: 2px;
+}
+
+.separator.minimal {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(232, 128, 61, 0.4), rgba(0, 0, 0, 0));
+  margin-bottom: 25px;
+}
+
+.external-resources {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.external-resources p {
+  font-size: 0.95rem;
+  color: var(--curie-brown-soft);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--curie-orange);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 128, 61, 0.2);
+}
+
+.external-link:hover {
+  background-color: var(--curie-brown);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(65, 40, 23, 0.25);
+}
+
+.external-link svg {
+  transition: transform 0.3s ease;
+}
+
+.external-link:hover svg {
+  transform: translate(2px, -2px);
 }

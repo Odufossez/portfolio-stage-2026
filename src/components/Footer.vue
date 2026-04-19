@@ -19,7 +19,7 @@
         <img src="../assets/Paris_Curie.png" alt="Logo Institut Curie" class="logo-box">
         <div class="uni-logos-stack">
           <img src="../assets/INFO_Logo.png" alt="Logo BUT informatique de Belfort" class="uni-logo-box">
-          <img src="../assets/Logo_de_l'Université_Marie-et-Louis-Pasteur.png" alt="Logo Université Marie-et-Louis Pasteur" class="uni-logo-box">
+          <img src="../assets/Logo_Universite_Marie-et-Louis-Pasteur.png" alt="Logo Université Marie-et-Louis Pasteur" class="uni-logo-box">
         </div>
       </div>
     </div>

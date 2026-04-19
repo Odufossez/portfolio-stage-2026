@@ -8,7 +8,7 @@ export const tracesData = [
     {
         id: 'maboss-langs',
         identification: 2,
-        caption: "Capture d'écran des proportions de langages dans le projet.",
+        caption: "Capture d'écran des proportions de langages dans le projet MaBoSS.",
         image: new URL('@/assets/traces/screen_langages_maboss.png', import.meta.url).href,
     },
     {
@@ -17,6 +17,30 @@ export const tracesData = [
         caption: "Capture d'écran d'un notebook Jupyter avec des exemples d'application de MaBoSS.",
         image: new URL('@/assets/traces/jupyter_metastasis.png', import.meta.url).href,
     },
+    {
+        id: 'pymaboss-langs',
+        identification: 4,
+        caption: "Capture d'écran des proportions de langages dans le projet pyMaBoSS.",
+        image: new URL('@/assets/traces/screen_langages_pymaboss.png', import.meta.url).href,
+    },
+    {
+        id: 'check_logical_exp_flow_chart',
+        identification: 5,
+        caption: "Flow chart de l'algorithme permettant de vérifier qu'une expression logique est valide c'est à dire que deux symboles logiques ou noms ne s'enchainent pas et qu'elle ne commence pas par un symbole logique.",
+        image: new URL('@/assets/traces/check_logical_expression.jpeg', import.meta.url).href,
+    },
+    {
+        id: 'parsing_logical_exp_flow_chart',
+        identification: 6,
+        caption: "Flow chat de l'algorithme permettant de parser une expression logique en tenant compte des sous-expressions.",
+        image: new URL('@/assets/traces/parsing_logical_expression.jpeg', import.meta.url).href,
+    },
+    {
+        id:'branches-github',
+        identification: 7,
+        caption: 'Les branches se présente comme des extensions parallèles à une branche principale. Il est possible des les fusionner (repère rouge).',
+        image: new URL('@/assets/traces/github_branches.jpeg', import.meta.url).href,
+    }
 ];
 
 export const getTrace = (id) => {

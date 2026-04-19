@@ -1,29 +1,32 @@
 <script setup>
+import {ref} from 'vue';
 import ColleagueHover from '@/components/ColleagueHover.vue';
 import Trace from "@/components/Trace.vue";
 import TraceHover from "@/components/TraceHover.vue";
 import BackButton from "@/components/BackButton.vue";
 import SectionNav from "@/components/SectionNav.vue";
 import SourcesSection from "@/components/SourcesSection.vue";
-import { tracesData } from "@/data/traces.js";
+import {tracesData} from "@/data/traces.js";
 
 const sections = [
-  { id: 'work-env', label: 'Environnement de travail' },
-  { id: 'communication', label: 'Communication' },
-  { id: 'github', label: 'GitHub' },
-  { id: 'languages', label: 'Langages' }
+  {id: 'work-env', label: 'Environnement de travail'},
+  {id: 'communication', label: 'Communication'},
+  {id: 'github', label: 'GitHub'},
+  {id: 'languages', label: 'Langages'}
 ];
+
+const activeLanguage = ref('maboss');
 </script>
 
 <template>
   <div class="page-container">
-    <BackButton to="/contexte-stage" />
+    <BackButton to="/contexte-stage"/>
 
     <header class="page-header">
       <h1>Environnement technique</h1>
     </header>
 
-    <SectionNav :sections="sections" />
+    <SectionNav :sections="sections"/>
 
     <div class="styled-box" id="work-env">
       <h2>Environnement de travail</h2>
@@ -94,52 +97,69 @@ const sections = [
         afin de pouvoir modifier/effacer/valider mon travail sans qu'il n'y ait d'impact sur la branche principale.
       </p>
       <br>
-      <SourcesSection ids="github-sysbio" />
+      <SourcesSection ids="github-sysbio"/>
     </div>
 
-    <div class="styled-box" id="languages">
+    <section class="missions-section" id="languages">
       <h2>Langages du projet</h2>
-      <div class="side-by-side">
-        <div class="text-content">
-          <p>
-            MaBoSS est un logiciel écrit en C++ qui a quelques couches de Python. On peut voir sur la
-            trace 2 ci-contre la répartition proportionnelle des langages utilisés par l'application MaBoSS.
-            Plus de la moitié (52.1%) est en C++, les exemples d'applications sont sous Jupyter Notebook (24%) et le
-            reste
-            représentent les minces couches de Python, de configurations, etc...
-          </p>
-          <p>
-            La majeure partie de mon travail se concentre sur la partie C++ de ce projet.
-          </p>
+      <div class="tabs-list">
+        <button
+            class="tab-item"
+            :class="{ active: activeLanguage === 'maboss' }"
+            @click="activeLanguage = 'maboss'"
+        >
+          MaBoSS
+        </button>
+        <button
+            class="tab-item"
+            :class="{ active: activeLanguage === 'pymaboss' }"
+            @click="activeLanguage = 'pymaboss'"
+        >
+          pyMaBoSS
+        </button>
+      </div>
+
+      <div class="styled-box mission-content">
+        <div v-if="activeLanguage === 'maboss'">
+          <h2>MaBoSS</h2>
+          <div class="text-content">
+            <p>
+              MaBoSS est un logiciel écrit en C++ qui a quelques couches de Python. On peut voir sur la
+              trace 2 ci-dessous la répartition proportionnelle des langages utilisés par l'application MaBoSS.
+              Plus de la moitié (52.1%) est en C++, les exemples d'applications sont sous Jupyter Notebook (24%) et le
+              reste
+              représentent les minces couches de Python, de configurations, etc...
+            </p>
+            <p>
+              La partie documentation de mon stage se concentre sur la partie écrite en C++.
+            </p>
+          </div>
+          <div class="trace-content">
+            <Trace trace-id="maboss-langs"></Trace>
+          </div>
         </div>
-        <div class="trace-content">
-          <Trace trace-id="maboss-langs"></Trace>
+
+        <div v-if="activeLanguage === 'pymaboss'">
+          <h2>pyMaBoSS</h2>
+
+          <div class="text-content">
+            <p>
+              pyMaBoSS est une bibliothèque Python hébergée sur Colomoto permettant l'utilisation de Jupyter Notebook
+              pour faire du traitement de données sur les résultats de simulation. En conséquence, ce projet est écrit
+              en
+              Python. Sur la trace 4 ci-dessous, on peut voir les proportions de langages et on remarque la très forte
+              proportion de langage Jupyter Notebook, dûe aux exemples d'applications présents dans le projet.
+            </p>
+          </div>
+          <div class="trace-content">
+            <Trace trace-id="pymaboss-langs"/>
+          </div>
         </div>
       </div>
-    </div>
+      <BackButton to="contexte-stage"></BackButton>
+    </section>
   </div>
 </template>
 
 <style scoped>
-.side-by-side {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.text-content {
-  flex: 1;
-}
-
-.trace-content {
-  flex-shrink: 0;
-}
-
-@media (max-width: 850px) {
-  .side-by-side {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
 </style>

@@ -17,6 +17,17 @@ import Lexical from "@/pages/pages-compilation/lexical.vue"
 import Sources from "@/pages/pages-compilation/sources.vue"
 import Members from "@/pages/members-pages.vue"
 import Traces from "@/pages/pages-compilation/traces-compilation.vue"
+import GithubUsage from "@/pages/savoirfaire-pages/github-usage.vue"
+import ModuleCreation from "@/pages/savoirfaire-pages/module-creation.vue"
+import FlowCharts from "@/pages/savoirfaire-pages/flow-charts.vue"
+import UnitTests from "@/pages/savoirfaire-pages/unit-tests.vue"
+import JupyterNotebooks from "@/pages/savoirfaire-pages/jupyter-notebooks.vue"
+import DocumentationPython from "@/pages/savoirfaire-pages/documentation-python.vue"
+import DocumentationUml from "@/pages/savoirfaire-pages/documentation-uml.vue"
+import DocumentationCpp from "@/pages/savoirfaire-pages/documentation-c++.vue"
+import ParsingLogicalExpression from "@/pages/savoirfaire-pages/parsing-logical-expression.vue"
+import Regex from "@/pages/savoirfaire-pages/regex.vue"
+import DataTreatment from "@/pages/savoirfaire-pages/data-treatment.vue"
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -38,6 +49,17 @@ const routes = [
     { path: '/sources', component: Sources },
     { path: '/members', component: Members },
     { path: '/traces-compilation', component: Traces },
+    { path: '/savoirfaire-pages/github-usage', component: GithubUsage },
+    { path: '/savoirfaire-pages/module-creation', component: ModuleCreation },
+    { path: '/savoirfaire-pages/flow-charts', component: FlowCharts },
+    { path: '/savoirfaire-pages/unit-tests', component: UnitTests },
+    { path: '/savoirfaire-pages/jupyter-notebooks', component: JupyterNotebooks },
+    { path: '/savoirfaire-pages/documentation-python', component: DocumentationPython },
+    { path: '/savoirfaire-pages/documentation-uml', component: DocumentationUml },
+    { path: '/savoirfaire-pages/documentation-c++', component: DocumentationCpp },
+    { path: '/savoirfaire-pages/parsing-logical-expression', component: ParsingLogicalExpression },
+    { path: '/savoirfaire-pages/regex', component: Regex },
+    { path: '/savoirfaire-pages/data-treatment', component: DataTreatment },
 ]
 
 const router = createRouter({

@@ -6,7 +6,7 @@ import TeamCard from "@/components/TeamCard.vue";
 
 <template>
 <div class="page-container">
-  <BackButton to="/unit-1331" />
+  <BackButton to="/unit-1331" label="Retour à la page de l'unité" />
   <header class="page-header">
     <h1>Le personnel de l'unité</h1>
   </header>

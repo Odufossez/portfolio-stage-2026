@@ -28,6 +28,11 @@ export const sourcesData = [
         id:'github-colomoto-pymaboss',
         name: 'GitHub Colomoto-PyMaBoSS',
         link: 'https://github.com/colomoto/pyMaboss'
+    },
+    {
+        id:'branches-github-doc',
+        name: 'Branches d\'un répertoire - Site officiel de Github',
+        link: 'https://docs.github.com/fr/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches'
     }
 ]
 

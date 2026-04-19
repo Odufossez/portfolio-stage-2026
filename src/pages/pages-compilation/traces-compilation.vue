@@ -7,7 +7,7 @@ import Trace from "@/components/Trace.vue";
 
 <template>
   <div class="page-container">
-    <BackButton to="/home"/>
+    <BackButton to="/home" label="Retour à l'accueil"/>
     <header class="page-header">
       <h1>Toutes les traces utilisées sur ce site</h1>
     </header>

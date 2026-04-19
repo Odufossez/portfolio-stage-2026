@@ -134,48 +134,5 @@ li {
   line-height: 1.6;
 }
 
-/* Styles pour les onglets */
-.missions-section {
-  margin-bottom: var(--section-margin);
-}
-
-.tabs-list {
-  display: flex;
-  gap: 5px;
-  padding-left: 10px;
-}
-
-.tab-item {
-  background-color: var(--curie-box-border);
-  border: 1px solid var(--curie-box-border);
-  border-bottom: none;
-  padding: 10px 20px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  cursor: pointer;
-  color: var(--curie-brown-soft);
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.tab-item:hover {
-  background-color: #ffd8b3;
-}
-
-.tab-item.active {
-  background-color: var(--curie-box-bg);
-  color: var(--curie-orange);
-  height: 45px;
-  margin-top: -5px;
-  border-color: var(--curie-box-border);
-}
-
-.mission-content {
-  margin-top: -1px;
-  border-top-left-radius: 0;
-  min-height: 250px;
-}
-
 /* Ressources externes */
-
 </style>

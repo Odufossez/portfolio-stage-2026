@@ -25,14 +25,4 @@ import BackButton from "@/components/BackButton.vue";
   </div>
 </template>
 
-<style scoped>
-.content {
-  line-height: 1.8;
-  font-size: 1.1rem;
-  color: var(--curie-text);
-}
 
-.content p, .content li {
-  margin-bottom: 20px;
-}
-</style>
