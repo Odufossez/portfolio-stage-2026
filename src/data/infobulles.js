@@ -70,6 +70,41 @@ export const infobullesData = [
     id:'repo',
     title:'Repository ou répertoire Github',
     content:'Un repository ou repo Github est l\'endroit où tout le code, les images, les fichiers d\'un projet sont stockés ainsi que leur historique de modification'
+  },
+  {
+    id:'rebase',
+    title: 'La commande Rebase',
+    content: 'Un rebase va récupérer l\'historique de la branche cible pour le fusionner avec celui de la branche courante. ' +
+        'Cette commande applique dans l\'ordre ' +
+        'chronologique les changements de la branche cible sur la branche courante.'
+  },
+  {
+    id:'stash',
+    title: 'La commande Stash',
+    content: 'Cette commande va stocker les changements de la branche courante dans un stash. ' +
+        'Ce serait comme mettre dans une pile "à appliquer plus tard" les changements. Ceux-ci n\'apparaissent donc plus dans la branche courante. ' +
+        'Ils peuvent être rétabli à tout moment en utilisant la commande "git stash apply".'
+  },
+  {
+    id: 'push',
+    title: 'La commande Push',
+    content: 'La commande "push" va permettre d\'envoyer les modifications dans le git. Celles-ci doivent avoir été commit au préalable.' +
+        'On parle de modifications "poussées" pour dire qu\'elles ont été mise en ligne.'
+  },
+  {
+    id: 'commit',
+    title: 'La commande Commit',
+    content: 'Commit permet de préparer les modifications à être envoyées dans le git. Il est accompagné d\'un message explicatif.'
+  },
+  {
+    id: 'pull',
+    title: 'La commande Pull',
+    content: 'Pull d\'intégrer les modifications d\'un dépot distant dans la branche actuelle'
+  },
+  {
+    id:'fork',
+    title:'La commande Fork',
+    content:'Faire un "fork" d\'un dépôt va permettre de le copier dans nos propre repository afin que les modifications que l\'on va y faire n\'affecte pas le projet originel.'
   }
 ];
 

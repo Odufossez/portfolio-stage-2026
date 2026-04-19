@@ -136,16 +136,53 @@ export const savoirFaire = [
         id: 'documentation-python',
         classification: 'sub-theme',
         title: 'Documentation en Python',
+        subs: [
+            'know-standards-python',
+            'being-communicant'
+        ]
+    },
+    {
+      id: 'know-standards-python',
+      classification: 'root',
+      title: 'Connaitre les standards Python',
+    },
+    {
+        id: 'being-communicant',
+        classification: 'root',
+        title: 'Bien communiquer avec les autres'
     },
     {
         id: 'documentation-uml',
         classification: 'sub-theme',
         title: 'Documentation UML',
+        subs: [
+            'doxygen',
+            'clang-uml'
+        ]
+    },
+    {
+        id: 'doxygen',
+        classification: 'root',
+        title: 'Documentation avec Doxygen',
+    },
+    {
+      id: 'clang-uml',
+      classification: 'root',
+      title: 'Documentation avec Clang-UML',
     },
     {
         id: 'documentation-c++',
         classification: 'sub-theme',
         title: 'Documentation C++',
+        subs: [
+            'being-communicant',
+            'know-standards-c++',
+        ]
+    },
+    {
+        id: 'know-standards-c++',
+        classification: 'root',
+        title: 'Connaitre les standards C++',
     },
     {
         id: 'parsing-logical-expression',
@@ -239,5 +276,54 @@ export const savoirFaire = [
         id: 'know-what-data-use',
         title: 'Savoir quelles données utiliser',
         classification: 'root',
-    }
+    },
+    {
+        id: 'answer-needs',
+        title: 'Répondre aux besoins',
+        classification: 'theme',
+        subs: [
+            'cahier-des-charges',
+            'recherche-projet',
+        ],
+        color: '#4fb1ec',
+    },
+    {
+        id: 'cahier-des-charges',
+        title: 'Cahier des charges',
+        classification: 'sub-theme',
+        subs: [
+            'being-communicant',
+            'ask-questions',
+            'know-to-synthetize'
+        ]
+    },
+    {
+        id: 'ask-questions',
+        title: 'Poser des questions et les bonnes',
+        classification: 'root',
+    },
+    {
+        id: 'know-to-synthetize',
+        title: 'Savoir comment synthetiser',
+        classification: 'root',
+    },
+    {
+        id: 'recherche-projet',
+        title: 'Se documenter',
+        classification: 'sub-theme',
+        subs: [
+            'looking-for-existant',
+            'browse-sources',
+        ]
+    },
+    {
+        id: 'looking-for-existant',
+        title: 'Rechercher l\'existant',
+        classification: 'root',
+    },
+    {
+        id: 'browse-sources',
+        title: 'Parcourir les sources',
+        classification: 'root',
+    },
 ]

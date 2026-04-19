@@ -40,6 +40,19 @@ export const tracesData = [
         identification: 7,
         caption: 'Les branches se présente comme des extensions parallèles à une branche principale. Il est possible des les fusionner (repère rouge).',
         image: new URL('@/assets/traces/github_branches.jpeg', import.meta.url).href,
+    },
+    {
+        id:'branches-maboss',
+        identification: 8,
+        caption: 'Visualisation des branches dans le projet MaBoSS.',
+        image: new URL('@/assets/traces/screen_branches_maboss.png', import.meta.url).href,
+    },
+    {
+        id:'screen-fork-pymaboss',
+        identification: 9,
+        caption: 'Capture d\'écran qui montre que mon dépôt appelé "pyMaboss" est un fork du déôt de Colomoto du même nom (cercle rouge). '+
+        'Le cercle jaune indique le bouton permettant de demander la fusion avec le dépôt originel. ',
+        image: new URL('@/assets/traces/screen_fork.png', import.meta.url).href,
     }
 ];
 

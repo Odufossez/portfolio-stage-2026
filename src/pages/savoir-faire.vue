@@ -1,10 +1,18 @@
 <script setup>
-import { ref, computed } from 'vue';
+import {ref, computed, watch} from 'vue';
 import BackButton from "@/components/BackButton.vue";
-import { savoirFaire } from '@/data/savoir-faire.js';
+import {savoirFaire} from '@/data/savoir-faire.js';
 
 const themes = computed(() => savoirFaire.filter(item => item.classification === 'theme'));
-const activeThemeId = ref(themes.value[0]?.id);
+
+// On initialise avec la valeur en session ou le premier thème par défaut
+const savedTheme = sessionStorage.getItem('activeSavoirFaireTheme');
+const activeThemeId = ref(savedTheme || themes.value[0]?.id);
+
+// Mise à jour de la session lors du changement d'onglet
+watch(activeThemeId, (newId) => {
+  sessionStorage.setItem('activeSavoirFaireTheme', newId);
+});
 
 const activeTheme = computed(() => savoirFaire.find(item => item.id === activeThemeId.value));
 
@@ -15,26 +23,29 @@ function getById(id) {
 
 <template>
   <div class="page-container">
-    <BackButton to="/home" label="Retour à l'accueil" />
-    
+    <BackButton to="/home" label="Retour à l'accueil"/>
+
     <header class="page-header">
       <h1>Savoir-faire généraux</h1>
     </header>
 
     <section class="content">
-      <p>Cette page présente mes savoir-faire généraux acquis et mobilisés durant mon cursus et mon stage.</p>
+      <p>Cette page présente mes savoir-faire généraux acquis et mobilisés durant mon cursus et mon stage. Chaque
+        section présente le thème général des savoir-faire présentés dans les sous-pages. Ils sont organisés tel que
+        l'on puisse se rendre compte de leur hiérarchie mais seul le dernier niveau de savoir-faire est décrit.
+      </p>
       <p>Pour avoir une description de chacun d'entre eux, cliquez sur le titre de la sous rubrique ! </p>
     </section>
 
     <section class="missions-section">
       <div class="tabs-list">
-        <button 
-          v-for="theme in themes" 
-          :key="theme.id"
-          class="tab-item" 
-          :class="{ active: activeThemeId === theme.id }"
-          @click="activeThemeId = theme.id"
-          :style="{ 
+        <button
+            v-for="theme in themes"
+            :key="theme.id"
+            class="tab-item"
+            :class="{ active: activeThemeId === theme.id }"
+            @click="activeThemeId = theme.id"
+            :style="{
             borderColor: activeThemeId === theme.id ? theme.color : '#e2e8f0',
             color: activeThemeId === theme.id ? theme.color : '#333'
           }"
@@ -45,20 +56,20 @@ function getById(id) {
 
       <div v-if="activeTheme" class="styled-box theme-content" :style="{ borderColor: activeTheme.color }">
         <h2 :style="{ color: activeTheme.color }">{{ activeTheme.title }}</h2>
-        
+
         <div class="subs-container" v-if="activeTheme.subs && activeTheme.subs.length">
           <div v-for="subId in activeTheme.subs" :key="subId" class="sub-item">
-            
+
             <!-- SUB-THEME -->
             <template v-if="getById(subId)?.classification === 'sub-theme'">
               <div class="sub-theme-block">
                 <router-link :to="`/savoirfaire-pages/${subId}`" class="sub-theme-link">
                   <h3 class="sub-theme-title">
-                    <span 
-                      v-for="(char, index) in getById(subId).title.split('')" 
-                      :key="index"
-                      class="wave-char"
-                      :style="{ animationDelay: `${(subId.length * 0.2) + (index * 0.03)}s` }"
+                    <span
+                        v-for="(char, index) in getById(subId).title.split('')"
+                        :key="index"
+                        class="wave-char"
+                        :style="{ animationDelay: `${(subId.length * 0.2) + (index * 0.03)}s` }"
                     >{{ char === ' ' ? '\xa0' : char }}</span>
                   </h3>
                 </router-link>
@@ -69,14 +80,14 @@ function getById(id) {
                 </div>
               </div>
             </template>
-            
+
             <!-- ROOT (direct child of theme) -->
             <template v-else-if="getById(subId)?.classification === 'root'">
               <div class="root-item direct-root">
                 <span class="root-title">{{ getById(subId).title }}</span>
               </div>
             </template>
-            
+
           </div>
         </div>
       </div>
@@ -107,18 +118,18 @@ function getById(id) {
   transition: all 0.3s ease;
   font-size: 1rem;
   font-weight: 500;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .tab-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fcfcfc;
 }
 
 .tab-item.active {
   background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   transform: translateY(-1px);
 }
 
@@ -186,7 +197,7 @@ function getById(id) {
   font-size: 0.95rem;
   color: #495057;
   display: inline-block;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .direct-root {

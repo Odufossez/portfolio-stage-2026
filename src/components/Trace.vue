@@ -10,7 +10,7 @@
       <div class="caption-container">
         <p class="caption-text">
           <template v-if="finalTrace.identification">
-            <strong>Trace n {{ finalTrace.identification }} :</strong>
+            <strong>Trace n°{{ finalTrace.identification }} :</strong>
           </template>
           {{ finalTrace.caption }}
         </p>

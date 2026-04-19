@@ -60,6 +60,6 @@ defineProps({
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
-  text-align: left; /* Tooltips usually look better left-aligned */
+  text-align: justify;
 }
 </style>

@@ -2,6 +2,7 @@
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
 import BackgroundGraph from "./components/BackgroundGraph.vue";
+import ScrollToTop from "./components/ScrollToTop.vue";
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import BackgroundGraph from "./components/BackgroundGraph.vue";
   </main>
 
   <Footer />
+  <ScrollToTop />
 </template>
 
 <style scoped>

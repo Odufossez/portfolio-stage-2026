@@ -28,6 +28,8 @@ import DocumentationCpp from "@/pages/savoirfaire-pages/documentation-c++.vue"
 import ParsingLogicalExpression from "@/pages/savoirfaire-pages/parsing-logical-expression.vue"
 import Regex from "@/pages/savoirfaire-pages/regex.vue"
 import DataTreatment from "@/pages/savoirfaire-pages/data-treatment.vue"
+import CahierDesCharges from "@/pages/savoirfaire-pages/cahier-des-charges.vue"
+import RechercheProjet from "@/pages/savoirfaire-pages/recherche-projet.vue"
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -60,6 +62,8 @@ const routes = [
     { path: '/savoirfaire-pages/parsing-logical-expression', component: ParsingLogicalExpression },
     { path: '/savoirfaire-pages/regex', component: Regex },
     { path: '/savoirfaire-pages/data-treatment', component: DataTreatment },
+    { path: '/savoirfaire-pages/cahier-des-charges', component: CahierDesCharges },
+    { path: '/savoirfaire-pages/recherche-projet', component: RechercheProjet },
 ]
 
 const router = createRouter({
