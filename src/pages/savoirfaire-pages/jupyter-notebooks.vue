@@ -1,5 +1,7 @@
 <script setup>
 import BackButton from "@/components/BackButton.vue";
+import {ref} from "vue";
+const activeRoot = ref('')
 </script>
 
 <template>
@@ -11,22 +13,18 @@ import BackButton from "@/components/BackButton.vue";
     </header>
 
     <section class="content">
-      <p>Traces et explications pour les compétences liées à : Jupyter notebooks.</p>
-      
-      <div class="styled-box">
-        <h2>Mes Traces</h2>
-        <!-- Ajoutez vos traces et explications pour chaque root ici -->
-      </div>
+      <h2>L'utilisation de Jupyter Notebook</h2>
+
+      <section class="missions-section">
+        <div class="tabs-list">
+
+        </div>
+      </section>
+
     </section>
   </div>
 </template>
 
 <style scoped>
-.styled-box {
-  margin-top: 2rem;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: var(--surface-card, #ffffff);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+
 </style>
