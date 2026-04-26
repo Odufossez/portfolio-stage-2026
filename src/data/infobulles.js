@@ -110,6 +110,11 @@ export const infobullesData = [
     id:'pandas',
     title: 'Bibliothèque Python pandas',
     content: 'Bibliothèque Python permettant la création et la manipulation de Dataframe, de grands tableaux de données.'
+  },
+  {
+    id:'enum',
+    title:'Enumération ou enum',
+    content:'Une énumération, couramment appelée "enum" est un type de données défini par un ensemble de valeurs constantes. '
   }
 ];
 

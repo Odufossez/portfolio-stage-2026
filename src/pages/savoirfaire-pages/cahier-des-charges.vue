@@ -16,7 +16,7 @@ const activeRoot = ref('being-communicant');
       <h1>Cahier des charges</h1>
     </header>
 
-    <section class="mission-section">
+    <section class="missions-section">
       <div class="tabs-list">
         <button class="tab-item"
                 :class="{active: activeRoot === 'being-communicant'}"

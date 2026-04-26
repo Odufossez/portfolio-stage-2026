@@ -126,8 +126,13 @@ export const savoirFaire = [
             'checking_exceptions',
             'checking_no_exceptions',
             'conceive-test-samples',
-
+            'conception-bouchons'
         ]
+    },
+    {
+        id: 'conception-bouchons',
+        classification: 'root',
+        title: 'Concevoir des bouchons',
     },
     {
         id: 'jupyter-notebooks',

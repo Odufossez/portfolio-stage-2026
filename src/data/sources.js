@@ -48,6 +48,16 @@ export const sourcesData = [
         id:'normes-code',
         name: 'Normes de codage',
         link: 'https://fr.wikipedia.org/wiki/R%C3%A8gles_de_codage'
+    },
+    {
+        id:'integration-tests',
+        name: 'Tests d\'intégration',
+        link:'https://fr.wikipedia.org/wiki/Test_d%27int%C3%A9gration'
+    },
+    {
+        id: 'unit-tests',
+        name: 'Tests unitaires',
+        link:'https://fr.wikipedia.org/wiki/Test_unitaire'
     }
 ]
 

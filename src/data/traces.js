@@ -60,6 +60,30 @@ export const tracesData = [
         identification: 10,
         caption: 'Capture d\'écran d\'une commande commit vers la fork et la branche que j\'ai crée pour pyMaboss.',
         image: new URL('@/assets/traces/screen_push_fork_branch.png', import.meta.url).href,
+    },
+    {
+        id: 'screen-no-raise',
+        identification: 11,
+        caption: '',
+        image: new URL('@/assets/traces/screen-no-raise.png', import.meta.url).href,
+    },
+    {
+        id: 'screen-raise-excp',
+        identification: 12,
+        caption: '',
+        image: new URL('@/assets/traces/screen-raise-excp.png', import.meta.url).href,
+    },
+    {
+        id:'custom-exception',
+        identification: 13,
+        caption: '',
+        image: new URL('@/assets/traces/custom-exception.png', import.meta.url).href,
+    },
+    {
+        id:'exemples-assertions',
+        identification: 14,
+        caption: '',
+        image: new URL('@/assets/traces/exemples-assertions.png', import.meta.url).href,
     }
 ];
 

@@ -14,7 +14,7 @@ const showDetails = ref(false);
       <h1>Généralités sur la documentation</h1>
     </header>
 
-    <section class="mission-section">
+    <section class="missions-section">
       <div class="tabs-list">
         <button class="tab-item" :class="{active: activeRoot === 'standards'}" @click="activeRoot='standards'">
           Généralités sur la documentation

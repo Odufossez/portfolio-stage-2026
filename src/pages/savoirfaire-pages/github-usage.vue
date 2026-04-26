@@ -18,7 +18,7 @@ const showEcoleDetails = ref(false);
 
     </header>
 
-    <section class="mission-section">
+    <section class="missions-section">
       <div class="tabs-list">
         <button class="tab-item"
                 :class="{active: activeRoot === 'branches'}"

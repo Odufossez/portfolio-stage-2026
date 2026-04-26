@@ -245,6 +245,14 @@ body::after {
   display: flex;
   gap: 5px;
   padding-left: 10px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-top: 8px; /* Espace pour l'onglet actif qui "monte" */
+  scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+}
+
+.tabs-list::-webkit-scrollbar {
+  display: none; /* Cache la scrollbar sur Chrome/Safari */
 }
 
 .tab-item {
@@ -258,6 +266,8 @@ body::after {
   color: var(--curie-brown-soft);
   font-weight: 600;
   transition: all 0.3s ease;
+  flex-shrink: 0; /* Empêche les onglets de s'écraser */
+  text-align: center;
 }
 
 .tab-item:hover {
@@ -267,9 +277,11 @@ body::after {
 .tab-item.active {
   background-color: var(--curie-box-bg);
   color: var(--curie-orange);
-  height: 45px;
-  margin-top: -5px;
+  min-height: 45px;
+  margin-top: -8px;
   border-color: var(--curie-box-border);
+  position: relative;
+  z-index: 1;
 }
 
 .mission-content {
@@ -280,12 +292,47 @@ body::after {
 
 .exemple {
   color: var(--curie-green);
-  background-color: var(--curie-box-bg);
+  background-color: var(--curie-green-soft);
   border: 1px solid var(--curie-green);
-  border-radius: 6px;
-  padding: 2px 8px;
+  border-radius: 8px;
+  padding: 4px 10px;
   font-weight: 600;
   display: inline-block;
+  margin: 0 2px;
+}
+
+ul.exemple, ol.exemple {
+  display: block;
+  list-style-type: none;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background-color: var(--curie-green-soft);
+  border: 1px solid var(--curie-green);
+  border-left: 5px solid var(--curie-green);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.08);
+}
+
+ul.exemple li, ol.exemple li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 30px;
+  color: var(--curie-text);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+ul.exemple li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--curie-green);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+ul.exemple li:last-child, ol.exemple li:last-child {
+  margin-bottom: 0;
 }
 
 /* Typography & Links (Moved from main.css) */

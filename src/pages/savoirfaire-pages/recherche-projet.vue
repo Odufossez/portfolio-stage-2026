@@ -16,7 +16,7 @@ const activeRoot = ref('looking-for-existant');
       <h1>Se documenter</h1>
     </header>
 
-    <section class="mission-section">
+    <section class="missions-section">
       <div class="tabs-list">
         <button class="tab-item"
                 :class="{active: activeRoot === 'looking-for-existant'}"
