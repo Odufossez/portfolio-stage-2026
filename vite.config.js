@@ -11,7 +11,7 @@ export default defineConfig({
     vueDevTools(),
 
   ],
-  base: "/REPONAME/",
+  base: "/portfolio-stage-2026/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
