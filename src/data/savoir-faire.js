@@ -45,20 +45,27 @@ export const savoirFaire = [
         color: '#b2876a',
         title: 'Documentation',
         subs: [
-            'documentation-python',
-            'documentation-uml',
-            'documentation-c++',
+            'generalities-on-doc',
         ]
     },
     {
         id: 'coding-python',
         classification: 'theme',
         color: '#ff6300',
-        title: 'Coding en Python',
+        title: 'Coder en Python',
         subs: [
             'unit-tests',
             'jupyter-notebooks',
             'module-creation',
+            'respect-normes'
+        ]
+    },
+    {
+        id: 'respect-normes',
+        classification: 'sub-theme',
+        title: 'Respect des normes',
+        subs: [
+            'know-standards-python'
         ]
     },
     {
@@ -133,56 +140,28 @@ export const savoirFaire = [
         ]
     },
     {
-        id: 'documentation-python',
-        classification: 'sub-theme',
-        title: 'Documentation en Python',
-        subs: [
-            'know-standards-python',
-            'being-communicant'
-        ]
-    },
-    {
       id: 'know-standards-python',
       classification: 'root',
       title: 'Connaitre les standards Python',
     },
     {
+        id: 'generalities-on-doc',
+        classification: 'sub-theme',
+        title: 'Généralités sur la documentation',
+        subs: [
+            'tools-for-doc',
+            'being-communicant'
+        ]
+    },
+    {
+        id: 'tools-for-doc',
+        classification: 'root',
+        title: 'Outils pour la documentation',
+    },
+    {
         id: 'being-communicant',
         classification: 'root',
         title: 'Bien communiquer avec les autres'
-    },
-    {
-        id: 'documentation-uml',
-        classification: 'sub-theme',
-        title: 'Documentation UML',
-        subs: [
-            'doxygen',
-            'clang-uml'
-        ]
-    },
-    {
-        id: 'doxygen',
-        classification: 'root',
-        title: 'Documentation avec Doxygen',
-    },
-    {
-      id: 'clang-uml',
-      classification: 'root',
-      title: 'Documentation avec Clang-UML',
-    },
-    {
-        id: 'documentation-c++',
-        classification: 'sub-theme',
-        title: 'Documentation C++',
-        subs: [
-            'being-communicant',
-            'know-standards-c++',
-        ]
-    },
-    {
-        id: 'know-standards-c++',
-        classification: 'root',
-        title: 'Connaitre les standards C++',
     },
     {
         id: 'parsing-logical-expression',

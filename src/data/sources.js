@@ -33,6 +33,21 @@ export const sourcesData = [
         id:'branches-github-doc',
         name: 'Branches d\'un répertoire - Site officiel de Github',
         link: 'https://docs.github.com/fr/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches'
+    },
+    {
+        id: 'doxygen',
+        name: 'Site de Doxygen',
+        link: 'https://www.doxygen.nl/'
+    },
+    {
+        id:'clang-uml',
+        name: 'Site de Clang-UML',
+        link: 'https://clang-uml.github.io/'
+    },
+    {
+        id:'normes-code',
+        name: 'Normes de codage',
+        link: 'https://fr.wikipedia.org/wiki/R%C3%A8gles_de_codage'
     }
 ]
 

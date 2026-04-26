@@ -26,7 +26,8 @@ export const tracesData = [
     {
         id: 'check_logical_exp_flow_chart',
         identification: 5,
-        caption: "Flow chart de l'algorithme permettant de vérifier qu'une expression logique est valide c'est à dire que deux symboles logiques ou noms ne s'enchainent pas et qu'elle ne commence pas par un symbole logique.",
+        caption: "Flow chart de l'algorithme permettant de vérifier qu'une expression logique est valide c'est à dire " +
+            "que deux symboles logiques ou noms ne s'enchainent pas et qu'elle ne commence ou ne termine pas par un symbole logique.",
         image: new URL('@/assets/traces/check_logical_expression.jpeg', import.meta.url).href,
     },
     {
@@ -53,6 +54,12 @@ export const tracesData = [
         caption: 'Capture d\'écran qui montre que mon dépôt appelé "pyMaboss" est un fork du déôt de Colomoto du même nom (cercle rouge). '+
         'Le cercle jaune indique le bouton permettant de demander la fusion avec le dépôt originel. ',
         image: new URL('@/assets/traces/screen_fork.png', import.meta.url).href,
+    },
+    {
+        id:'screen_push_fork',
+        identification: 10,
+        caption: 'Capture d\'écran d\'une commande commit vers la fork et la branche que j\'ai crée pour pyMaboss.',
+        image: new URL('@/assets/traces/screen_push_fork_branch.png', import.meta.url).href,
     }
 ];
 

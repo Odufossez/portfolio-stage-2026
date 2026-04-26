@@ -22,7 +22,7 @@ import ModuleCreation from "@/pages/savoirfaire-pages/module-creation.vue"
 import FlowCharts from "@/pages/savoirfaire-pages/flow-charts.vue"
 import UnitTests from "@/pages/savoirfaire-pages/unit-tests.vue"
 import JupyterNotebooks from "@/pages/savoirfaire-pages/jupyter-notebooks.vue"
-import DocumentationPython from "@/pages/savoirfaire-pages/documentation-python.vue"
+import GeneralitiesDoc from "../pages/savoirfaire-pages/generalities-on-doc.vue"
 import DocumentationUml from "@/pages/savoirfaire-pages/documentation-uml.vue"
 import DocumentationCpp from "@/pages/savoirfaire-pages/documentation-c++.vue"
 import ParsingLogicalExpression from "@/pages/savoirfaire-pages/parsing-logical-expression.vue"
@@ -56,7 +56,7 @@ const routes = [
     { path: '/savoirfaire-pages/flow-charts', component: FlowCharts },
     { path: '/savoirfaire-pages/unit-tests', component: UnitTests },
     { path: '/savoirfaire-pages/jupyter-notebooks', component: JupyterNotebooks },
-    { path: '/savoirfaire-pages/documentation-python', component: DocumentationPython },
+    { path: '/savoirfaire-pages/generalities-on-doc', component: GeneralitiesDoc },
     { path: '/savoirfaire-pages/documentation-uml', component: DocumentationUml },
     { path: '/savoirfaire-pages/documentation-c++', component: DocumentationCpp },
     { path: '/savoirfaire-pages/parsing-logical-expression', component: ParsingLogicalExpression },

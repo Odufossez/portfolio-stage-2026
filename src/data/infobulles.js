@@ -105,6 +105,11 @@ export const infobullesData = [
     id:'fork',
     title:'La commande Fork',
     content:'Faire un "fork" d\'un dépôt va permettre de le copier dans nos propre repository afin que les modifications que l\'on va y faire n\'affecte pas le projet originel.'
+  },
+  {
+    id:'pandas',
+    title: 'Bibliothèque Python pandas',
+    content: 'Bibliothèque Python permettant la création et la manipulation de Dataframe, de grands tableaux de données.'
   }
 ];
 
