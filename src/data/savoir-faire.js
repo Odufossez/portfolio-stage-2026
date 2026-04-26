@@ -126,8 +126,14 @@ export const savoirFaire = [
             'checking_exceptions',
             'checking_no_exceptions',
             'conceive-test-samples',
-            'conception-bouchons'
+            'conception-bouchons',
+            'writing-assertions'
         ]
+    },
+    {
+      id:'writing-assertions',
+      classification: 'root',
+      title: 'Rédiger des assertions',
     },
     {
         id: 'conception-bouchons',

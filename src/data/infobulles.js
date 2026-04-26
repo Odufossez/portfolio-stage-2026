@@ -115,6 +115,11 @@ export const infobullesData = [
     id:'enum',
     title:'Enumération ou enum',
     content:'Une énumération, couramment appelée "enum" est un type de données défini par un ensemble de valeurs constantes. '
+  },
+  {
+    id: 'flow-chart',
+    title:'Flow chart ou diagramme de flux',
+    content: 'Une flow chart ou diagramme de flux est un schéma représentant les différentes instructions d\'un programme et les diverses routes que le déroulement de celui-ci peut emprunter.'
   }
 ];
 

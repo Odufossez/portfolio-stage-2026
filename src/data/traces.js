@@ -84,6 +84,12 @@ export const tracesData = [
         identification: 14,
         caption: '',
         image: new URL('@/assets/traces/exemples-assertions.png', import.meta.url).href,
+    },
+    {
+        id: 'screen-bouchon',
+        identification: 15,
+        caption:'',
+        image: new URL('@/assets/traces/screen-bouchons.png', import.meta.url).href,
     }
 ];
 
