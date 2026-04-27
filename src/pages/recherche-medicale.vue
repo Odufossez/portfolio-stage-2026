@@ -18,7 +18,7 @@ import SourcesSection from "@/components/SourcesSection.vue";
         La bio-informatique ou bioinformatique est un champ scientifique multi-disciplinaire auquel collaborent notamment
         des biologistes, mathématiciens, physiciens, médecins, agronomes et bioinformaticiens dans le but de résoudre un
         problème scientifique posé par la biologie. De manière plus générale, la bioinformatique est l'application de l'informatique,
-        des mathématiques et de la statistique à science biologique.
+        des mathématiques et de la statistique à la science biologique.
       </p>
       <p>
         Ce domaine s'étend de l'analyse du génome à la modélisation de l'évolution d'une population animale dans un environnement
@@ -32,7 +32,7 @@ import SourcesSection from "@/components/SourcesSection.vue";
     <div class="styled-box">
       <h2>Application dans la recherche médicale</h2>
       <p>
-        Un bioinformaticien va coder des logiciels permettant les simulations ou simuler lui-même selon son domaine.
+        Un bioinformaticien va coder des logiciels permettant les simulations ou va simuler lui-même selon son domaine.
       </p>
       <p>
         La bioinformatique dans la recherche médicale permet de simuler des réactions de systèmes entiers en prenant en compte

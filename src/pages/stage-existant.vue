@@ -98,7 +98,7 @@ const showDetailspy = ref(false);
         <div v-if="showDetailspy" class="details-content">
           <div class="inner-details">
             <h3>Principe de fonctionnement</h3>
-            <p> Grâce à l'intégration de pyMaboss directement dans un notebook Jupyter et à avoir MaBoSS installé sur le
+            <p> Grâce à l'intégration de pyMaboss directement dans un notebook Jupyter et à la présence de MaBoSS installé sur le
               poste
               il est possible de lancer des simulations directement dans le notebook et d'afficher les résultats de
               celles-ci
@@ -119,12 +119,13 @@ const showDetailspy = ref(false);
 
       <h3>L'existant</h3>
       <p>
-        pyMaboss est un outil largement utilisé, avec de nombreux exemples ou applications diverses,
+        pyMaboss est un outil largement utilisé, avec de nombreux exemples ou applications diverses. Par exemple,
         <ColleagueHover name="pankaew">Saran</ColleagueHover>
-        par exemple aime bien étudier l'état des
+        étudie l'état des
         <InfoHover id="noeuds">noeuds</InfoHover>
         au cours du
-        temps, il réalise des GIF avec les résultats de simulation.
+        temps et réalise des GIF avec les résultats de simulation afin de suivre le flot général de la simulation plutôt
+        que des états fixes.
       </p>
 
       <h3>Ce qu'il manque</h3>

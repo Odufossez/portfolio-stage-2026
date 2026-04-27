@@ -18,7 +18,7 @@ import SourcesSection from "@/components/SourcesSection.vue";
       <p>
         Mon stage s'est déroulé au sein de l'Unité d'Oncologie Computationnelle (U1331) de l'Institut Curie.
         Cette unité étudie les différents aspects de la pathologie cancéreuse et de ses traitements en s'intéressant
-        aux mécanismes moléculaires et cellulaires sous-jacents: l’initiation (estimation des risques de cancer, prise
+        aux mécanismes moléculaires et cellulaires sous-jacents : l’initiation (estimation des risques de cancer, prise
         en compte des facteurs génétiques et non génétiques, optimisation des stratégies de suivi/dépistage et
         d’intervention), le développement et la progression tumorale (inférence et modélisation des réseaux de gènes et
         protéines impliqués, analyse des phénotypes par imagerie), et l’amélioration des stratégies thérapeutiques
