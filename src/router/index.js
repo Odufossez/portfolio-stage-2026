@@ -28,6 +28,7 @@ import Regex from "@/pages/savoirfaire-pages/regex.vue"
 import DataTreatment from "@/pages/savoirfaire-pages/data-treatment.vue"
 import CahierDesCharges from "@/pages/savoirfaire-pages/cahier-des-charges.vue"
 import RechercheProjet from "@/pages/savoirfaire-pages/recherche-projet.vue"
+import RespectNormes from "@/pages/savoirfaire-pages/respect-normes.vue";
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -60,6 +61,8 @@ const routes = [
     { path: '/savoirfaire-pages/data-treatment', component: DataTreatment },
     { path: '/savoirfaire-pages/cahier-des-charges', component: CahierDesCharges },
     { path: '/savoirfaire-pages/recherche-projet', component: RechercheProjet },
+    { path: '/savoirfaire-pages/respect-normes', component: RespectNormes },
+
 ]
 
 const router = createRouter({
