@@ -58,6 +58,11 @@ export const sourcesData = [
         id: 'unit-tests',
         name: 'Tests unitaires',
         link:'https://fr.wikipedia.org/wiki/Test_unitaire'
+    },
+    {
+        id:'pep8',
+        name: 'PEP8',
+        link: 'https://peps.python.org/pep-0008/'
     }
 ]
 

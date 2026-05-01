@@ -2,6 +2,7 @@
 
 import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
+import SourcesSection from "@/components/SourcesSection.vue";
 const showDetails = ref(false);
 </script>
 
@@ -69,6 +70,7 @@ const showDetails = ref(false);
         </p>
       </div>
     </section>
+    <SourcesSection :ids="['pep8','normes-code']"/>
   </div>
 </template>
 
