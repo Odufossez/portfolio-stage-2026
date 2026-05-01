@@ -145,7 +145,6 @@ export const savoirFaire = [
         classification: 'sub-theme',
         title: 'Jupyter notebooks',
         subs: [
-            'jupyter-maboss',
             'jupyter-pymaboss',
             'data-visualization',
         ]
@@ -182,11 +181,6 @@ export const savoirFaire = [
             'check-validity-logical-expression',
             'compute-logical-expression',
         ]
-    },
-    {
-        id: 'jupyter-maboss',
-        classification: 'root',
-        title: 'Jupyter notebooks pour MaBoSS',
     },
     {
         id: 'jupyter-pymaboss',
