@@ -63,6 +63,11 @@ export const sourcesData = [
         id:'pep8',
         name: 'PEP8',
         link: 'https://peps.python.org/pep-0008/'
+    },
+    {
+        id:'github-maboss-test',
+        name:'Github de MaBoSS_test',
+        link:'https://github.com/sysbio-curie/MaBoSS_test'
     }
 ]
 
