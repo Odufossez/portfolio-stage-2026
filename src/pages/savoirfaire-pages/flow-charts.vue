@@ -1,4 +1,5 @@
 <script setup>
+import DetailsButton from "@/components/DetailsButton.vue";
 import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
 const activeRoot = ref('conception');
@@ -38,10 +39,7 @@ const showDetails = ref(false)
           <div v-if="activeRoot === 'conception'">
             <div class="box-header-with-tab">
               <h2>Conception de flow-chart</h2>
-              <button @click="showDetails = !showDetails" class="details-tab"
-                      :class="{ active: showDetails }">
-                {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-              </button>
+              <DetailsButton v-model="showDetails" />
             </div>
             <div class="inner-details" v-if="showDetails">
               <h3>Quelle différence avec l'école ?</h3>
@@ -76,10 +74,7 @@ const showDetails = ref(false)
           <div v-if="activeRoot === 'usage'">
             <div class="box-header-with-tab">
               <h2>Utilisation d'une flow-chart</h2>
-              <button @click="showDetails = !showDetails" class="details-tab"
-                      :class="{ active: showDetails }">
-                {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-              </button>
+              <DetailsButton v-model="showDetails" />
             </div>
             <div class="inner-details" v-if="showDetails">
               <h3>Quelle différence avec l'école ?</h3>

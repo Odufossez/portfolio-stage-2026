@@ -1,4 +1,5 @@
 <script setup>
+import DetailsButton from "@/components/DetailsButton.vue";
 import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
 const activeRoot = ref('maboss')
@@ -30,17 +31,14 @@ const showDetails = ref(false)
           </button>
           <button class="tab-item"
                   :class="{active: activeRoot === 'data-treatment'}"
-                  @click="activeRoot='data-treatment'">Traitement de données avec Pandas et nnumpy
+                  @click="activeRoot='data-treatment'">Traitement de données avec Pandas et numpy
           </button>
         </div>
         <div class="styled-box mission-content">
           <div v-if="activeRoot === 'maboss'">
             <div class="box-header-with-tab">
               <h2>pyMaBoSS dans Jupyter</h2>
-              <button @click="showDetails = !showDetails" class="details-tab"
-                      :class="{ active: showDetails }">
-                {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-              </button>
+              <DetailsButton v-model="showDetails" />
             </div>
             <div class="inner-details" v-if="showDetails">
               <h3>Quelle différence avec l'école ?</h3>
@@ -66,10 +64,7 @@ const showDetails = ref(false)
           <div v-if="activeRoot === 'data-treatment'">
             <div class="box-header-with-tab">
               <h2>Traitement de données avec pandas et numpy</h2>
-              <button @click="showDetails = !showDetails" class="details-tab"
-                      :class="{ active: showDetails }">
-                {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-              </button>
+              <DetailsButton v-model="showDetails" />
             </div>
 
             <div class="inner-details" v-if="showDetails">

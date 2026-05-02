@@ -4,6 +4,7 @@ import {ref} from "vue";
 import SourcesSection from "../../components/SourcesSection.vue";
 import InfoHover from "../../components/InfoHover.vue";
 import Trace from "../../components/Trace.vue";
+import DetailsButton from "@/components/DetailsButton.vue";
 
 const activeRoot = ref('assertions');
 const showDetails = ref(false);
@@ -64,10 +65,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'assertions'">
           <div class="box-header-with-tab">
             <h2>Les assertions</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
           <div class="details-content" v-if="showDetails">
             <div class="inner-details">
@@ -135,10 +133,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'bouchons'">
           <div class="box-header-with-tab">
             <h2>Concevoir des bouchons</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div class="details-content" v-if="showDetails">
@@ -197,10 +192,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'raising-excp'">
           <div class="box-header-with-tab">
             <h2>Gestion des exceptions</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div class="details-content" v-if="showDetails">
@@ -276,10 +268,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'samples'">
           <div class="box-header-with-tab">
             <h2>Concevoir des échantillons de test</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div class="details-content" v-if="showDetails">

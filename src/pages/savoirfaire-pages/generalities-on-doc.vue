@@ -1,4 +1,5 @@
 <script setup>
+import DetailsButton from "@/components/DetailsButton.vue";
 import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
 
@@ -32,10 +33,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'standards'">
           <div class="box-header-with-tab">
             <h2>Généralités sur la documentation</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div v-if="showDetails" class="details-content">
@@ -83,10 +81,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'communication'">
           <div class="box-header-with-tab">
             <h2>Communiquer avec les autres</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div class="inner-details" v-if="showDetails">
@@ -134,10 +129,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'tools-doc'">
           <div class="box-header-with-tab">
             <h2>Outils de documentation</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
           <div class="inner-details" v-if="showDetails">
             <h3>Quelles différences par rapport à l'école ?</h3>

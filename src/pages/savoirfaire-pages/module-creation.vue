@@ -1,4 +1,5 @@
 <script setup>
+import DetailsButton from "@/components/DetailsButton.vue";
 import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
 
@@ -30,10 +31,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'classes'">
           <div class="box-header-with-tab">
             <h2>Programmation orientée objet en Python</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div class="inner-details" v-if="showDetails">
@@ -69,10 +67,7 @@ const showDetails = ref(false);
         <div v-if="activeRoot === 'except'">
           <div class="box-header-with-tab">
             <h2>Création d'exceptions personnalisées</h2>
-            <button @click="showDetails = !showDetails" class="details-tab"
-                    :class="{ active: showDetails }">
-              {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div class="inner-details" v-if="showDetails">

@@ -1,4 +1,5 @@
 <script setup>
+import DetailsButton from "@/components/DetailsButton.vue";
 
 import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
@@ -16,10 +17,7 @@ const showDetails = ref(false);
     <section class="content">
       <div class="box-header-with-tab">
         <h2>Les normes de code en Python</h2>
-        <button @click="showDetails = !showDetails" class="details-tab"
-                :class="{ active: showDetails }">
-          {{ showDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-          </button>
+        <DetailsButton v-model="showDetails" />
       </div>
 
       <div class="inner-details" v-if="showDetails">

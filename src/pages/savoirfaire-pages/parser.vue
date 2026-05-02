@@ -13,13 +13,6 @@ const activeRoot = ref('regex');
       <h1>Parser</h1>
     </header>
 
-    <section class="content">
-      <p>
-        Traces et explications pour les compétences liées à la création de parseur, incluant l'utilisation de REGEX et
-        le parsing d'expressions logiques.
-      </p>
-    </section>
-
     <section class="missions-section">
       <div class="tabs-list">
         <button class="tab-item"
@@ -65,7 +58,25 @@ const activeRoot = ref('regex');
 
           <h3>Vérifier la validité d'une expression logique</h3>
           <p>
-            <!-- Ajoutez vos traces et explications ici -->
+            Il est important que l'expression logique passée par l'utilisateur soit valide. C'est à dire :
+          </p>
+          <ul>
+            <li>elle ne commence pas par un symbole logique <b>(&, |),</b></li>
+            <li>elle ne termine pas par un symbole logique,</li>
+            <li>deux symboles logiques ne s'enchainent pas,</li>
+            <li>deux noms ne s'enchainent pas.</li>
+          </ul>
+          <p>
+            Le cœur du traitement consiste à évaluer l'expression pour filtrer les données. Comme on peut le voir sur
+            l'illustration de mes tests unitaires, la compréhension précise des opérateurs est cruciale :
+
+            L'utilisation d'un ET (&) restreint fortement les résultats, ne gardant que les lignes où toutes les
+            conditions sont vraies simultanément <span class="exemple">(comme A vrai ET B faux).</span>
+
+            L'utilisation d'un OU (|) est beaucoup plus permissive et conserve toutes les lignes dès qu'une seule des
+            conditions est remplie.
+            Mon parser assure la correspondance exacte entre la logique saisie et les lignes de données conservées en
+            sortie.
           </p>
 
           <h3>Calculer la sortie d'une expression logique</h3>

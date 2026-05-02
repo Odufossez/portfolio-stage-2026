@@ -1,4 +1,5 @@
 <script setup>
+import DetailsButton from "@/components/DetailsButton.vue";
 import {ref} from 'vue';
 import BackButton from "@/components/BackButton.vue";
 import InfoHover from "@/components/InfoHover.vue";
@@ -20,9 +21,7 @@ const showDetailspy = ref(false);
     <div class="styled-box">
       <div class="box-header-with-tab">
         <h2>MaBoSS</h2>
-        <button @click="showDetails = !showDetails" class="details-tab" :class="{ active: showDetails }">
-          {{ showDetails ? 'Cacher les détails' : 'Comment ça marche ?' }}
-        </button>
+        <DetailsButton v-model="showDetails" />
       </div>
 
       <p>
@@ -84,9 +83,7 @@ const showDetailspy = ref(false);
     <div class="styled-box">
       <div class="box-header-with-tab">
         <h2>pyMaboss</h2>
-        <button @click="showDetailspy = !showDetailspy" class="details-tab" :class="{ active: showDetailspy }">
-          {{ showDetailspy ? 'Cacher les détails' : 'Comment ça marche ?' }}
-        </button>
+        <DetailsButton v-model="showDetails" />
       </div>
 
       <p>

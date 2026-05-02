@@ -120,6 +120,16 @@ export const infobullesData = [
     id: 'flow-chart',
     title:'Flow chart ou diagramme de flux',
     content: 'Une flow chart ou diagramme de flux est un schéma représentant les différentes instructions d\'un programme et les diverses routes que le déroulement de celui-ci peut emprunter.'
+  },
+  {
+    id:'vectorisation',
+    title:'Vectorisation',
+    content:'C\'est une méthode de calcul qui permet d\'appliquer une opération sur l\'ensemble d\'un tableau (ou d\'une colonne) en une seule instruction, sans utiliser de boucles Python for. En déléguant ces calculs répétitifs à des fonctions optimisées en langage C, on obtient des performances extrêmement élevées, indispensables pour traiter des gros volumes de données.'
+  },
+  {
+    id:'watchdog',
+    title:'Watchdog ou chien de garde',
+    content:'Un chien de garde ou watchdog est une sécurité d\'exécution qui se déclenche si le programme tourne pendant trop de temps.'
   }
 ];
 

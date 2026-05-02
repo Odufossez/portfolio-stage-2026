@@ -1,4 +1,5 @@
 <script setup>
+import DetailsButton from "@/components/DetailsButton.vue";
 import BackButton from "@/components/BackButton.vue";
 import {ref} from "vue";
 import InfoHover from "@/components/InfoHover.vue";
@@ -41,10 +42,7 @@ const showEcoleDetails = ref(false);
         <div v-if="activeRoot === 'branches'">
           <div class="box-header-with-tab">
             <h2>Création et gestion de branches git</h2>
-            <button @click="showEcoleDetails = !showEcoleDetails" class="details-tab"
-                    :class="{ active: showEcoleDetails }">
-              {{ showEcoleDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
           <div v-if="showEcoleDetails" class="details-content">
             <div class="inner-details">
@@ -149,10 +147,7 @@ const showEcoleDetails = ref(false);
         <div v-if="activeRoot === 'fork'">
           <div class="box-header-with-tab">
             <h2>Fork</h2>
-            <button @click="showEcoleDetails = !showEcoleDetails" class="details-tab"
-                    :class="{ active: showEcoleDetails }">
-              {{ showEcoleDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div v-if="showEcoleDetails" class="details-content">
@@ -200,10 +195,7 @@ const showEcoleDetails = ref(false);
         <div v-if="activeRoot === 'pull-requests'">
           <div class="box-header-with-tab">
             <h2>Pull Requests</h2>
-            <button @click="showEcoleDetails = !showEcoleDetails" class="details-tab"
-                    :class="{ active: showEcoleDetails }">
-              {{ showEcoleDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
           <div v-if="showEcoleDetails" class="details-content">
             <div class="inner-details">
@@ -241,10 +233,7 @@ const showEcoleDetails = ref(false);
         <div v-if="activeRoot === 'commits'">
           <div class="box-header-with-tab">
             <h2>Commits de qualité</h2>
-            <button @click="showEcoleDetails = !showEcoleDetails" class="details-tab"
-                    :class="{ active: showEcoleDetails }">
-              {{ showEcoleDetails ? 'Cacher les détails' : 'Et par rapport à l\'école ?' }}
-            </button>
+            <DetailsButton v-model="showDetails" />
           </div>
 
           <div v-if="showEcoleDetails" class="details-content">
