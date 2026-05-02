@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { getTeamMember } from '@/data/team';
 import TeamCard from '@/components/TeamCard.vue';
 
@@ -11,37 +11,70 @@ const props = defineProps({
 });
 
 const isHovered = ref(false);
-const hoverTarget = ref(null);
+const triggerRef = ref(null);
 const cardPosition = ref({ top: 0, left: 0 });
 
 const member = computed(() => getTeamMember(props.name));
 
+const isTouchDevice = () => {
+  return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+};
+
 const handleMouseEnter = (event) => {
-  if (!member.value) return;
+  if (!member.value || isTouchDevice()) return;
   
   const rect = event.target.getBoundingClientRect();
-  
-  // Position the card above the name
-  // We'll calculate the initial position and adjust in a nextTick or with CSS
   cardPosition.value = {
     top: rect.top + window.scrollY - 10,
     left: rect.left + window.scrollX + (rect.width / 2)
   };
-  
   isHovered.value = true;
 };
 
 const handleMouseLeave = () => {
+  if (isTouchDevice()) return;
   isHovered.value = false;
 };
+
+const handleClick = (event) => {
+  if (!member.value) return;
+  
+  if (isHovered.value) {
+    isHovered.value = false;
+  } else {
+    const rect = event.target.getBoundingClientRect();
+    cardPosition.value = {
+      top: rect.top + window.scrollY - 10,
+      left: rect.left + window.scrollX + (rect.width / 2)
+    };
+    isHovered.value = true;
+  }
+};
+
+const handleClickOutside = (event) => {
+  if (isHovered.value && triggerRef.value && !triggerRef.value.contains(event.target)) {
+    isHovered.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+  document.addEventListener('touchstart', handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside);
+  document.removeEventListener('touchstart', handleClickOutside);
+});
 </script>
 
 <template>
   <span 
     class="colleague-trigger"
-    ref="hoverTarget"
+    ref="triggerRef"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
+    @click="handleClick"
   >
     <slot></slot>
     

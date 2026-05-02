@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { getInfobulle } from '@/data/infobulles';
 import InfoCard from '@/components/InfoCard.vue';
 
@@ -12,32 +12,69 @@ const props = defineProps({
 
 const isHovered = ref(false);
 const cardPosition = ref({ top: 0, left: 0 });
+const triggerRef = ref(null);
 
 const info = computed(() => getInfobulle(props.id));
 
+const isTouchDevice = () => {
+  return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+};
+
 const handleMouseEnter = (event) => {
-  if (!info.value) return;
+  if (!info.value || isTouchDevice()) return;
   
   const rect = event.target.getBoundingClientRect();
-  
   cardPosition.value = {
     top: rect.top + window.scrollY - 10,
     left: rect.left + window.scrollX + (rect.width / 2)
   };
-  
   isHovered.value = true;
 };
 
 const handleMouseLeave = () => {
+  if (isTouchDevice()) return;
   isHovered.value = false;
 };
+
+const handleClick = (event) => {
+  if (!info.value) return;
+  
+  if (isHovered.value) {
+    isHovered.value = false;
+  } else {
+    const rect = event.target.getBoundingClientRect();
+    cardPosition.value = {
+      top: rect.top + window.scrollY - 10,
+      left: rect.left + window.scrollX + (rect.width / 2)
+    };
+    isHovered.value = true;
+  }
+};
+
+const handleClickOutside = (event) => {
+  if (isHovered.value && triggerRef.value && !triggerRef.value.contains(event.target)) {
+    isHovered.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+  document.addEventListener('touchstart', handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside);
+  document.removeEventListener('touchstart', handleClickOutside);
+});
 </script>
 
 <template>
   <span 
     class="info-trigger"
+    ref="triggerRef"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
+    @click="handleClick"
   >
     <slot></slot>
     

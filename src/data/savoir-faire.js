@@ -94,8 +94,7 @@ export const savoirFaire = [
         title: 'Algorithme',
         subs: [
             'flow-charts',
-            'parsing-logical-expression',
-            'regex',
+            'parser',
             'data-treatment'
         ]
     },
@@ -174,13 +173,18 @@ export const savoirFaire = [
         title: 'Bien communiquer avec les autres'
     },
     {
-        id: 'parsing-logical-expression',
+        id: 'parser',
         classification: 'sub-theme',
-        title: 'Parsing d\'expressions logiques',
+        title: 'Parser',
         subs: [
-            'check-validity-logical-expression',
-            'compute-logical-expression',
+            'regex',
+            'parsing-logical-expression',
         ]
+    },
+    {
+        id: 'parsing-logical-expression',
+        classification: 'root',
+        title: 'Expressions logiques',
     },
     {
         id: 'jupyter-pymaboss',
@@ -191,15 +195,6 @@ export const savoirFaire = [
         id: 'data-visualization',
         classification: 'root',
         title: 'Visualisation de données avec pandas et numpy'
-    },
-    {
-        id: 'regex',
-        classification: 'sub-theme',
-        title: 'Concevoir une expression régulière',
-        subs: [
-            'check_regex',
-            'parsing_regex',
-        ]
     },
     {
         id: 'checking_exceptions',
@@ -217,14 +212,9 @@ export const savoirFaire = [
         title: 'Vérifier qu\'un échantillon ne lève pas d\'exception'
     },
     {
-        id: 'check_regex',
+        id: 'regex',
         classification: 'root',
-        title:'Vérifier la validité d\'une chaine de caractère par rapport à une REGEX'
-    },
-    {
-        id:'parsing_regex',
-        classification: 'root',
-        title: 'Décomposer une chaine de caractère par rapport à une REGEX'
+        title: 'REGEX',
     },
     {
         id: 'data-treatment',
@@ -236,16 +226,7 @@ export const savoirFaire = [
             'know-what-data-use'
         ]
     },
-    {
-        id: 'check-validity-logical-expression',
-        classification: 'root',
-        title: 'Vérifier la validité d\'une expression logique',
-    },
-    {
-        id: 'compute-logical-expression',
-        classification: 'root',
-        title: 'Calculer la sortie d\'une expression logique',
-    },
+
     {
         id: 'data-treatment-python',
         title: 'Traitement de données en Python',

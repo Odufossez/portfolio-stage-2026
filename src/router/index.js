@@ -23,8 +23,7 @@ import FlowCharts from "@/pages/savoirfaire-pages/flow-charts.vue"
 import UnitTests from "@/pages/savoirfaire-pages/unit-tests.vue"
 import JupyterNotebooks from "@/pages/savoirfaire-pages/jupyter-notebooks.vue"
 import GeneralitiesDoc from "../pages/savoirfaire-pages/generalities-on-doc.vue"
-import ParsingLogicalExpression from "@/pages/savoirfaire-pages/parsing-logical-expression.vue"
-import Regex from "@/pages/savoirfaire-pages/regex.vue"
+import Parser from "@/pages/savoirfaire-pages/parser.vue"
 import DataTreatment from "@/pages/savoirfaire-pages/data-treatment.vue"
 import CahierDesCharges from "@/pages/savoirfaire-pages/cahier-des-charges.vue"
 import RechercheProjet from "@/pages/savoirfaire-pages/recherche-projet.vue"
@@ -56,8 +55,7 @@ const routes = [
     { path: '/savoirfaire-pages/unit-tests', component: UnitTests },
     { path: '/savoirfaire-pages/jupyter-notebooks', component: JupyterNotebooks },
     { path: '/savoirfaire-pages/generalities-on-doc', component: GeneralitiesDoc },
-    { path: '/savoirfaire-pages/parsing-logical-expression', component: ParsingLogicalExpression },
-    { path: '/savoirfaire-pages/regex', component: Regex },
+    { path: '/savoirfaire-pages/parser', component: Parser },
     { path: '/savoirfaire-pages/data-treatment', component: DataTreatment },
     { path: '/savoirfaire-pages/cahier-des-charges', component: CahierDesCharges },
     { path: '/savoirfaire-pages/recherche-projet', component: RechercheProjet },
