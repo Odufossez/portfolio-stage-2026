@@ -6,10 +6,10 @@ import Social from '../pages/social.vue'
 import ContexteStage from '../pages/contexte-stage.vue'
 import ContexteSujet from '../pages/contexte-sujet.vue'
 import SavoirFaire from '../pages/savoir-faire.vue'
-import InstitutCurie from '../pages/institut-curie.vue'
-import Unit1331 from '../pages/unit-1331.vue'
-import Moyens from '../pages/moyens.vue'
-import RechercheMedicale from "@/pages/recherche-medicale.vue";
+import InstitutCurie from '../pages/environnment-stage/institut-curie.vue'
+import Unit1331 from '../pages/environnment-stage/unit-1331.vue'
+import Moyens from '../pages/environnment-stage/moyens.vue'
+import RechercheMedicale from "../pages/environnment-stage/recherche-medicale.vue";
 import Enjeux from "@/pages/stage-enjeux.vue"
 import Existant from "@/pages/stage-existant.vue"
 import Sujet from "@/pages/stage-sujet.vue"
@@ -27,7 +27,8 @@ import Parser from "@/pages/savoirfaire-pages/parser.vue"
 import DataTreatment from "@/pages/savoirfaire-pages/data-treatment.vue"
 import CahierDesCharges from "@/pages/savoirfaire-pages/cahier-des-charges.vue"
 import RechercheProjet from "@/pages/savoirfaire-pages/recherche-projet.vue"
-import RespectNormes from "@/pages/savoirfaire-pages/respect-normes.vue";
+import RespectNormes from "@/pages/savoirfaire-pages/respect-normes.vue"
+import SyntheseStage from "@/pages/synthese-stage.vue";
 
 const routes = [
     { path: '/', redirect: '/home' },
@@ -60,6 +61,7 @@ const routes = [
     { path: '/savoirfaire-pages/cahier-des-charges', component: CahierDesCharges },
     { path: '/savoirfaire-pages/recherche-projet', component: RechercheProjet },
     { path: '/savoirfaire-pages/respect-normes', component: RespectNormes },
+    { path: '/synthese-stage', component: SyntheseStage },
 
 ]
 

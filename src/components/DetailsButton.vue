@@ -1,12 +1,14 @@
 <script setup>
-defineProps({
+import { computed } from 'vue';
+
+const props = defineProps({
   modelValue: {
     type: Boolean,
     required: true
   },
-  labelShow: {
+  label: {
     type: String,
-    default: "Et par rapport à l'école ?"
+    default: ""
   },
   labelHide: {
     type: String,
@@ -15,14 +17,20 @@ defineProps({
 });
 
 defineEmits(['update:modelValue']);
+
+const displayLabel = computed(() => {
+  return props.label && props.label.trim() !== ""
+      ? props.label
+      : "Et par rapport à l'école ?";
+});
 </script>
 
 <template>
-  <button 
-    @click="$emit('update:modelValue', !modelValue)" 
-    class="details-tab"
-    :class="{ active: modelValue }"
+  <button
+      @click="$emit('update:modelValue', !modelValue)"
+      class="details-tab"
+      :class="{ active: modelValue }"
   >
-    {{ modelValue ? labelHide : labelShow }}
+    {{ modelValue ? labelHide : displayLabel }}
   </button>
 </template>

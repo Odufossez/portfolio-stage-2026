@@ -2,11 +2,9 @@
 import {ref} from 'vue';
 import ColleagueHover from '@/components/ColleagueHover.vue';
 import Trace from "@/components/Trace.vue";
-import TraceHover from "@/components/TraceHover.vue";
 import BackButton from "@/components/BackButton.vue";
 import SectionNav from "@/components/SectionNav.vue";
 import SourcesSection from "@/components/SourcesSection.vue";
-import {tracesData} from "@/data/traces.js";
 
 const sections = [
   {id: 'work-env', label: 'Environnement de travail'},

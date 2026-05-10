@@ -14,7 +14,7 @@ const activeMission = ref('overview');
     </header>
 
     <div class="styled-box">
-      <img src="../assets/Paris_Curie.png" alt="Logo de l'Institut Curie" class="logo-placeholder">
+      <img src="../../assets/Paris_Curie.png" alt="Logo de l'Institut Curie" class="logo-placeholder">
       <h2>Présentation générale</h2>
       <p>
         Fondé en 1909 par Marie Curie, l'Institut Curie est aujourd'hui le premier centre français de lutte contre le cancer. 

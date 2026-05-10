@@ -17,7 +17,8 @@ import NavCard from "../components/NavCard.vue";
         </p>
         <ul>
           <li><b>Une introduction générale du stage</b>: une présentation de l'Institut Curie et de l'équipe qui m'a
-            accueilli, une exposition du projet et une description des savoir-faire généraux mobilisés pendant cette période.
+            accueilli, une exposition du projet et une synthèse globale de celui-ci retraçant brièvement les savoir-faire
+            que j'ai eu à mobiliser.
           </li>
           <li><strong>Un onglet technique</strong>: <span class="todo">[todo]</span>.</li>
           <li><strong>Une vue sur la gestion de projet</strong>: <span class="todo">[todo]</span>.</li>
@@ -39,7 +40,7 @@ import NavCard from "../components/NavCard.vue";
     <section class="nav-grid">
       <NavCard title="L'environnement du stage" to="/contexte-stage"/>
       <NavCard title="Le projet" to="/contexte-sujet"/>
-      <NavCard title="La description des savoirs-faire généraux" to="/savoir-faire"/>
+      <NavCard title="La synthèse de ce stage" to="/synthese-stage"/>
     </section>
   </div>
 </template>

@@ -11,6 +11,11 @@
 
     <ul class="navbar-links" :class="{ 'is-open': isMenuOpen }">
       <li>
+        <router-link to="/savoir-faire" class="icon-link" title="Savoir-faire" @click="closeMenu">
+          <img src="@/assets/brain.png" alt="Savoir-faire" style="height: 24px; width: 24px; object-fit: contain; filter: brightness(0) invert(1);"
+        </router-link>
+      </li>
+      <li>
         <router-link to="/traces-compilation" class="icon-link" title="Traces" style="display: flex; align-items: center;" @click="closeMenu">
           <img src="@/assets/galerie-dimages.png" alt="Traces" style="height: 24px; width: 24px; object-fit: contain; filter: brightness(0) invert(1);">
         </router-link>

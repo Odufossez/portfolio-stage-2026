@@ -21,7 +21,7 @@ const showDetailspy = ref(false);
     <div class="styled-box">
       <div class="box-header-with-tab">
         <h2>MaBoSS</h2>
-        <DetailsButton v-model="showDetails" />
+        <DetailsButton v-model="showDetails" label="Voir les détails sur le fonctionnement" />
       </div>
 
       <p>
@@ -83,7 +83,7 @@ const showDetailspy = ref(false);
     <div class="styled-box">
       <div class="box-header-with-tab">
         <h2>pyMaboss</h2>
-        <DetailsButton v-model="showDetails" />
+        <DetailsButton v-model="showDetailspy" label="Voir les détails sur le fonctionnement" />
       </div>
 
       <p>

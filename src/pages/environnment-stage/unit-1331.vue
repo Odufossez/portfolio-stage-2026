@@ -1,5 +1,4 @@
 <script setup>
-
 import BackButton from "@/components/BackButton.vue";
 import SourcesSection from "@/components/SourcesSection.vue";
 </script>
