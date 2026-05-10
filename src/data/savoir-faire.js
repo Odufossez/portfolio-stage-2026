@@ -3,7 +3,7 @@ export const savoirFaire = [
         id: 'contribution-opensource',
         classification: 'theme',
         color: '#5d5c5c',
-        title: 'Contribution à des projets open source',
+        title: 'Contribuer à des projets open source',
         subs: [
             'github-usage'
         ]
@@ -11,7 +11,7 @@ export const savoirFaire = [
     {
         id: 'github-usage',
         classification: 'sub-theme',
-        title: 'Utilisation de GitHub',
+        title: 'Utiliser GitHub',
         subs: [
             'branches',
             'pull-requests',
@@ -22,28 +22,28 @@ export const savoirFaire = [
     {
         id: 'branches',
         classification: 'root',
-        title: 'Branches',
+        title: 'Gérer des branches',
     },
     {
         id: 'pull-requests',
         classification: 'root',
-        title: 'Pull requests',
+        title: 'Créer une pull-request',
     },
     {
         id: 'fork',
         classification: 'root',
-        title: 'Fork',
+        title: 'Gérer une fork',
     },
     {
         id: 'commits',
         classification: 'root',
-        title: 'Commits de qualité',
+        title: 'Faire des commits de qualité',
     },
     {
         id: 'documentation',
         classification: 'theme',
         color: '#b2876a',
-        title: 'Documentation',
+        title: 'Écrire de la documentation',
         subs: [
             'generalities-on-doc',
         ]
@@ -63,7 +63,7 @@ export const savoirFaire = [
     {
         id: 'respect-normes',
         classification: 'sub-theme',
-        title: 'Respect des normes',
+        title: 'Respecter des normes',
         subs: [
             'know-standards-python'
         ]
@@ -71,7 +71,7 @@ export const savoirFaire = [
     {
         id: 'module-creation',
         classification: 'sub-theme',
-        title: 'Création de modules',
+        title: 'Créer des modules Python',
         subs: [
             'classes',
             'exceptions'
@@ -80,18 +80,18 @@ export const savoirFaire = [
     {
         id: 'exceptions',
         classification: 'root',
-        title: 'Créations d\'exceptions'
+        title: 'Créer des exceptions'
     },
     {
       id: 'classes',
       classification: 'root',
-      title: 'Création de classes'
+      title: 'Programmer Orienté Objet en Python'
     },
     {
         id: 'algorithme',
         classification: 'theme',
         color: '#8c4d4d',
-        title: 'Algorithme',
+        title: 'Réaliser des algorithmes',
         subs: [
             'flow-charts',
             'parser',
@@ -101,7 +101,7 @@ export const savoirFaire = [
     {
         id: 'flow-charts',
         classification: 'sub-theme',
-        title: 'Flow charts',
+        title: 'Utiliser des flow charts',
         subs: [
             'conceive-flowchart',
             'code-flowchart',
@@ -120,7 +120,7 @@ export const savoirFaire = [
     {
         id: 'unit-tests',
         classification: 'sub-theme',
-        title: 'Tests unitaires',
+        title: 'Réaliser des tests unitaires',
         subs: [
             'checking_exceptions',
             'checking_no_exceptions',
@@ -142,7 +142,7 @@ export const savoirFaire = [
     {
         id: 'jupyter-notebooks',
         classification: 'sub-theme',
-        title: 'Jupyter notebooks',
+        title: 'Utiliser Jupyter notebooks',
         subs: [
             'jupyter-pymaboss',
             'data-visualization',
@@ -165,7 +165,7 @@ export const savoirFaire = [
     {
         id: 'tools-for-doc',
         classification: 'root',
-        title: 'Outils pour la documentation',
+        title: 'Utiliser des outils pour la documentation',
     },
     {
         id: 'being-communicant',
@@ -175,7 +175,7 @@ export const savoirFaire = [
     {
         id: 'parser',
         classification: 'sub-theme',
-        title: 'Parser',
+        title: 'Concevoir un parser',
         subs: [
             'regex',
             'parsing-logical-expression',
@@ -184,17 +184,17 @@ export const savoirFaire = [
     {
         id: 'parsing-logical-expression',
         classification: 'root',
-        title: 'Expressions logiques',
+        title: 'Gérer des expressions logiques',
     },
     {
         id: 'jupyter-pymaboss',
         classification: 'root',
-        title: 'Jupyter notebooks pour pyMaboss',
+        title: 'Utiliser Jupyter notebooks pour pyMaboss',
     },
     {
         id: 'data-visualization',
         classification: 'root',
-        title: 'Visualisation de données avec pandas et numpy'
+        title: 'Visualiser et traiter des données avec pandas et numpy'
     },
     {
         id: 'checking_exceptions',
@@ -219,7 +219,7 @@ export const savoirFaire = [
     {
         id: 'data-treatment',
         classification: 'sub-theme',
-        title: 'Traitement de données',
+        title: 'Traiter des données',
         subs: [
             'data-treatment-python',
             'data-treatment-pandas',
@@ -229,12 +229,12 @@ export const savoirFaire = [
 
     {
         id: 'data-treatment-python',
-        title: 'Traitement de données en Python',
+        title: 'Traiter des données en Python',
         classification: 'root',
     },
     {
         id: 'data-treatment-pandas',
-        title: 'Traitement de données avec pandas',
+        title: 'Traiter des données avec pandas',
         classification: 'root',
     },
     {
@@ -254,7 +254,7 @@ export const savoirFaire = [
     },
     {
         id: 'cahier-des-charges',
-        title: 'Cahier des charges',
+        title: 'Concevoir un cahier des charges',
         classification: 'sub-theme',
         subs: [
             'being-communicant',
@@ -264,12 +264,12 @@ export const savoirFaire = [
     },
     {
         id: 'ask-questions',
-        title: 'Poser des questions et les bonnes',
+        title: 'Poser des questions pertinentes',
         classification: 'root',
     },
     {
         id: 'know-to-synthetize',
-        title: 'Savoir comment synthetiser',
+        title: 'Savoir comment synthétiser',
         classification: 'root',
     },
     {
