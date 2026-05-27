@@ -7,7 +7,7 @@ import SourcesSection from "@/components/SourcesSection.vue";
 import Trace from "@/components/Trace.vue";
 
 const activeRoot = ref('branches');
-const showEcoleDetails = ref(false);
+const showDetails = ref(false);
 </script>
 
 <template>
@@ -44,7 +44,7 @@ const showEcoleDetails = ref(false);
             <h2>Création et gestion de branches git</h2>
             <DetailsButton v-model="showDetails" />
           </div>
-          <div v-if="showEcoleDetails" class="details-content">
+          <div v-if="showDetails" class="details-content">
             <div class="inner-details">
               <h3>Quelles sont les différences d'utilisation des branches entre l'école et le stage ?</h3>
               <p>
@@ -150,7 +150,7 @@ const showEcoleDetails = ref(false);
             <DetailsButton v-model="showDetails" />
           </div>
 
-          <div v-if="showEcoleDetails" class="details-content">
+          <div v-if="showDetails" class="details-content">
             <div class="inner-details">
               <h3>Quelles différences par rapport à l'école ?</h3>
               <p>
@@ -197,7 +197,7 @@ const showEcoleDetails = ref(false);
             <h2>Pull Requests</h2>
             <DetailsButton v-model="showDetails" />
           </div>
-          <div v-if="showEcoleDetails" class="details-content">
+          <div v-if="showDetails" class="details-content">
             <div class="inner-details">
               <h3>Quelles différences par rapport à l'école ?</h3>
               <p>
@@ -223,7 +223,7 @@ const showEcoleDetails = ref(false);
           </p>
           <p>
             Sur la <b>trace 9</b> ci-dessous, on peut voir entouré <span class="red">en rouge l'indication que ce repository est un <InfoHover
-              id="fork">fork</InfoHover></span>. Le cercle jaune indique le bouton qui permet de lancr la procédure pour
+              id="fork">fork</InfoHover></span>. Le cercle jaune indique le bouton qui permet de lancer la procédure pour
             mettre à jour le
             repository originel avec mes modifications.
           </p>
@@ -236,7 +236,7 @@ const showEcoleDetails = ref(false);
             <DetailsButton v-model="showDetails" />
           </div>
 
-          <div v-if="showEcoleDetails" class="details-content">
+          <div v-if="showDetails" class="details-content">
             <div class="inner-details">
                 <h3>Quelles différences par rapport à l'école ?</h3>
               <p>

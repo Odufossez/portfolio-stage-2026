@@ -266,8 +266,13 @@ body::after {
   color: var(--curie-brown-soft);
   font-weight: 600;
   transition: all 0.3s ease;
-  flex-shrink: 0; /* Empêche les onglets de s'écraser */
   text-align: center;
+  flex-shrink: 1;
+  white-space: normal;
+  max-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tab-item:hover {
@@ -539,4 +544,56 @@ a,
   display: inline;
 }
 
+/* Bloc ou zone de texte encadrée en gris */
+.encadre-gris {
+  display: block; /* S'assure que le span se comporte comme un bloc si appliqué dessus */
+  border: 1px solid #d1c7bd; /* Un gris chaud/taupe pour rester dans l'univers Curie */
+  background-color: #fcfaf7; /* Un fond très légèrement grisé/crème pour détacher le bloc */
+  border-radius: 8px; /* Bord arrondi cohérent avec tes boutons/petits blocs */
+  padding: 15px 20px; /* Espace interne pour que le texte ne colle pas aux bords */
+  margin-bottom: var(--section-margin); /* Aligné sur ton système de marges existant */
 
+  /* Typographie */
+  text-align: justify;
+  line-height: 1.6;
+  color: var(--curie-text);
+}
+
+/* Version inline (si tu l'appliques sur un court span au milieu d'un paragraphe) */
+span.encadre-gris {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 2px 8px;
+  margin: 0 4px;
+  border-radius: 4px;
+  text-align: left;
+}
+
+/* Colors */
+.blue {
+  color: #007bff;
+}
+
+.purple {
+  color: #6f42c1;
+}
+
+.green {
+  color: #28a745;
+}
+
+.orange {
+  color: #ff6300
+}
+
+.pink {
+  color: #e823bf
+}
+
+.light-blue {
+  color: #006d93;
+}
+
+.dark-green {
+  color: #186418;
+}

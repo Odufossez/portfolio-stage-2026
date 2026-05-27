@@ -17,20 +17,25 @@ import NavCard from "../components/NavCard.vue";
         </p>
         <ul>
           <li><b>Une introduction générale du stage</b>: une présentation de l'Institut Curie et de l'équipe qui m'a
-            accueilli, une exposition du projet et une synthèse globale de celui-ci retraçant brièvement les savoir-faire
+            accueilli, une exposition du projet et une synthèse globale de celui-ci retraçant brièvement les
+            savoir-faire
             que j'ai eu à mobiliser.
           </li>
           <li><strong>Un onglet technique</strong>: <span class="todo">[todo]</span>.</li>
           <li><strong>Une vue sur la gestion de projet</strong>: <span class="todo">[todo]</span>.</li>
-          <li><strong>Un volet sur mon intégration en entreprise</strong>: <span class="todo">[todo]</span>.</li>
+          <li><strong>Un volet sur mon intégration en entreprise</strong>: qui présente les différents évènements
+            auxquels j'ai participé avec l'équipe au cours de mon stage.
+          </li>
         </ul>
         <p>
-          A ces quatre pages principales, s'ajoutent trois pages permettant de compiler les <b>traces</b>, le <b>lexique</b> et les
-         <b>divers liens de sources</b> présentes sur ce site.
+          A ces quatre pages principales, s'ajoutent quatre pages permettant de compiler les <b>savoir-faire présentés en détails</b>, les <b>traces</b>, le
+          <b>lexique</b> et les
+          <b>divers liens de sources</b> présentes sur ce site.
         </p>
         <p>
           Ce portfolio témoigne de mon évolution en tant que futur développeur et présente comment mon stage m'a fait
-          découvrir la bio-informatique et l'application du développement, des graphes et des probabilités dans la recherche médicale.
+          découvrir la bio-informatique et l'application du développement, des graphes et des probabilités dans la
+          recherche médicale.
         </p>
       </div>
     </section>

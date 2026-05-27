@@ -90,6 +90,26 @@ export const tracesData = [
         identification: 15,
         caption:'',
         image: new URL('@/assets/traces/screen-bouchons.png', import.meta.url).href,
+    },
+    {
+        id: 'team-meeting',
+        identification: 16,
+        caption: 'Le programme de passage pour indiquer qui parle lors des teams meeting hebdomadaires. Le 19 Mai, ce n\'est pas Victoria ' +
+            'qui a parlé mais moi. Ces meetings permettent de partager son avancement sur son projet en cours et de faire part de ses découvertes, ou de ses problèmes.' +
+            ' Un temps est dédié aux questions ou remarques que l\'audience peut apporter. Cela se passe en petit comité, environ 15 personnes.',
+        image: new URL('@/assets/traces/schedule_team_meeting.png', import.meta.url).href,
+    },
+    {
+        id:'journal-club',
+        identification: 17,
+        caption: 'Le mail envoyé par Victoria aux membres de l\'équipe pour informer de quel article elle va parler lors du prochain journal club qui avait lieu le 19 Mai.',
+        image: new URL('@/assets/traces/journal-club.png', import.meta.url).href,
+    },
+    {
+        id:'cdc',
+        identification: 18,
+        caption:'Liste des fonctions désirées par l\'équipe qui doivent pouvoir être effectuées avec mon outil.',
+        image: new URL('@/assets/traces/cahier-des-charges.png', import.meta.url).href,
     }
 ];
 

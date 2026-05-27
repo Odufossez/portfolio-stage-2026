@@ -130,6 +130,16 @@ export const infobullesData = [
     id:'watchdog',
     title:'Watchdog ou chien de garde',
     content:'Un chien de garde ou watchdog est une sécurité d\'exécution qui se déclenche si le programme tourne pendant trop de temps.'
+  },
+  {
+    id:'cohort',
+    title:'Une cohorte',
+    content:'Une cohorte est un groupe de patients partageant des similitudes phénotypiques qui sont concernés par la tumeur étudiées.'
+  },
+  {
+    id:'ref-card',
+    title: 'Ref card',
+    content: 'Une ref card est un document explicatif d\'un outil qui permet d\'expliquer comment celui-ci s\'utilise. C\'est un document pour les utilisateurs, il n\'est pas nécessaire d\'y détailler le code mais plutôt des fonctions essentielles ou utiles pour utiliser le programme.'
   }
 ];
 

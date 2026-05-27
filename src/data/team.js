@@ -43,9 +43,23 @@ export const teamData = [
   },
   {
     id: 'kaufmann',
-    name: "Emma Kaufmann",
+    name: "Emma KAUFMANN",
     description: "Assistante administrative. Elle s'est assurée que mon intégration et mon arrivée se passent bien.",
     photo: new URL('@/assets/team/kaufmann.jpg', import.meta.url).href,
+    relationship: ""
+  },
+  {
+    id: 'bruning',
+    name: 'Victoria BRUNING',
+    description: "Doctorante. Elle infère des modèles pour trouver ceux qui correspondent à la cellule étudiée.",
+    photo: new URL('@/assets/team/bruning.png', import.meta.url).href,
+    relationship: "close"
+  },
+  {
+    id: 'orozco-ruiz',
+    name: 'Sophia OROZCO-RUIZ',
+    description: "Doctorante. Elle a construit un modèle en utilisant la littérature scientifique et je l'ai aidée à le tester avec mon outil.",
+    photo: new URL('@/assets/team/orozco-ruiz.png', import.meta.url).href,
     relationship: "close"
   }
 ];

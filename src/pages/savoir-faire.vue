@@ -100,7 +100,6 @@ function getById(id) {
   margin-top: 2rem;
 }
 
-/* Redefine tab-item specifically for this page to look like encards */
 .tabs-list {
   display: flex;
   flex-wrap: wrap;
@@ -119,6 +118,7 @@ function getById(id) {
   font-size: 1rem;
   font-weight: 500;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
 }
 
 .tab-item:hover {
