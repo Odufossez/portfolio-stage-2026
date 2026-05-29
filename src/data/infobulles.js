@@ -5,6 +5,12 @@ export const infobullesData = [
     content: 'Markovian Boolean Stochastic Logiciel de modélisation booléenne basé sur des simulations stochastiques pour étudier les processus biologiques.'
   },
   {
+    id:'maboss_test',
+    title: 'MaBoSS_test',
+    content: 'Outil codé en python permettant de tester des assertions sur un modèle simulé sur MaBoSS. Il se base sur des' +
+        ' tests unitaires pour faire ses évaluations.'
+  },
+  {
     id: 'stochastique',
     title: 'Stochastique',
     content: 'Se dit d\'un processus dont l\'évolution est aléatoire dans le temps, par opposition à un processus déterministe.'
