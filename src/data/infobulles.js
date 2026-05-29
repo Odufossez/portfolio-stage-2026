@@ -140,6 +140,22 @@ export const infobullesData = [
     id:'ref-card',
     title: 'Ref card',
     content: 'Une ref card est un document explicatif d\'un outil qui permet d\'expliquer comment celui-ci s\'utilise. C\'est un document pour les utilisateurs, il n\'est pas nécessaire d\'y détailler le code mais plutôt des fonctions essentielles ou utiles pour utiliser le programme.'
+  },
+  {
+    id:'merge',
+    title: 'La commande Merge',
+    content: 'Comme son nom l\'indique, la commande de merge/fusion, permet de fusionner deux branches pour qu\'elles ne deviennent qu\'une.'
+  },
+  {
+    id:'tdd',
+    title: 'Test-Driven Development',
+    content: 'Méthode d\'implémentation reposant sur le fait d\'écrire les tests avant le code, puis d\'écrire un code suffisant à le faire fonctionner avant de raffiner le programme.'
+  },
+  {
+    id:'ci',
+    title: 'Intégration Continue',
+    content: 'L\'intégration continue, ou Continuous Integration (CI), est une méthode d\'implémentation dans laquelle les développeurs fusionnent les bouts de code très régulièrement ' +
+        'et testent au fur-et-à-mesure (automatiquement ou pas) pour assurer la stabilité continue du programme.'
   }
 ];
 

@@ -22,7 +22,7 @@ import NavCard from "../components/NavCard.vue";
             que j'ai eu à mobiliser.
           </li>
           <li><strong>Un onglet technique</strong>: <span class="todo">[todo]</span>.</li>
-          <li><strong>Une vue sur la gestion de projet</strong>: <span class="todo">[todo]</span>.</li>
+          <li><strong>Une vue sur la gestion de projet</strong>: qui retrace mes méthodes de gestion pour le projet de mon stage.</li>
           <li><strong>Un volet sur mon intégration en entreprise</strong>: qui présente les différents évènements
             auxquels j'ai participé avec l'équipe au cours de mon stage.
           </li>

@@ -43,10 +43,10 @@ export const tracesData = [
         image: new URL('@/assets/traces/github_branches.jpeg', import.meta.url).href,
     },
     {
-        id:'branches-maboss',
+        id:'branches-pymaboss',
         identification: 8,
-        caption: 'Visualisation des branches dans le projet MaBoSS.',
-        image: new URL('@/assets/traces/screen_branches_maboss.png', import.meta.url).href,
+        caption: 'Visualisation des branches dans le projet pyMaBoSS. On peut voir la branche temporal-logic que j\'ai créé pour ce projet.',
+        image: new URL('@/assets/traces/pymaboss-branches.png', import.meta.url).href,
     },
     {
         id:'screen-fork-pymaboss',
@@ -110,7 +110,27 @@ export const tracesData = [
         identification: 18,
         caption:'Liste des fonctions désirées par l\'équipe qui doivent pouvoir être effectuées avec mon outil.',
         image: new URL('@/assets/traces/cahier-des-charges.png', import.meta.url).href,
-    }
+    },
+    {
+        id:'agile-semaines',
+        identification: 19,
+        caption: 'Capture d\'écran de mon Notion sur laquelle on peut voir les tâches des semaines 3 et 4. Certaines de ces tâches' +
+            'sont colorées pour indiquer une priorité: bleu, jaune ou rouge. En rouge c\'est toujours une fonctionnalité à mettre en place' +
+            ' absolument cette semaine. Le bleu ou le jaune sont là pour indiquer une priorité au-dessus du blanc mais ' +
+            'pas aussi urgent qu\'en rouge. Une tâche marquée d\'une coche bleue est implémentée et testée. Une crois signifie que le comportement' +
+            ' n\'est pas implémenté et a été reporté. Enfin, la petite horloge signifie que ce comportement n\'est pas du' +
+            ' requis dans l\'immédiat et il a été mis en suspend sans forcement voir son développement repris.',
+        image: new URL('@/assets/traces/semaines-3-4-agile.png', import.meta.url).href,
+    },
+    {
+        id:'decoupage-mcct',
+        identification: 20,
+        caption: 'Schéma de découpage de l\'outil MaBoSS_CoherencyCheckerTool (MCCT). L\'outil de est découpé en 4 grandes parties:' +
+            ' Gérer des simulations, lire une question, renvoyer une réponse et être opensource. Chacune de ces parties regroupe une ou' +
+            ' plusieurs fonctions requises pour pouvoir fonctionner. C\'est un découpage très large qui n\'entre pas dans les' +
+            ' détails de chaque fonction.',
+        image: new URL('@/assets/traces/decoupage_mcct.png', import.meta.url).href,
+    },
 ];
 
 export const getTrace = (id) => {

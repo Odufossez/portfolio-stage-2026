@@ -68,6 +68,11 @@ export const sourcesData = [
         id:'github-maboss-test',
         name:'Github de MaBoSS_test',
         link:'https://github.com/sysbio-curie/MaBoSS_test'
+    },
+    {
+        id:'github-cct-fork',
+        name: 'Fork de Colomoto-CCT',
+        link: 'https://github.com/Odufossez/pyMaBoSS/tree/temporal-logic'
     }
 ]
 

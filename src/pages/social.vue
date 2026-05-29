@@ -40,7 +40,7 @@ const activeRoot = ref('team-meeting');
           Établissement du cahier des charges
         </button>
         <button class="tab-item" :class="{active: activeRoot==='bilan'}" @click="activeRoot='bilan'">
-          Bilan et conclusion
+          Bilan et évaluation
         </button>
       </div>
 
@@ -310,7 +310,7 @@ const activeRoot = ref('team-meeting');
         </div>
 
         <div v-if="activeRoot==='bilan'">
-          <h2>Bilan et conclusion</h2>
+          <h2>Bilan et évaluation</h2>
           <div class="inner-details">
             <h3>Communiquer sur un outil</h3>
             <h4>Synthèse</h4>
@@ -324,7 +324,7 @@ const activeRoot = ref('team-meeting');
               A part de la documentation du code qui ne concerne pas les utilisateurs habituels (les chercheurs), je
               devais
               concevoir <span class="dark-green">des tutos, des exemples, une <InfoHover
-                id="ref-car">ref card </InfoHover>...</span> autant de documents à
+                id="ref-card">ref card </InfoHover>...</span> autant de documents à
               réaliser en <span class="purple">anglais</span> qui devaient être
               <span class="dark-green">clairs, concis et accessibles.</span>
             </p>
