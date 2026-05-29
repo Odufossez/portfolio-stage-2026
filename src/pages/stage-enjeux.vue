@@ -45,7 +45,7 @@ const addCont = ref(false)
     </div>
     <p>
       Dans un contexte d'inférence de modèle comme celui de mon stage, avoir un outil tel que celui que j'ai décrit dans
-      <a href="stage-sujet.vue"> la section précédente,</a> permet d'inscrire une étape supplémentaire en tant que
+      <router-link to="/stage-sujet"> la section précédente,</router-link> permet d'inscrire une étape supplémentaire en tant que
       <b>checkup de routine</b> dans la <a @click="addCont=!addCont">pipeline</a> de <b>création, validation et optimisation des modèles
       cellulaires.</b> Également, l'objectif à très long terme serait <b>d'automatiser cette pipeline</b>. Il faut donc que mon outil
       puisse <b>être automatiser le plus simplement possible.</b>
