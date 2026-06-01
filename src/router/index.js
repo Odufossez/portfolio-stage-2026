@@ -6,10 +6,10 @@ import Social from '../pages/social.vue'
 import ContexteStage from '../pages/contexte-stage.vue'
 import ContexteSujet from '../pages/contexte-sujet.vue'
 import SavoirFaire from '../pages/savoir-faire.vue'
-import InstitutCurie from '../pages/environnment-stage/institut-curie.vue'
-import Unit1331 from '../pages/environnment-stage/unit-1331.vue'
-import Moyens from '../pages/environnment-stage/moyens.vue'
-import RechercheMedicale from "../pages/environnment-stage/recherche-medicale.vue";
+import InstitutCurie from '../pages/contexte-stage/institut-curie.vue'
+import Unit1331 from '../pages/contexte-stage/unit-1331.vue'
+import Moyens from '../pages/contexte-stage/moyens.vue'
+import RechercheMedicale from "../pages/contexte-stage/recherche-medicale.vue";
 import Enjeux from "@/pages/stage-enjeux.vue"
 import Existant from "@/pages/stage-existant.vue"
 import Sujet from "@/pages/stage-sujet.vue"

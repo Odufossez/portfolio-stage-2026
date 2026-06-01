@@ -25,8 +25,14 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
           
-          <div class="fullscreen-content">
-            <img :src="finalTrace.image" :alt="finalTrace.caption" class="fullscreen-image">
+          <div class="fullscreen-content" :class="{ 'side-by-side': isSideBySide }">
+            <img
+                ref="fullscreenImgEl"
+                :src="finalTrace.image"
+                :alt="finalTrace.caption"
+                class="fullscreen-image"
+                @load="onFullscreenImageLoad"
+            >
             <div class="fullscreen-caption">
               <p>
                 <template v-if="finalTrace.identification">
@@ -66,6 +72,8 @@ const props = defineProps({
 });
 
 const isFullScreen = ref(false);
+const isSideBySide = ref(false);
+const fullscreenImgEl = ref(null);
 
 const finalTrace = computed(() => {
   if (props.traceId) {
@@ -78,8 +86,18 @@ const finalTrace = computed(() => {
   };
 });
 
+const onFullscreenImageLoad = () => {
+  if (!fullscreenImgEl.value) return;
+  const img = fullscreenImgEl.value;
+  const caption = finalTrace.value?.caption || '';
+  const isPortrait = img.naturalHeight > img.naturalWidth * 0.9;
+  const isLongCaption = caption.length > 150;
+  isSideBySide.value = isPortrait || isLongCaption;
+};
+
 const openFullScreen = () => {
   isFullScreen.value = true;
+  isSideBySide.value = false;
   document.body.style.overflow = 'hidden';
 };
 
@@ -222,6 +240,18 @@ onUnmounted(() => {
   width: 90%;
   height: 90%;
   max-width: 1200px;
+  transition: all 0.3s ease;
+}
+
+/* Side-by-side layout : image portrait ou légende longue */
+.fullscreen-content.side-by-side {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1400px;
+  height: auto;
+  max-height: 90vh;
 }
 
 .fullscreen-image {
@@ -230,6 +260,12 @@ onUnmounted(() => {
   object-fit: contain;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.fullscreen-content.side-by-side .fullscreen-image {
+  max-width: 60%;
+  max-height: 85vh;
 }
 
 .fullscreen-caption {
@@ -240,6 +276,14 @@ onUnmounted(() => {
   font-size: 1.1rem;
   line-height: 1.6;
   padding: 0 20px;
+}
+
+.fullscreen-content.side-by-side .fullscreen-caption {
+  margin-top: 0;
+  text-align: left;
+  max-width: 380px;
+  min-width: 200px;
+  flex-shrink: 0;
 }
 
 /* Transitions */

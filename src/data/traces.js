@@ -64,31 +64,43 @@ export const tracesData = [
     {
         id: 'screen-no-raise',
         identification: 11,
-        caption: '',
+        caption: "Pour vérifier qu'un échantillon de test ne lève pas d'exceptions, on peut écrire le test ainsi : faire un" +
+            " appel de la fonction à tester dans un try-except et si une exception est détectée, alors le test a échoué.",
         image: new URL('@/assets/traces/screen-no-raise.png', import.meta.url).href,
     },
     {
         id: 'screen-raise-excp',
         identification: 12,
-        caption: '',
+        caption: "Pour vérifier qu'un échantillon lève une exception, il faut écrire le test avec un assertRaises pour que " +
+            "celui-ci ne s'arrête pas après la levée de l'exception. C'est pour lui indiquer que cette exception est voulue. Il est " +
+            "donc possible d'enchainer plusieurs vérification dans le même test.",
         image: new URL('@/assets/traces/screen-raise-excp.png', import.meta.url).href,
     },
     {
         id:'custom-exception',
         identification: 13,
-        caption: '',
+        caption: "En programmation orientée objet, il est possible de créer des exceptions personnalisées par le biais de " +
+            "l'héritage. Il suffit de faire hériter la ou les classes de 'Exception'. En Python, une classe mère est passée " +
+            "entre parenthèses de la classe fille, comme ici, Exception est passée entre parenthèses de FormulaException. Une " +
+            "mère peut avoir plusieurs filles, on voit d'ailleurs ici que EmptyTargetException et EmptyNameException héritent de " +
+            "la même classe.",
         image: new URL('@/assets/traces/custom-exception.png', import.meta.url).href,
     },
     {
         id:'exemples-assertions',
         identification: 14,
-        caption: '',
+        caption: "En test unitaire, il est possible de vérifier qu'une équation logique est vraie. Le mot clé 'assert' permet de dire " +
+            "que la logique qui va suivre doit être vraie. On peut donc vérifier que les membres de 'formula6' sont bien ceux que l'on " +
+            "attend un à un avec une série de 'assert'.",
         image: new URL('@/assets/traces/exemples-assertions.png', import.meta.url).href,
     },
     {
         id: 'screen-bouchon',
         identification: 15,
-        caption:'',
+        caption:"La classe FakeResult sert de bouchon (stub) pour simuler le comportement de la classe Result originale. " +
+            "Au lieu de lancer de vraies simulations lourdes, elle fournit instantanément des données fixes et maîtrisées. " +
+            "Les méthodes de A à E calquent exactement l'interface de la vraie classe. La fonction encadrée en rouge automatise " +
+            "le chargement de ces faux résultats à partir de fichiers CSV pour faciliter l'écriture des tests.",
         image: new URL('@/assets/traces/screen-bouchons.png', import.meta.url).href,
     },
     {
@@ -131,6 +143,13 @@ export const tracesData = [
             ' détails de chaque fonction.',
         image: new URL('@/assets/traces/decoupage_mcct.png', import.meta.url).href,
     },
+    {
+        id: 'schema-pipeline',
+        identification: 21,
+        caption: "Schéma de la pipeline d'inférence de modèles booléens. Plusieurs outils peuvent être utilisés pour inférer " +
+            "les règles du modèle. Celui-ci peut ensuite être simulé dans MaBoSS et MaBoSS_test permet de valider son fonctionnement.",
+        image: new URL('@/assets/traces/schema-pipeline.jpg', import.meta.url).href,
+    }
 ];
 
 export const getTrace = (id) => {

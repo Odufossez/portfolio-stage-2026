@@ -16,7 +16,7 @@ export const teamData = [
   {
     id: 'stoll',
     name: "Gautier STOLL",
-    description: "Bio-informaticien et mon tuteur pendant ce stage. Il est à l'origine du logiciel MaBoSS, sur lequel j'ai eu à travailler.",
+    description: "Ingénieur de recherche et mon tuteur pendant ce stage. Il est à l'origine du logiciel MaBoSS, sur lequel j'ai eu à travailler.",
     photo: new URL('@/assets/team/stoll.png', import.meta.url).href,
     relationship: "tutor"
   },

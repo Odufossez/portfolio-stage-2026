@@ -3,6 +3,7 @@ import {ref} from 'vue';
 import BackButton from "@/components/BackButton.vue";
 import DetailsButton from "@/components/DetailsButton.vue";
 import InfoHover from "@/components/InfoHover.vue";
+import Trace from "@/components/Trace.vue";
 
 const addCont = ref(false)
 </script>
@@ -35,13 +36,17 @@ const addCont = ref(false)
             <mn>n</mn>
           </msup>
         </math>
-        n étant le nombre de noeuds. Lorsqu'un modèle est inféré, il est alors difficile de savoir si c'est <b>la</b>
+        n étant le nombre de noeuds et ce calcul étant le nombre de combinaisons possibles.
+        Lorsqu'un modèle est inféré, il est alors difficile de savoir si c'est <b>la</b>
         solution ou si c'est <b>une</b> solution qui existe.
       </p>
       <p>
-        Ce processus long se fait rarement seul. Une série d'étape existe déjà pour faciliter la modélisation de ces
-        règles logiques qui régissent le modèle.
+        Ce processus long se fait rarement seul. Des outils existent déjà pour faciliter l'établissement des règles qui
+        régissent un modèle mais il est possible de le faire "à la main", c'est à dire, lire la documentation scientifique
+        et déduire des articles les règles. On peut résumé très grossièrement l'inférence des modèles au schéma de la
+        trace ci-dessous.
       </p>
+      <Trace traceId="schema-pipeline"/>
     </div>
     <p>
       Dans un contexte d'inférence de modèle comme celui de mon stage, avoir un outil tel que celui que j'ai décrit dans

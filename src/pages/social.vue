@@ -54,7 +54,7 @@ const activeRoot = ref('team-meeting');
             </p>
           </div>
           <p>
-            Tous les mardi à 14h, il y a un <b>team meeting</b>. C'est une réunion en petit comité (environ 15
+            Tous les mardis à 14h, il y a un <b>team meeting</b>. C'est une réunion en petit comité (environ 15
             personnes),
             toutes de l'équipe U1331, durant laquelle une personne désignée à l'avance présente son projet en cours.
             Pour cela
@@ -63,10 +63,10 @@ const activeRoot = ref('team-meeting');
             la ou les tumeurs concernées, la méthodologie, la
             <InfoHover id="cohort">cohorte</InfoHover>
             qui participe à
-            l'étude et la problématique: qu'est ce qui cherche à être démontré ?
+            l'étude et la problématique : qu'est-ce qui est recherché ?
           </p>
           <p>
-            Ces meetings sont un moment privilégiés qui permettent de mettre en commun des idées, de poser des
+            Ces meetings sont un moment privilégié qui permettent de mettre en commun des idées, de poser des
             questions...
             C'est aussi au cours d'un de ces meetings que j'ai pu présenter mon projet à toute l'équipe. Sur la
             <TraceHover id="team-meeting">trace numéro
@@ -80,7 +80,7 @@ const activeRoot = ref('team-meeting');
           <p>
             Bien que souvent très orientés biologie, j'ai assisté à tous les meetings car ils sont très intéressant. Ils
             me permettent de mieux comprendre ce qui est fait au sein de l'équipe et par qui. Cela m'a aussi permis
-            d'apprendre beaucoup de chose en biologie, souvent des concepts ou des choses très très précises même sans
+            d'apprendre beaucoup de choses en biologie, souvent des concepts ou des choses très très précises même sans
             leur contexte.
           </p>
           <p>
@@ -141,8 +141,8 @@ const activeRoot = ref('team-meeting');
             informations techniques les aideront à réaliser leurs propres queries dans le futur.
           </p>
           <p>
-            Ayant pu terminé en avance mon outil, j'ai pu m'intéresser à des problématiques plus poussées, comme
-            l'automatiser
+            Ayant pu terminer en avance mon outil, j'ai pu m'intéresser à des problématiques plus poussées, comme
+            l'automatisation
             de ce processus notamment à l'aide de l'IA (diapositives 17 à 19). Dans un premier temps, je souhaitais
             connaître la capacité des
             LLMs à convertir des phrases issues de la littérature scientifique en query. Pour cela j'ai fait un prompt
@@ -220,7 +220,7 @@ const activeRoot = ref('team-meeting');
             <p>
               <span class="orange">Prendre en compte le contexte biologique</span>,
               <span class="light-blue">réaliser un cahier des charges</span>,
-              <span class="dark-green">travailler dans un contexte opensource</span>
+              <span class="dark-green">travailler dans un contexte open source</span>
             </p>
           </div>
           <p>
@@ -273,7 +273,7 @@ const activeRoot = ref('team-meeting');
             </p>
             <ul class="orange">
               <li><strong>Les cas d'usage réels :</strong> Quel type de requêtes les chercheurs vont-ils saisir ?</li>
-              <li><strong>Les priorités :</strong> Quelles fonctionnalités logiques étaient indispensables pour
+              <li><strong>Les priorités : </strong>Quelles fonctionnalités logiques étaient indispensables pour
                 la première version ?
               </li>
             </ul>
@@ -317,7 +317,7 @@ const activeRoot = ref('team-meeting');
             <p>
               Durant mon stage, j'ai donc eu non seulement à réaliser un outil mais également à communiquer à propos de
               celui-ci. Le contexte de <span class="orange">recherche</span> mais aussi du fait que cet outil vient
-              compléter un logiciel <span class="dark-green">opensource</span> font que ces transmissions de savoirs
+              compléter un logiciel <span class="dark-green">open source</span> font que ces transmissions de savoirs
               doivent se faire <span class="purple">en anglais</span>.
             </p>
             <p>
@@ -328,7 +328,7 @@ const activeRoot = ref('team-meeting');
               réaliser en <span class="purple">anglais</span> qui devaient être
               <span class="dark-green">clairs, concis et accessibles.</span>
             </p>
-            <h4>Evaluation</h4>
+            <h4>Évaluation</h4>
             <p>
               Il y a une expression que j'aime bien utiliser, que je trouve appropriée pour ce type de travaux : "<i>
               c'est plus pas facile que c'est compliqué
@@ -339,7 +339,7 @@ const activeRoot = ref('team-meeting');
               des procédures... donc ce n'était <b>pas une découverte pour moi.</b>
             </p>
             <p>
-              Qu'est ce qui rend alors ce travail "pas facile"? Deux aspects:
+              Qu'est ce qui rend alors ce travail "pas facile"? Deux aspects :
             </p>
             <ul>
               <li class="orange">La transposition à un contexte que je ne maîtrise pas.</li>
@@ -357,14 +357,14 @@ const activeRoot = ref('team-meeting');
               stage qu'au début.
             </p>
             <p>
-              Ensuite, <span class="purple">la rédaction en anglais.</span> <b>Étant bilingue, rédigé en anglais n'est
+              Ensuite, <span class="purple">la rédaction en anglais.</span> <b>Étant bilingue, rédiger en anglais n'est
               pas
               du tout quelque chose qui représente un obstacle pour moi.</b> Cependant, encore une fois, le <span
                 class="orange">contexte</span>
               peut influencer sur ma précision, sur l'interprétation des mots que j'utilise. Heureusement, mon aisance
               dans
               cette langue m'a permis de développer rapidement le vocabulaire qui me manquait et donc je peux fournir
-              des explications clairs en utilisant le bon vocabulaire, comme j'ai pu le faire lors de ma <span
+              des explications claires en utilisant le bon vocabulaire, comme j'ai pu le faire lors de ma <span
                 class="green">présentation</span>,
               qui a été très bien comprise et reçue par l'ensemble de l'équipe. Je peux donc dire que, plus que mon
               anglais,
@@ -378,10 +378,10 @@ const activeRoot = ref('team-meeting');
             <h3>Participer à des meetings</h3>
             <h4>Synthèse</h4>
             <p>
-              Au sein de l'Institut Curie, les présentations sur son ou ses sujets de recherches courants font parties
+              Au sein de l'Institut Curie, les présentations sur son ou ses sujets de recherches courants font partie
               de la <span class="pink">méthodologie de recherche</span> employée.
               En effet, <span class="green">réaliser une présentation sur son sujet permet de travailler sa capacité d'explication,
-            de synthèse...</span>. Celles-ci sont aussi un moment privilégié pour débattre ou soumettre des idées.
+            de synthèse...</span> Celles-ci sont aussi un moment privilégié pour débattre ou soumettre des idées.
             </p>
             <p>
               Comme je travaille avec <span class="orange">des chercheurs (biologistes et/ou bio-informaticiens)</span>
@@ -404,7 +404,7 @@ const activeRoot = ref('team-meeting');
               car
               sur <span class="orange"> une notion connue de tous les autres.</span>
             </p>
-            <h4>Evaluation</h4>
+            <h4>Évaluation</h4>
             <p>
               Que ce soit par l'école ou mon expérience passée, <span class="green"> je savais déjà faire une présentation et respecter des
               normes de diaporama (peu de mots, support visuel, animation, titres...)</span>. J'ai donc juste eu à
@@ -419,7 +419,7 @@ const activeRoot = ref('team-meeting');
             <p>
               Comme je l'ai expliqué précédemment, le <span class="light-blue">recueil des besoins</span> s'est fait
               aussi bien par <span class="light-blue"> des consignes données </span> dès le début par mes tuteurs, que par
-              moi qui <span class="light-blue">suis allé poser des questions</span> à celleux qui utilisent l'outil pour
+              les démarches que j'ai entreprises <span class="light-blue">pour poser des questions</span> à celleux qui utilisent l'outil pour
               savoir ce dont ils avaient <b>besoin</b> pour améliorer leur travail.
             </p>
             <p>
@@ -427,11 +427,11 @@ const activeRoot = ref('team-meeting');
               pouvoir les implémenter. En utilisant les exemples de MaBoSS_test, j'ai pu recréer ces évaluations pour
               établir si mon module répondait aux besoins et <span class="dark-green"> réaliser un tutoriel. </span>
             </p>
-            <h4>Evaluation</h4>
+            <h4>Évaluation</h4>
             <p>
               Dans ce vaste domaine qu'est "Répondre à des besoins", on peut inclure le fait de <b> suivre des consignes données
               par des enseignants.</b> Finalement, ce que j'ai eu à faire ici n'est pas si différent. Sauf que dans le cadre
-              de mon stage, personnes ne sait faire ce que je fais. C'est à moi de
+              de mon stage, personne ne sait faire ce que je fais. C'est à moi de
               <span class="light-blue">
                 choisir comment j'implémente la fonction, proposer d'autres possibilités, encourager mes collègues à
                 me demander des choses plus précises, plus pointues...
