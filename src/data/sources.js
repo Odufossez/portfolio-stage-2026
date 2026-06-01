@@ -73,6 +73,11 @@ export const sourcesData = [
         id:'github-cct-fork',
         name: 'Fork de Colomoto-CCT',
         link: 'https://github.com/Odufossez/pyMaBoSS/tree/temporal-logic'
+    },
+    {
+        id: 'web-colomoto',
+        name: 'Site officiel de Colomoto',
+        link: 'https://colomoto.github.io/'
     }
 ]
 

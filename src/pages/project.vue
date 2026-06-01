@@ -17,7 +17,7 @@ const activeRoot = ref('agile');
       <BackButton to="/home" label="Retour à l'accueil"/>
       <h1>Suivi de projet</h1>
       <p>
-        Cette présente la manière dont j'ai géré mon projet et son évolution.
+        Cette page présente la manière dont j'ai géré mon projet et son évolution.
       </p>
     </header>
     <section class="missions-section">
@@ -27,7 +27,7 @@ const activeRoot = ref('agile');
           Gérer un projet en agile
         </button>
         <button class="tab-item" :class="{active: activeRoot==='github'}" @click="activeRoot='github'">
-          Utiliser Github
+          Utiliser GitHub
         </button>
         <button class="tab-item" :class="{active: activeRoot==='chrono'}"
                 @click="activeRoot='chrono'">
@@ -59,7 +59,7 @@ const activeRoot = ref('agile');
             checkpoint hebdomadaire
             et utiliser une logique Agile pour suivre mon projet. La première étape pour cela, c'est de découper mon
             projet
-            en fonction et en tâches. C'est ce découpage que présente la trace 20 ci-dessous.
+            en fonctions et en tâches. C'est ce découpage que présente la <b>trace 20</b> ci-dessous.
           </p>
           <div class="side-by-side inner-details">
             <div class="text-content">
@@ -71,14 +71,14 @@ const activeRoot = ref('agile');
               <p>
                 <span class="blue"> L'outil a donc 4 fonctions principales.</span> Les fonctions composantes (en vert),
                 ne sont pas des fonctions à part
-                entière mais regroupe tout un tas de fonction que je ne détaille pas ici.
+                entière mais regroupe tout un tas de fonctions que je ne détaille pas ici.
               </p>
               <ul>
-                <li><p><b>La gestion des simulations</b>: l'outil prend en charge la ou les simulations nécessaires pour
+                <li><p><b>La gestion des simulations</b> : l'outil prend en charge la ou les simulations nécessaires pour
                   l'évaluation, cela implique donc de gérer les fichiers résultats et les options possibles.</p>
                 </li>
                 <li><p>
-                  <b>La lecture de la question</b>: l'outil se basant sur une assertion ou une question pour faire son
+                  <b>La lecture de la question</b> : l'outil se basant sur une assertion ou une question pour faire son
                   évaluation,
                   il faut que celui-ci soit capable de différencier les cibles, les noms, qu'est ce qui est recherché...
                   cela
@@ -87,7 +87,7 @@ const activeRoot = ref('agile');
                 </b>(Type, cible, nom). Enfin, il faut <b>la lire et la traiter</b>.</p>
                 </li>
                 <li><p>
-                  <b>L'envoi de la réponse</b>: l'outil retourne une réponse, pour que l'utilisateur sache la réponse à
+                  <b>L'envoi de la réponse</b> : l'outil retourne une réponse, pour que l'utilisateur sache la réponse à
                   sa question ou si l'assertion est juste ou non. Il faut donc choisir un <b>format de réponse</b>, ici,
                   des dataframes (pandas). Plus tard j'ai fait une <b>fonction de visualisation de cette réponse </b>(Fonction
                   de
@@ -95,7 +95,7 @@ const activeRoot = ref('agile');
                 </li>
                 <li>
                   <p>
-                    <b>La gestion de l'aspect opensource</b>: l'outil faisant parti d'un programme opensource
+                    <b>La gestion de l'aspect open source</b> : l'outil faisant parti d'un programme open source
                     (
                     <InfoHover id="pymaboss">pyMaBoSS</InfoHover>
                     ) il faut également que je prenne en compte le temps
@@ -111,7 +111,7 @@ const activeRoot = ref('agile');
         </div>
 
         <div v-if="activeRoot==='github'">
-          <h2>Utiliser Github</h2>
+          <h2>Utiliser GitHub</h2>
           <div class="encadre-gris">
             <h3>Savoir-faire mobilisés</h3>
             <span class="green">Créer et gérer des branches</span>,
@@ -119,12 +119,12 @@ const activeRoot = ref('agile');
           </div>
           <p>
             Une grande partie de la gestion de projet que j'ai eu à faire reposait sur l'utilisation de GitHub. Dans un
-            projet opensource, tout le monde ne contribue pas sur la <span
+            projet open source, tout le monde ne contribue pas sur la <span
               class="green">sur la branche principale</span>
             du
             <InfoHover id="repo">repository</InfoHover>
             d'origine. Cela créerait énormément de conflits et le projet
-            n'aurait jamais de version stable. Pour palier à cela, il est possible de créer une branche depuis la
+            n'aurait jamais de version stable. Pour pallier cela, il est possible de créer une branche depuis la
             branche
             principale du
             <InfoHover id="repo">repository</InfoHover>
@@ -139,12 +139,12 @@ const activeRoot = ref('agile');
           </p>
           <div class="side-by-side inner-details">
             <div class="text-content">
-              <h3>Comment cela se présente ?</h3>
+              <h3>Comment cela se présente-t-il ?</h3>
               <p>
                 Un
-                <InfoHover id="repo">repository Github</InfoHover>
+                <InfoHover id="repo">repository GitHub</InfoHover>
                 est composé d'une branche principale (la branche
-                centrale "main" de la <b>trace 7</b>). Il est possible de créer une ou plusieurs branche (<span
+                centrale "main" de la <b>trace 7</b>). Il est possible de créer une ou plusieurs branches (<span
                   class="blue">branche A</span> et <span class="purple">branche B</span>)
                 et de fusionner cette branche avec le contenu de la branche principale (<span class="red">merge</span>
                 en rouge).
@@ -167,15 +167,15 @@ const activeRoot = ref('agile');
                 pyMaBoSS
                 en
                 plus d'avoir <span class="light-blue">fait un <InfoHover id="fork">fork</InfoHover> du projet originel
-                de Colomoto</span>,
+                de <InfoHover id="colomoto">CoLoMoTo</InfoHover> </span>,
                 en bleu sous le nom du repo en haut sur la <b>trace 8</b> ci-contre.
-                Dans le cadre de projet open-source, les contributeurs <span class="light-blue">n'ont pas les droits de
+                Dans le cadre de projets open source, les contributeurs <span class="light-blue">n'ont pas les droits de
                 modification sur les
-                repository sur lesquels iels souhaitent contribuer. Faire un fork permet de créer une copie qui nous est
+                repositories sur lesquels iels souhaitent contribuer. Faire un fork permet de créer une copie qui nous est
                 propre.</span>
               </p>
               <p>
-                Dans le cas des branches, j'en ai crée deux (entourées en vert ci-contre): temporal-logic pour l'ajout
+                Dans le cas des branches, j'en ai créé deux (entourées en vert ci-contre) : temporal-logic pour l'ajout
                 de tout le module et la branche automated-query qui m'a permis de faire des modifications conséquentes
                 dans la logique d'exécution du programme <b>sans prendre le risque de tout casser</b> lorsque j'ai rajouté la gestion
                 des simulations par le programme.
@@ -197,7 +197,7 @@ const activeRoot = ref('agile');
               <InfoHover id="commit">commit</InfoHover>
               et de
               <InfoHover id="push">push</InfoHover>
-              classiques, comme j'ai pu beaucoup faire durant mon cursus à la forme : <code class="code-inline">git
+              classiques, comme j'ai pu beaucoup faire durant mon cursus, a la forme : <code class="code-inline">git
               commit -m "message"</code>
               puis <code class="code-inline">git push origin nom_branche</code>. "Origin" fait référence au repository
               originel du
@@ -239,12 +239,12 @@ const activeRoot = ref('agile');
               Le principe repose sur une extension du
               <InfoHover id="tdd">Test-Driven Development</InfoHover> (TDD) mais à la place des tests (que seule l'équipe
               technique peut comprendre), on décrit le comportement de l'application dans un langage normalisé pour
-              que tout le monde se comprennent (souvent le format Given / When / Then ou Etant donné / Quand /
+              que tout le monde se comprennent (souvent le format Given / When / Then ou Étant donné / Quand /
               Alors).
             </p>
             <p>
               Cette méthode de développement me convient mieux car elle m'évite ce syndrome de la page blanche que les
-              auteurs connaissent bien: je sais ce que je veux, mais par où commencer ?
+              auteurs connaissent bien : je sais ce que je veux, mais par où commencer ?
               J'ai donc repris le schéma de la <TraceHover id="decoupage-mcct">trace 20</TraceHover> et j'ai fait un
               second découpage (que je ne schématise pas intégralement ici) de chaque fonction verte pour avoir une idée
               des composantes de son comportement.
@@ -260,18 +260,18 @@ const activeRoot = ref('agile');
               <p>
                 Sur la <b>trace 19</b> ci-contre, vous pouvez voir la liste des <span class="purple">comportements que je veux implémenter durant la
                 semaine <b>n</b></span>. Le code couleur est purement personnel, le rouge m'indique que ce comportement est
-                prioritaire: typiquement, le rouge en gras de la semaine 3. Il fallait que je m'assure que <span class="dark-green">
-                ce qui avait déjà codé fonctionne correctement avant de faire une nouvelle fonctionnalité.
+                prioritaire : typiquement, le rouge en gras de la semaine 3. Il fallait que je m'assure que <span class="dark-green">
+                ce qui avait déjà été codé fonctionne correctement avant de faire une nouvelle fonctionnalité.
               </span>
-                Cette méthode d'implémentation permet d'éviter <span class="purple">un grand nombre de bug en fusionnant tout
+                Cette méthode d'implémentation permet d'éviter <span class="purple">un grand nombre de bugs en fusionnant tout
               le code en même temps.</span>
               </p>
               <p>
-                En général, les comportements que je choisis d'implémenter sur une semaine sont indépendantes les unes
-                des autres: je peux commencer n'importe où dans la liste (à moins que je me le sois précisé). Une fois
+                En général, les comportements que je choisis d'implémenter sur une semaine sont indépendants les unes
+                des autres : je peux commencer n'importe où dans la liste (à moins que je me le sois précisé). Une fois
                 que celui-ci a été implémenté et que tous les tests sont au vert, je mets une petite coche bleue. Également,
                 je pousse ces changements sur github avec un <span class="pink">commit décrivant ce que je viens d'ajouter</span>.
-                Comme je fais <i>beaucoup</i> de contribution en une journée, il est important que je les documente bien
+                Comme je fais <i>beaucoup</i> de contributions en une journée, il est important que je les documente bien
                 pour m'y retrouver quand je reviens le lendemain, ou même pour un développeur qui voudrait suivre la logique
                 de développement que j'ai suivi.
               </p>
@@ -295,7 +295,7 @@ const activeRoot = ref('agile');
               A l'école, nous avions eu à suivre une logique <span class="dark-green">d'intégration continue</span>,
               afin de découvrir cette méthodologie. Avoir pu l'appliquer ici, <span class="purple">combinée à un Behavior-Driven Development (BDD),</span>
               m'a permis de mieux saisir l'intérêt et l'efficience de ces méthodes. En effet à l'école, on a souvent beaucoup
-              de projet en même en temps, avec des méthodologies différentes, de matières différentes... comme je ne
+              de projets en même en temps, avec des méthodologies différentes, de matières différentes... comme je ne
               pouvais pas me dédier entièrement à un seul projet (le code <b>et</b> la gestion), l'application de la gestion
               restait souvent partielle.
             </p>
@@ -309,11 +309,11 @@ const activeRoot = ref('agile');
             <p>
               Je pense sincèrement que je <b>connaissais</b> le principe de méthodes agiles plus que je ne <b>savais</b>
               les appliquer. Cela a clairement amélioré mon efficacité, je saisis mieux leur intérêt. C'est une manière
-              de fonctionner que j'ai eu très naturellement, cela n'a pas été difficile de trouver les termes qui
+              de fonctionner que j'ai eue très naturellement, cela n'a pas été difficile de trouver les termes qui
               correspondaient à ma méthode.
             </p>
             <p>
-              Étant seul, je n'ai pas eu à utiliser d'outil de gestion, si je devais refaire mon stage je n'en utiliserais pas.
+              Étant seul, je n'ai pas eu à utiliser d'outil de gestion; si je devais refaire mon stage je n'en utiliserais pas.
               Je passerais certainement autant de temps à coder qu'à mettre en place et maintenir
               l'outil à jour, pour une personne seule, ça n'a que peu d'intérêt.
               De plus cela décentralise mes notes de <TraceHover id="agile-semaines"> mon programme d'implémentation</TraceHover>
@@ -333,10 +333,10 @@ const activeRoot = ref('agile');
             <h3>Utiliser GitHub</h3>
             <h4>Synthèse</h4>
             <p>
-              Github est dans mon quotidien de développeur depuis ma première année de BUT. C'est un outil très pratique
+              GitHub est dans mon quotidien de développeur depuis ma première année de BUT. C'est un outil très pratique
               de gestion de version
               mais je n'avais pas eu l'occasion d'utiliser toutes les fonctionnalités qu'il propose,<span class="green"> notamment la création
-              de branches</span>, que je connaissais mais n'avais jamais fait. Aussi,<span class="light-blue"> le fork d'un projet</span> , que j'ai eu besoin
+              de branches</span>, que je connaissais mais n'avais jamais faite. Aussi,<span class="light-blue"> le fork d'un projet</span> , que j'ai eu besoin
               de faire pour concevoir mon outil sur pyMaBoSS, était une fonctionnalité que je ne connaissais pas. A contrario,
               <span class="pink">faire des commits,</span> est une action que j'ai beaucoup effectuée. La principale
               différence avec les commits que j'ai pu avoir à faire pour mes projets personnels, des petits projets de cours
@@ -346,15 +346,15 @@ const activeRoot = ref('agile');
               que ces projets n'avaient pas de portée longue dans le temps, pas de maintient à venir.
             </p>
             <p>
-              Dans le cas de mon projet de stage, c'est l'exact inverse. C'est un projet opensource, d'autres personnes
-              vont peut-être être amenées à travailler dessus à plus ou moins longs termes, il est important que les
+              Dans le cas de mon projet de stage, c'est l'exact inverse. C'est un projet open source, d'autres personnes
+              vont peut-être être amenées à travailler dessus à plus ou moins long terme, il est important que les
               <span class="pink">commits soient complets et de qualité (et en anglais bien sûr)</span> afin qu'une autre
               personne voulant les consulter puisse avoir un aperçu exact de ce que j'ai fait.
             </p>
             <h4>Évaluation</h4>
             <p>
-              Bien que non débutant dans l'usage de Github, j'ai progressé fortement dans son usage grâce à mon expérience
-              à l'Institut Curie. Prendre ses marques sur un outil aussi utilisé que Github n'est pas difficile, il y a
+              Bien que non débutant dans l'usage de GitHub, j'ai progressé fortement dans son usage grâce à mon expérience
+              à l'Institut Curie. Prendre ses marques sur un outil aussi utilisé que GitHub n'est pas difficile, il y a
               énormément de tuto en ligne qui décrivent étapes par étapes ce que nous pourrions avoir besoin de faire.
               C'était donc plus une question de pratiquer, ce que je maîtrise bien mieux maintenant sans aller jusqu'à
               être un expert.
