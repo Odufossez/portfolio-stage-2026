@@ -12,7 +12,7 @@ import Trace from "@/components/Trace.vue";
       <h1>Toutes les traces utilisées sur ce site</h1>
     </header>
     <main class="traces-grid">
-      <div v-for="trace in tracesData" :key="trace.id" class="styled-box">
+      <div v-for="trace in tracesData" :key="trace.id" :id="trace.id" class="styled-box">
         <Trace :traceId="trace.id" />
       </div>
     </main>

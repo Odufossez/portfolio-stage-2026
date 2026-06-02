@@ -30,7 +30,7 @@ export const teamData = [
   {
     id: 'gaspard',
     name: "Lucie GASPARD-BOULINC",
-    description: "Doctorante. Elle est dans le groupe avec qui je mange tous les midis, elle m'a aidé à m'intégré.",
+    description: "Doctorante. Elle est dans le groupe avec qui je mange tous les midis, elle m'a aidé à m'intégrer.",
     photo: new URL('@/assets/team/gaspard-boulinc.jpg', import.meta.url).href,
     relationship: "close"
   },

@@ -62,23 +62,18 @@ export const tracesData = [
         image: new URL('@/assets/traces/screen_push_fork_branch.png', import.meta.url).href,
     },
     {
-        id: 'screen-no-raise',
+        id: 'test-exception',
         identification: 11,
         caption: "Pour vérifier qu'un échantillon de test ne lève pas d'exceptions, on peut écrire le test ainsi : faire un" +
-            " appel de la fonction à tester dans un try-except et si une exception est détectée, alors le test a échoué.",
-        image: new URL('@/assets/traces/screen-no-raise.png', import.meta.url).href,
-    },
-    {
-        id: 'screen-raise-excp',
-        identification: 12,
-        caption: "Pour vérifier qu'un échantillon lève une exception, il faut écrire le test avec un assertRaises pour que " +
+            " appel de la fonction à tester dans un try-except et si une exception est détectée, alors le test a échoué." +
+            " De même, " + "pour vérifier qu'un échantillon lève une exception, il faut écrire le test avec un assertRaises pour que " +
             "celui-ci ne s'arrête pas après la levée de l'exception. C'est pour lui indiquer que cette exception est voulue. Il est " +
             "donc possible d'enchainer plusieurs vérification dans le même test.",
-        image: new URL('@/assets/traces/screen-raise-excp.png', import.meta.url).href,
+        image: new URL('@/assets/traces/tests-exceptions.png', import.meta.url).href,
     },
     {
         id:'custom-exception',
-        identification: 13,
+        identification: 12,
         caption: "En programmation orientée objet, il est possible de créer des exceptions personnalisées par le biais de " +
             "l'héritage. Il suffit de faire hériter la ou les classes de 'Exception'. En Python, une classe mère est passée " +
             "entre parenthèses de la classe fille, comme ici, Exception est passée entre parenthèses de FormulaException. Une " +
@@ -88,7 +83,7 @@ export const tracesData = [
     },
     {
         id:'exemples-assertions',
-        identification: 14,
+        identification: 13,
         caption: "En test unitaire, il est possible de vérifier qu'une équation logique est vraie. Le mot clé 'assert' permet de dire " +
             "que la logique qui va suivre doit être vraie. On peut donc vérifier que les membres de 'formula6' sont bien ceux que l'on " +
             "attend un à un avec une série de 'assert'.",
@@ -96,7 +91,7 @@ export const tracesData = [
     },
     {
         id: 'screen-bouchon',
-        identification: 15,
+        identification: 14,
         caption:"La classe FakeResult sert de bouchon (stub) pour simuler le comportement de la classe Result originale. " +
             "Au lieu de lancer de vraies simulations lourdes, elle fournit instantanément des données fixes et maîtrisées. " +
             "Les méthodes de A à E calquent exactement l'interface de la vraie classe. La fonction encadrée en rouge automatise " +
@@ -105,7 +100,7 @@ export const tracesData = [
     },
     {
         id: 'team-meeting',
-        identification: 16,
+        identification: 15,
         caption: 'Le programme de passage pour indiquer qui parle lors des teams meeting hebdomadaires. Le 19 Mai, ce n\'est pas Victoria ' +
             'qui a parlé mais moi. Ces meetings permettent de partager son avancement sur son projet en cours et de faire part de ses découvertes, ou de ses problèmes.' +
             ' Un temps est dédié aux questions ou remarques que l\'audience peut apporter. Cela se passe en petit comité, environ 15 personnes.',
@@ -113,19 +108,19 @@ export const tracesData = [
     },
     {
         id:'journal-club',
-        identification: 17,
+        identification: 16,
         caption: 'Le mail envoyé par Victoria aux membres de l\'équipe pour informer de quel article elle va parler lors du prochain journal club qui avait lieu le 19 Mai.',
         image: new URL('@/assets/traces/journal-club.png', import.meta.url).href,
     },
     {
         id:'cdc',
-        identification: 18,
+        identification: 17,
         caption:'Liste des fonctions désirées par l\'équipe qui doivent pouvoir être effectuées avec mon outil.',
         image: new URL('@/assets/traces/cahier-des-charges.png', import.meta.url).href,
     },
     {
         id:'agile-semaines',
-        identification: 19,
+        identification: 18,
         caption: 'Capture d\'écran de mon Notion sur laquelle on peut voir les tâches des semaines 3 et 4. Certaines de ces tâches' +
             'sont colorées pour indiquer une priorité: bleu, jaune ou rouge. En rouge c\'est toujours une fonctionnalité à mettre en place' +
             ' absolument cette semaine. Le bleu ou le jaune sont là pour indiquer une priorité au-dessus du blanc mais ' +
@@ -136,7 +131,7 @@ export const tracesData = [
     },
     {
         id:'decoupage-mcct',
-        identification: 20,
+        identification: 19,
         caption: 'Schéma de découpage de l\'outil MaBoSS_CoherencyCheckerTool (MCCT). L\'outil de est découpé en 4 grandes parties:' +
             ' Gérer des simulations, lire une question, renvoyer une réponse et être opensource. Chacune de ces parties regroupe une ou' +
             ' plusieurs fonctions requises pour pouvoir fonctionner. C\'est un découpage très large qui n\'entre pas dans les' +
@@ -145,10 +140,55 @@ export const tracesData = [
     },
     {
         id: 'schema-pipeline',
-        identification: 21,
+        identification: 20,
         caption: "Schéma de la pipeline d'inférence de modèles booléens. Plusieurs outils peuvent être utilisés pour inférer " +
             "les règles du modèle. Celui-ci peut ensuite être simulé dans MaBoSS et MaBoSS_test permet de valider son fonctionnement.",
         image: new URL('@/assets/traces/schema-pipeline.jpg', import.meta.url).href,
+    },
+    {
+        id: 'test-deroulement',
+        identification: 21,
+        caption: "Fonction de test qui effectue des assertions au fur et à mesure du déroulement de l'algorithme de traitement." +
+            " Les fonctions sont appelées manuellement pour que je puisse tester l'état des dataframes entre deux étapes afin " +
+            "de m'assurer que le déroulement se passe bien. Cela me permet de valider une seconde fois les fonctions, puisqu'elles " +
+            "ont été testées en isolement une première fois. En violet j'ai mis en évidence les étapes de l'algorithme et en rouge ce" +
+            " sont les assertions.",
+        image: new URL('@/assets/traces/test-deroulement.png', import.meta.url).href,
+    },
+    {
+        id: 'formula',
+        identification: 22,
+        caption: "Déclaration de la classe Formula qui permet de stocker les membre d'une query après l'avoir parsé. On peut" +
+            " y voir les membres et leur type.",
+        image: new URL('@/assets/traces/formula.png', import.meta.url).href,
+    },
+    {
+        id: 'exemple-couverture',
+        identification: 23,
+        caption: "Diagramme d'exécution exemple. Un chemin possible est mis en surbrillance jaune, en suivant celui-ci, " +
+            "le programme a comme sortie l'output 2.",
+        image: new URL('@/assets/traces/exemple-couverture.jpg', import.meta.url).href
+    },
+    {
+        id: 'test-sample',
+        identification: 24,
+        caption: "Capture d'écran d'une partie des échantillons de test utilisés pour tester le FormulaChecker. Ces échantillons " +
+            "sont stockés dans des variables pour les utiliser plus facilement dans les tests. Les cinq premières sont là " +
+            "pour couvrir des cas où il n'y a pas d'erreur, les suivantes doivent déclencher des erreurs.",
+        image: new URL('@/assets/traces/test-sample.png', import.meta.url).href,
+    },
+    {
+        id: 'diagramme-formula-checker',
+        identification: 25,
+        caption: "Diagramme d'exécution du FormulaChecker.",
+        image: new URL('@/assets/traces/formula-checker-diagramme.png', import.meta.url).href,
+    },
+    {
+        id: 'dossier-module',
+        identification: 26,
+        caption: "Capture d'écran de l'arborescence des fichiers de pyMaBoSS. Encadré en rouge, le dossier que j'ai créé " +
+            "qui contient tout le programme que j'ai écrit pour le MaBoSS_CoherencyCheckerTool.",
+        image: new URL('@/assets/traces/dossier-module.png', import.meta.url).href,
     }
 ];
 

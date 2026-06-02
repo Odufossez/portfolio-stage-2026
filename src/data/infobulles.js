@@ -167,6 +167,11 @@ export const infobullesData = [
         id: 'colomoto',
         title: 'CoLoMoTo',
         content: 'CoLoMoTo (Consortium for Logical Models and Tools) est un consortium de groupes de recherche intéressés par la modélisation logique (qualitative) des systèmes biologiques : modélisateurs, conservateurs et développeurs de méthodes et d’outils logiciels. Le consortium travaille à la définition de normes pour la représentation et l’échange des modèles (en particulier le format qual SBML), ainsi qu’à la comparaison des méthodes, modèles et outils.'
+    },
+    {
+        id: 'mcct',
+        title: "MaBoSS-Coherency Checker Tool",
+        content: "Nom de l'outil que j'ai développé pour l'évaluation des simulations MaBoSS. Il est raccourci en MCCT."
     }
 ];
 
