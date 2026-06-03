@@ -70,9 +70,14 @@ const subRoot = ref(1)
             </button>
             <button class="sub-tab-item" :class="{active: subRoot === 2}" @click="subRoot=2">Utiliser des logigrammes
             </button>
-            <button class="sub-tab-item" :class="{active: subRoot === 3}" @click="subRoot=3">Fusionner des dataframes
+            <button class="sub-tab-item" :class="{active: subRoot === 3}" @click="subRoot=3">Fusionner des dataframes -
+              Concept
             </button>
-            <button class="sub-tab-item" :class="{active: subRoot === 4}" @click="subRoot=4">Utiliser une REGEX</button>
+            <button class="sub-tab-item" :class="{active: subRoot === 4}" @click="subRoot=4">Fusionner des dataframes -
+              Application
+            </button>
+            <button class="sub-tab-item" :class="{active: subRoot === 5}" @click="subRoot=5">Utiliser une REGEX</button>
+
           </div>
           <div class="sub-inner-details" v-if="subRoot === 1">
             <h3>Créer un module python</h3>
@@ -201,10 +206,14 @@ const subRoot = ref(1)
                 <p>
                   Concernant <span class="green-blue">le support des conditions imbriquées</span>, j'utilise la présence
                   de parenthèses ouvrantes et fermantes pour <span class="green-blue">créer des sous-listes de l'expression.</span>
-                  Sur la <b>trace 6</b> ci-contre on peut voir la flow-chart de la fonction qui permet de parser l'expression
-                  logique. En input de la fonction, on passe l'expression sous type de liste de string <span class="code-inline">list[str]</span>.
-                  En output de la fonction, on renvoie une liste de string aussi, mais nettoyée de caractères vides, d'espaces et
-                  des parenthèses. Également, les membres qui étaient entourés par des parenthèses sont regroupés en sous-listes.
+                  Sur la <b>trace 6</b> ci-contre on peut voir la flow-chart de la fonction qui permet de parser
+                  l'expression
+                  logique. En input de la fonction, on passe l'expression sous type de liste de string <span
+                    class="code-inline">list[str]</span>.
+                  En output de la fonction, on renvoie une liste de string aussi, mais nettoyée de caractères vides,
+                  d'espaces et
+                  des parenthèses. Également, les membres qui étaient entourés par des parenthèses sont regroupés en
+                  sous-listes.
                   <span class="exemple">
                     L'expression "A & ( B | ( C & D ) )" va être découpée : ['A', '&', ['B', '|', ['C', '&', 'D']]]
                   </span>
@@ -221,9 +230,13 @@ const subRoot = ref(1)
                 Si c'est un symbole vide (un espace par exemple), on l'ignore et on passe au suivant (instruction
                 <span class="code-inline">continue</span>),
               </p></li>
-              <li><p>
-                Si c'est une parenthèse ouvrante : on appelle en <InfoHover id="recursion">récursion</InfoHover> la fonction,
-              </p></li>
+              <li>
+                <p>
+                  Si c'est une parenthèse ouvrante : on appelle en
+                  <InfoHover id="recursion">récursion</InfoHover>
+                  la fonction,
+                </p>
+              </li>
               <li><p>
                 Si c'est une parenthèse fermante : on retourne la liste <span class="code-inline">parsed_exp</span>
                 contenant la sous-expression qui sera ajoutée à la variable <span class="code-inline">parsed_exp</span>
@@ -236,7 +249,8 @@ const subRoot = ref(1)
             </ul>
             <p class="green-blue">
               <b>
-                Grâce à ce formatage, je vais pouvoir traiter les membres un à un et récupérer les colonnes au fur et à mesure
+                Grâce à ce formatage, je vais pouvoir traiter les membres un à un et récupérer les colonnes au fur et à
+                mesure
                 pour appliquer l'expression morceau par morceau.
               </b>
             </p>
@@ -244,29 +258,95 @@ const subRoot = ref(1)
           </div>
 
           <div class="sub-inner-details" v-if="subRoot===3">
-            <h3>Fusion de dataframes</h3>
+            <h3>Fusion de dataframes : présentation du concept</h3>
+            <p>
+              Une fusion de tableau sur une logique de &-logique n'est pas la même qu'une fusion sur un |-logique.
+              En effet, la règle logique pour qu'un &-logique soit VRAI est que les DEUX membres doivent être VRAIS.
+              C'est ce qui est illustré par les deux premiers tableaux de la <b>trace 29</b> ci-dessous. Dans un premier
+              temps on voit que les valeurs <span class="code-inline">float</span> des lignes ont été remplacées
+              par des valeurs <span class="code-inline">boolean</span> pour comprendre la mécanique.
+            </p>
+            <p>
+              Dans la seconde partie de cette même trace, on voit deux tableaux verts, que l'on va fusionner en suivant
+              une
+              logique &-logique et une logique |-logique pour voir la différence.
+            </p>
+            <p>
+              Dans la <a @click="subRoot=4">section suivante</a>, je vous parlerais plus en détail des fonctions
+              <span class="code-inline">merge_or</span>
+              et <span class="code-inline">merge_and</span>, applications directe des concepts présentés ici.
+            </p>
             <div class="side-by-side">
               <div class="trace-content">
                 <Trace traceId="tableaux-log-exp"/>
               </div>
-              <div class="text-content">
-                <h4>Fusion des dataframes</h4>
-                <p>
-                  Une fusion de tableau sur une logique de &-logique n'est pas la même qu'une fusion sur un |-logique.
-                  En effet, la règle logique pour qu'un &-logique soit VRAI est que les DEUX membres doivent être VRAIS.
-                  C'est ce qui est illustré par les deux premiers tableaux de la <b>trace 29</b> ci-contre. Dans un premier
-                  temps on voit que les valeurs <span class="code-inline">float</span> des lignes ont été remplacées
-                  par des valeurs <span class="code-inline">boolean</span> pour comprendre la mécanique.
-                </p>
-                <p>
-                  On a donc deux expressions : <b>A | !B</b> ("A ou pas B") et <b>A & !B</b> ("A et pas B").
 
-                </p>
+              <div class="text-content">
+                <div>
+                  <h4>Fusions simples</h4>
+                  <p>
+                    On a donc deux expressions : <b>A | !B</b> ("A ou pas B") et <b>A & !B</b> ("A et pas B"). Le
+                    principe
+                    de l'exemple, c'est de voir physiquement la différence entre les données à récupérer en fonction de
+                    l'expression. Dans cet exemple, la logique des lignes a été simplifiée : les valeurs sont des
+                    booléennes.
+                    Cependant, cet exemple n'est pas que théorique puisque cette configuration correspond à
+                    <span class="light-blue">l'application d'un masque conditionnel</span> pour récupérer les bonnes
+                    lignes
+                    d'un dataframe. Je parle de cette fonctionnalité dans la section sur
+                    <a @click="subRoot=1; activeRoot='data-ttt'">le traitement de données</a>.
+                  </p>
+                  <p>
+                    Ainsi, pour récupérer les lignes qui remplissent les conditions, il n'y a qu'à appliquer la formule
+                    logique : <b>A | !B on garde là où la valeur de A est à 1 ou que celle de B à 0.</b> De même pour la
+                    formule de &-logique sauf que <b>l'on garde seulement si A est à 1 ET que B est à 0.</b> On voit
+                    très clairement que les lignes à garder (en jaune fluo) sont différentes. Il est donc
+                    <b>primordial</b>
+                    <span class="green-blue"> d'adapter le comportement du programme en fonction des symboles.</span>
+                  </p>
+                </div>
               </div>
+
+            </div>
+            <div>
+              <h4>Fusion de tableau</h4>
+              <p>
+                Pour ce second exemple, on part de deux tableaux de départs, ceux en vert sur la trace. On va les
+                fusionner en suivant des logiques différentes, et voir les différences. Au préalable, j'établis l'impact
+                d'une logique sur les tableaux :
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <b>Dans une logique de OU </b>: on garde ce qui est <b>commun au deux membres sans le dédoubler</b>
+                    et
+                    ce qu'il y a en plus;
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Dans une logique de ET </b>: on garde <b>seulement</b> ce qui est commun aux <b>deux membres</b>.
+                  </p>
+                </li>
+              </ul>
+              <p>
+                Ainsi, pour la logique du &-logique, on ne va garder que <b>la colonne A</b>. Pour la logique du |-logique,
+                on garde les trois colonnes. Mais il faut noter une chose importante : dans le cas du |-logique on se retrouve
+                avec une ligne contenant une valeur vide car dans un des tableaux, il n'y avait de valeur pour B à cet
+                endroit. <span class="green-blue">C'est pour cette raison que l'on va retirer les lignes contenant
+                une valeur <span class="code-inline">na</span>.</span> J'ai prévu un second cas, qui permet de
+                <span class="green-blue">garder les temps d'un des deux dataframes pour pouvoir récupérer les valeurs
+                manquantes</span>.
+              </p>
             </div>
           </div>
 
           <div class="sub-inner-details" v-if="subRoot===4">
+            <h3>Concevoir les fonctions de fusion</h3>
+
+          </div>
+
+          <div class="sub-inner-details" v-if="subRoot===5">
             <h3>Utiliser une REGEX</h3>
           </div>
         </div>
@@ -498,6 +578,10 @@ const subRoot = ref(1)
             </div>
 
           </div>
+        </div>
+
+        <div v-if="activeRoot==='data-ttt'">
+          application de masque
         </div>
 
 
