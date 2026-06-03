@@ -172,6 +172,11 @@ export const infobullesData = [
         id: 'mcct',
         title: "MaBoSS-Coherency Checker Tool",
         content: "Nom de l'outil que j'ai développé pour l'évaluation des simulations MaBoSS. Il est raccourci en MCCT."
+    },
+    {
+        id: 'recursion',
+        title: "Principe de récursivité",
+        content: "Une fonction récursive est une fonction qui s'appelle elle-même. Chaque appel à la fonction est indépendant des autres, avec ses propres variables."
     }
 ];
 

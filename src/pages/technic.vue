@@ -35,7 +35,8 @@ const subRoot = ref(1)
         <span class="dark-green">rédiger des assertions</span>,
         <span class="dark-yellow">rédiger des tests</span>,
         <span class="dark-orange">utiliser des bouchons et/ou des mocks</span>,
-        <span class="dark-purple">exploiter des modules</span>
+        <span class="dark-purple">exploiter des modules</span>,
+        <span class="green-blue">gérer des algorithmes complexes</span>
       </p>
     </div>
     <section class="missions-section">
@@ -65,9 +66,13 @@ const subRoot = ref(1)
             </p>
           </div>
           <div class="sub-tabs-bar">
-            <button class="sub-tab-item" :class="{active: subRoot === 1}" @click="subRoot=1">Créer un module en Python</button>
-            <button class="sub-tab-item" :class="{active: subRoot === 2}" @click="subRoot=2">Concevoir des logigrammes</button>
-            <button class="sub-tab-item" :class="{active: subRoot === 3}" @click="subRoot=3">Utiliser une REGEX</button>
+            <button class="sub-tab-item" :class="{active: subRoot === 1}" @click="subRoot=1">Créer un module en Python
+            </button>
+            <button class="sub-tab-item" :class="{active: subRoot === 2}" @click="subRoot=2">Utiliser des logigrammes
+            </button>
+            <button class="sub-tab-item" :class="{active: subRoot === 3}" @click="subRoot=3">Fusionner des dataframes
+            </button>
+            <button class="sub-tab-item" :class="{active: subRoot === 4}" @click="subRoot=4">Utiliser une REGEX</button>
           </div>
           <div class="sub-inner-details" v-if="subRoot === 1">
             <h3>Créer un module python</h3>
@@ -78,38 +83,190 @@ const subRoot = ref(1)
                 <i>libraries</i> ou bibliothèque, ce sont des boîtes à outils.
               </p>
               <p class="exemple">
-                "math" est module de Python.
+                "math" est un module de Python.
               </p>
               <p>
-                De manière plus précise, <b> le module est le fichier qui permet d'importer les fonctions</b> contenues dans les
+                De manière plus précise, <b> le module est le fichier qui permet d'importer les fonctions</b> contenues
+                dans les
                 fichiers qui ont l'extension <span class="code-inline">.py</span>.
               </p>
             </div>
             <div class="side-by-side">
               <div class="text-content">
                 <p>
-                  Diviser un programme Python en plusieurs fichiers permet de mieux le structurer et de faciliter son maintien.
+                  Diviser un programme Python en plusieurs fichiers permet de mieux le structurer et de faciliter son
+                  maintien.
                   Pour mon projet, je préférais éviter de modifier le code de pyMaBoSS, déjà maintenu par
-                  <ColleagueHover name="noel">Vincent</ColleagueHover>.
+                  <ColleagueHover name="noel">Vincent</ColleagueHover>
+                  .
                   <span class="dark-purple">J'ai donc rajouté un dossier dans le code pour y mettre mes
                     fichiers.</span> Ce dossier est encadré en rouge sur la <b>trace 26</b> ci-contre.
                 </p>
                 <p>
-
+                  Mais créer le dossier ne suffit pas à faire du programme un module exploitable par d'autres. Il faut
+                  <span
+                      class="dark-purple">exporter la classe ou les fonctions que l'on souhaite mettre à disposition.</span>
+                  Pour cela, on crée un fichier nommé <span class="code-inline">__init__.py</span> dans lequel on va
+                  mettre
+                  les noms de ce que l'on souhaite exporter. Sur la <b>trace 27</b> ci-dessous, on peut voir que
+                  j'exporte
+                  deux classes : <span class="code-inline">MaBoSSEvaluator</span> et <span class="code-inline">Visualiser</span>.
+                  Je n'oublie pas de l'exporter depuis MaBoSS aussi, maintenant qu'il y a accès (partie basse de la
+                  <b>trace 27</b>).
+                  <span class="dark-purple">L'exporter depuis le fichier init de MaBoSS permet à l'utilisateur de récupérer
+                  mon programme depuis MaBoSS sans manipulation supplémentaire.</span>
                 </p>
+                <p>
+                  Grâce à ces fichiers, mon module est accessible depuis des <span
+                    class="green">Jupyter Notebooks</span>
+                  ou d'autres programmes. Comme sur la <b>trace 28</b> ci-dessous, sur laquelle on importe maboss
+                  (pour avoir accès à certaines autres fonctions) puis mon programme, appelé temporal_logic, en lui
+                  donnant un alias "tl". <b class="dark-purple">Il n'est pas nécessaire d'importer maboss avant
+                  d'importer temporal_logic grâce
+                  à l'export depuis le fichier init de maboss</b>.
+                </p>
+
               </div>
               <div class="trace-content">
                 <Trace traceId="dossier-module"/>
               </div>
             </div>
+            <div class="side-by-side">
+              <div class="trace-content">
+                <Trace traceId="import-module"/>
+              </div>
+              <div class="trace-content">
+                <Trace traceId="import-in-prog"/>
+              </div>
+            </div>
+
 
           </div>
 
           <div class="sub-inner-details" v-if="subRoot===2">
             <h3>Concevoir des logigrammes</h3>
+            <p>
+              Je le mentionnerais à nouveau mais quand je travaille sur un code, je suis souvent confronté au syndrome
+              de la
+              page blanche. Je sais ce que je veux, mais je ne sais pas par où commencer. <b>Dessiner mes programmes</b>
+              me permet d'avoir un point de départ et de mieux visualiser le chemin que je dois emprunter pour écrire ce
+              que je veux.
+            </p>
+            <div class="side-by-side">
+              <div class="text-content">
+                <p>
+                  <span class="green-blue">Pendant mon stage, j'ai dû rédiger de nombreuses fonctions, plus ou moins complexes.</span>
+                  Un exemple d'entre
+                  elles, c'est par exemple la computation de l'expression logique (celle qui est passée dans la query).
+                  Sa flow-chart est visible sur la <b>trace 5</b> ci-contre.
+                  <span class="green-blue">Cette fonction est utilisée pour filtrer les dataframes en fonction de
+                    l'expression logique qui a été passée.</span>
+
+                </p>
+                <p>
+                  Pour élaborer cet algorithme, il a fallu découper la computation en plusieurs étapes :
+                </p>
+                <ul>
+                  <li><p><b>Étape 1 : </b>vérifier que l'expression logique est correcte (ne commence pas ou ne termine
+                    pas par un
+                    symbole logique <span class="exemple">& ou |</span> et deux noms ou deux symboles ne s'enchainent
+                    pas
+                    <span class="exemple">"& &" ou "nom1 nom2"</span>);</p></li>
+                  <li><p><b>Étape 2 : </b>une itération sur les membres de l'expression pour extraire les colonnes et/ou
+                    les lignes
+                    qui correspondent et pour savoir comment fusionner le dataframe temporaire <span
+                        class="code-inline">temp</span>
+                    avec le dataframe de travail <span class="code-inline">work_df</span>;</p></li>
+                  <li><p><b>Étape 3 : </b>à la fin de la boucle, on supprime les lignes qui contiennent des cellules
+                    vides
+                    (valeur <span class="code-inline">na</span>) et on retourne le dataframe de travail.</p></li>
+                </ul>
+                <p>
+                  Deux points de cette fonction étaient intéressants algorithmiquement à traiter : la fusion des
+                  dataframes et
+                  le support des conditions imbriquées (<span class="exemple">A & (B | (C & D))</span>). Je détaille
+                  <span class="green-blue">la fusion de dataframes</span> dans la <a @click="subRoot=3">sous section
+                  suivante.</a>
+                </p>
+              </div>
+              <div class="trace-content">
+                <Trace traceId="compute-logical-expression-diagramme"/>
+              </div>
+            </div>
+            <div class="side-by-side">
+              <div class="trace-content">
+                <Trace traceId="parsing_logical_exp_flow_chart"/>
+              </div>
+              <div class="text-content">
+                <p>
+                  Concernant <span class="green-blue">le support des conditions imbriquées</span>, j'utilise la présence
+                  de parenthèses ouvrantes et fermantes pour <span class="green-blue">créer des sous-listes de l'expression.</span>
+                  Sur la <b>trace 6</b> ci-contre on peut voir la flow-chart de la fonction qui permet de parser l'expression
+                  logique. En input de la fonction, on passe l'expression sous type de liste de string <span class="code-inline">list[str]</span>.
+                  En output de la fonction, on renvoie une liste de string aussi, mais nettoyée de caractères vides, d'espaces et
+                  des parenthèses. Également, les membres qui étaient entourés par des parenthèses sont regroupés en sous-listes.
+                  <span class="exemple">
+                    L'expression "A & ( B | ( C & D ) )" va être découpée : ['A', '&', ['B', '|', ['C', '&', 'D']]]
+                  </span>
+                </p>
+              </div>
+            </div>
+            <p>
+              Comme on va <span class="green-blue">itérer sur les caractères de l'expression</span>
+              il faut prendre en compte qu'un membre puisse faire partie d'une sous-expression, et donc créer une liste.
+              Ainsi, tant que l'expression a des membres, on teste le membre :
+            </p>
+            <ul>
+              <li><p>
+                Si c'est un symbole vide (un espace par exemple), on l'ignore et on passe au suivant (instruction
+                <span class="code-inline">continue</span>),
+              </p></li>
+              <li><p>
+                Si c'est une parenthèse ouvrante : on appelle en <InfoHover id="recursion">récursion</InfoHover> la fonction,
+              </p></li>
+              <li><p>
+                Si c'est une parenthèse fermante : on retourne la liste <span class="code-inline">parsed_exp</span>
+                contenant la sous-expression qui sera ajoutée à la variable <span class="code-inline">parsed_exp</span>
+                (instruction <span class="code-inline">parsed_exp.append(parse_logical_expression(it))</span> "it" étant
+                le membre actuel de l'itération),
+              </p></li>
+              <li><p>
+                Sinon, on ajoute ce symbole à <span class="code-inline">parsed_exp</span>.
+              </p></li>
+            </ul>
+            <p class="green-blue">
+              <b>
+                Grâce à ce formatage, je vais pouvoir traiter les membres un à un et récupérer les colonnes au fur et à mesure
+                pour appliquer l'expression morceau par morceau.
+              </b>
+            </p>
+
           </div>
 
           <div class="sub-inner-details" v-if="subRoot===3">
+            <h3>Fusion de dataframes</h3>
+            <div class="side-by-side">
+              <div class="trace-content">
+                <Trace traceId="tableaux-log-exp"/>
+              </div>
+              <div class="text-content">
+                <h4>Fusion des dataframes</h4>
+                <p>
+                  Une fusion de tableau sur une logique de &-logique n'est pas la même qu'une fusion sur un |-logique.
+                  En effet, la règle logique pour qu'un &-logique soit VRAI est que les DEUX membres doivent être VRAIS.
+                  C'est ce qui est illustré par les deux premiers tableaux de la <b>trace 29</b> ci-contre. Dans un premier
+                  temps on voit que les valeurs <span class="code-inline">float</span> des lignes ont été remplacées
+                  par des valeurs <span class="code-inline">boolean</span> pour comprendre la mécanique.
+                </p>
+                <p>
+                  On a donc deux expressions : <b>A | !B</b> ("A ou pas B") et <b>A & !B</b> ("A et pas B").
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sub-inner-details" v-if="subRoot===4">
             <h3>Utiliser une REGEX</h3>
           </div>
         </div>
@@ -320,10 +477,13 @@ const subRoot = ref(1)
                 <p>
                   La classe mock des <span class="code-inline">Result</span> de MaBoSS, <span class="code-inline">FakeResult</span>,
                   <span class="dark-orange">permet de contrôler les résultats que je passe dans mon évaluateur et me soustrait à la simulation,
-                  normalement nécessaire pour avoir des résultats.</span> La <b>trace 14</b> ci-contre montre l'implémentation
+                  normalement nécessaire pour avoir des résultats.</span> La <b>trace 14</b> ci-contre montre
+                  l'implémentation
                   de cette classe. Elle implémente 5 fonctions (<i>repères A à E</i>) qui <span class="dark-orange">correspondent aux fonctions
-                  utilisées dans mon programme pour récupérer les résultats.</span> La fonction dont la signature est entourée
-                  en rouge, <span class="code-inline">load_fake_result</span>, permet de charger rapidement les résultats
+                  utilisées dans mon programme pour récupérer les résultats.</span> La fonction dont la signature est
+                  entourée
+                  en rouge, <span class="code-inline">load_fake_result</span>, permet de charger rapidement les
+                  résultats
                   en ayant juste à donné les chemins vers les fichiers csv.
                 </p>
                 <p>
@@ -339,8 +499,6 @@ const subRoot = ref(1)
 
           </div>
         </div>
-
-
 
 
       </div>

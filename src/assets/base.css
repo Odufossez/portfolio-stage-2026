@@ -624,7 +624,7 @@ a,
 
 /* Inline Code Style */
 .code-inline, code {
-  background-color: rgb(30 30 30 / 0.85);
+  background-color: rgb(77 77 77);
   color: var(--curie-orange);
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
   padding: 2px 6px;
@@ -681,7 +681,7 @@ span.encadre-gris {
 }
 
 .light-blue {
-  color: #006d93;
+  color: #55c1ea;
 }
 
 .dark-green {
@@ -702,4 +702,8 @@ span.encadre-gris {
 
 .dark-purple{
   color: #451d93
+}
+
+.green-blue{
+  color: #1a936c
 }

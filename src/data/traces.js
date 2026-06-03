@@ -24,11 +24,12 @@ export const tracesData = [
         image: new URL('@/assets/traces/screen_langages_pymaboss.png', import.meta.url).href,
     },
     {
-        id: 'check_logical_exp_flow_chart',
+        id: 'compute-logical-expression-diagramme',
         identification: 5,
-        caption: "Flow chart de l'algorithme permettant de vérifier qu'une expression logique est valide c'est à dire " +
-            "que deux symboles logiques ou noms ne s'enchainent pas et qu'elle ne commence ou ne termine pas par un symbole logique.",
-        image: new URL('@/assets/traces/check_logical_expression.jpeg', import.meta.url).href,
+        caption: "Flow chart de l'algorithme permettant de computer l'expression qui a été passée. Elle commence par une étape " +
+            "de vérification de l'expression logique puis le programme itère sur les membres pour fusionner les lignes et colonnes " +
+            "extraites des résultats.",
+        image: new URL('@/assets/traces/compute-logical-expression-diagramme.png', import.meta.url).href,
     },
     {
         id: 'parsing_logical_exp_flow_chart',
@@ -189,6 +190,30 @@ export const tracesData = [
         caption: "Capture d'écran de l'arborescence des fichiers de pyMaBoSS. Encadré en rouge, le dossier que j'ai créé " +
             "qui contient tout le programme que j'ai écrit pour le MaBoSS_CoherencyCheckerTool.",
         image: new URL('@/assets/traces/dossier-module.png', import.meta.url).href,
+    },
+    {
+        id: 'import-module',
+        identification: 27,
+        caption: "Lignes d'exportation des classes auxquelles d'autres programmes pourront accéder. Dans mon cas, je donne " +
+            "accès au MaBoSSEvaluator et au Visualiser. Dans le code du bas, le fichier __init__.py de MaBoSS exporte également " +
+            "mon programme pour que l'on puisse y avoir accès juste en téléchargeant pyMaBoSS.",
+        image: new URL('@/assets/traces/import-module.png', import.meta.url).href
+    },
+    {
+        id: 'import-in-prog',
+        identification: 28,
+        caption: "Lignes d'importation d'un module dans un programme.",
+        image: new URL('@/assets/traces/import-in-prog.png', import.meta.url).href
+    },
+    {
+        id: 'tableaux-log-exp',
+        identification: 29,
+        caption: "Pour savoir quelles lignes garder dans un dataframe, on applique un masque qui vient transformer les valeurs " +
+            "des cellules en boolean. La ligne à garder est celle qui respecte la condition passée. Pour la fusion de deux dataframes," +
+            " c'est le même principe, on ne va pas garder les mêmes colonnes que ce soit pour un &-logique ou un |-logique. " +
+            "Pour un &-logique, on garde les colonnes qui sont dans les deux dataframes. Pour un |-logique, on garde les colonnes des deux " +
+            "dataframes sans créer de doublons.",
+        image: new URL('@/assets/traces/tableaux-log-exp.png', import.meta.url).href
     }
 ];
 
