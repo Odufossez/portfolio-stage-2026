@@ -242,7 +242,7 @@ export const tracesData = [
         id: 'boucle-merge-or',
         identification: 32,
         caption: "La boucle qui permet le tri des colonnes fusionnées dans la fonction merge_or. Elle filtre les colonnes " +
-        "en ignorant celle du temps, puis elle sépare les nodes des states et reconstruit le tout en ayant rangé les groupes " +
+            "en ignorant celle du temps, puis elle sépare les nodes des states et reconstruit le tout en ayant rangé les groupes " +
             "par ordre alphabétique.",
         image: new URL('@/assets/traces/boucle-merge-or.png', import.meta.url).href
     },
@@ -266,9 +266,37 @@ export const tracesData = [
         id: 'maboss_test-assertion',
         identification: 35,
         caption: "Exemple de rédaction pour une assertion dans MaBoSS_test. test_BRAF_ON est une simulation, " +
-            "BRAF_inhibition est une mutation, IC_CRC est un état initial, est ajouté également la mutation sur EGFR et " +
-            "on regarde s'il y a une augmentation (increase) d'au moins 1 digit.",
+            "BRAF_inhibition est une mutation, IC_CRC est un état initial, EGFR actif est l'état à évaluer et " +
+            "on regarde s'il y a une augmentation (increase) d'au moins 1 digit. L'assertion testée est : '" +
+            "L'inhibition de BRAF provoque une activation de EGFR dans le cancer colorectal mais pas dans le mélanome.'",
         image: new URL('@/assets/traces/maboss_test-assertion.png', import.meta.url).href
+    },
+    {
+        id: 'processus-query',
+        identification: 36,
+        caption: "On part d'une phrase, " +
+            "une affirmation scientifique (issue d'un papier ou d'un expert), on la transforme en query (dans le langage " +
+            "normalisé), on la passe à l'évaluateur avec un model, le programme se charge de tout : simulation et traitement " +
+            "et renvoie des résultats.",
+        image: new URL('@/assets/traces/processus-query.png', import.meta.url).href
+    },
+    {
+        id: 'schema-query',
+        identification: 37,
+        caption: "",
+        image: new URL('@/assets/traces/schema-query.png', import.meta.url).href
+    },
+    {
+        id: 'querytype-enum',
+        identification: 38,
+        caption: "",
+        image: new URL('@/assets/traces/querytype-enum.png', import.meta.url).href
+    },
+    {
+        id: 'targettype-enum',
+        identification: 39,
+        caption: "",
+        image: new URL('@/assets/traces/targettype-enum.png', import.meta.url).href
     }
 ];
 

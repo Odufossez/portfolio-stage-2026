@@ -29,7 +29,7 @@ const subRoot = ref(1)
         <span class="blue">Gérer les exceptions</span>,
         <span class="purple">programmer orienté objet</span>,
         <span class="green">utiliser un Jupyter Notebook</span>,
-        <span class="orange">respecter les standards</span>,
+        <span class="orange">faire des choix d'implémentation</span>,
         <span class="pink">concevoir des échantillons de tests</span>,
         <span class="light-blue">exploiter des données avec Pandas</span>,
         <span class="dark-green">rédiger des assertions</span>,
@@ -561,37 +561,205 @@ const subRoot = ref(1)
           <div class="sub-inner-details" v-if="subRoot===5">
             <h3>Manipuler une REGEX</h3>
             <div class="side-by-side text-only">
-              <h4>Contexte</h4>
-              <p>
-                Lors de la création de cet outil, j'ai dû choisir une méthode pour permettre à l'utilisateur de "poser sa
-                question" par rapport à la simulation. Je devais mettre en relation l'utilisateur, la simulation et l'outil
-                qui traite les données (<router-link to="/stage-enjeux">sic enjeux du stage</router-link>).
-                Il y avait plusieurs pistes, je pouvais reprendre le principe de
-                <InfoHover id="maboss_test">MaBoSS_test</InfoHover> qui utilise des tests unitaires pour faire ses évaluations
-                ou utiliser une autre logique. C'est la seconde option que j'ai choisie, pour plusieurs raisons :
-              </p>
-              <ul>
-                <li>
-                  <p>
-                    <b>La contrainte d'automatisation</b> : En plus d'offrir aux chercheur et chercheuses un outil pour
-                    tester leurs modèles, la projection d'insertion de cet outil dans une pipeline de construction, validation
-                    et optimisation de modèle apportait la contrainte de pouvoir automatiser d'une manière ou d'une autre
-                    l'interrogation du modèle, notamment possiblement par l'utilisation d'IA. MaBoSS_test ne répondant que
-                    très difficilement voire pas à cette contrainte, je risquais de perdre beaucoup de temps à créer de
-                    nouvelles couches plutôt que d'intégrer une logique d'autonomie au programme.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <b>La complexité d'usage de MaBoSS_test</b> : Pour effectuer une évaluation avec MaBoSS_test, le chercheur
-                    doit effectuer ses propres simulations pour les évaluer en appelant une fonction dans laquelle il passe
-                    ses modifications (une mutation par exemple). Une assertion d'exemple ci-dessous, sur la <b>trace 35</b> :
-                  </p>
-                  <Trace traceId="maboss_test-assertion"/>
-                </li>
-              </ul>
-            </div>
+              <div class="text-content">
+                <h4>Contexte</h4>
+                <p>
+                  Lors de la création de cet outil, j'ai dû choisir une méthode pour permettre à l'utilisateur de "poser sa
+                  question" par rapport à la simulation. Je devais mettre en relation l'utilisateur, la simulation et l'outil
+                  qui traite les données (<router-link to="/stage-enjeux">sic enjeux du stage</router-link>).
+                  Il y avait plusieurs pistes, je pouvais reprendre le principe de
+                  <InfoHover id="maboss_test">MaBoSS_test</InfoHover> qui utilise des tests unitaires pour faire ses évaluations
+                  ou utiliser une autre logique. C'est la seconde option que j'ai choisie, pour plusieurs raisons :
+                </p>
+                <ul>
+                  <li>
+                    <p class="orange">
+                      <b>La contrainte d'automatisation</b> : En plus d'offrir aux chercheur et chercheuses un outil pour
+                      tester leurs modèles, la projection d'insertion de cet outil dans une pipeline de construction, validation
+                      et optimisation de modèle apportait la contrainte de pouvoir automatiser d'une manière ou d'une autre
+                      l'interrogation du modèle, notamment possiblement par l'utilisation d'IA. MaBoSS_test ne répondant que
+                      très difficilement voir pas à cette contrainte, je risquais de perdre beaucoup de temps à créer de
+                      nouvelles couches plutôt que
+                      <span class="green-blue">d'intégrer une logique d'autonomie au programme.</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b>La complexité d'usage de MaBoSS_test</b> : Pour effectuer une évaluation avec MaBoSS_test, le chercheur
+                      doit effectuer ses propres simulations pour les évaluer en appelant une fonction dans laquelle il passe
+                      ses modifications (une mutation par exemple). Une assertion d'exemple ci-dessous, sur la <b>trace 35</b> :
+                    </p>
+                    <Trace traceId="maboss_test-assertion"/>
+                  </li>
+                </ul>
+              </div>
+              <div class="text-content">
+                <h4>Solution</h4>
+                <p>
+                  Pour répondre à ce cahier des charges, j'ai donc entrepris de refaire un outil qui utilisera une autre
+                  méthodologie que MaBoSS_test. <span class="orange">Je voulais rendre l'outil le plus intuitif possible pour l'utilisateur</span>
+                  et aussi, j'avais remarqué que dans MaBoSS_test, on avait tendance à perdre des informations concernant
+                  l'assertion que l'on teste, en grande partie parce que l'on doit simuler avant.
+                  <span class="orange">Je voulais donc aussi
+                    limiter cette perte d'information.</span>
+                </p>
+                <p>
+                  J'ai donc décidé de permettre à l'utilisateur de poser une question au sens propre du terme. Évidemment,
+                  le laisser poser une question en langage courant aurait été vraiment trop complexe, donc il fallait que
+                  j'établisse un langage à mi-chemin entre la machine et l'utilisateur. <span class="orange">Les informations pouvant être
+                  quantifiées et codifiées, l'utilisation d'une expression régulière (REGEX) est appropriée.</span>
+                </p>
+                <p>
+                  Le processus peut ainsi être défini comme sur la <b>trace 36 ci-dessous.</b> On part d'une phrase,
+                  une affirmation scientifique (issue d'un papier ou d'un expert), on la transforme en query (dans le langage
+                  normalisé), on la passe à l'évaluateur avec un model, le programme se charge de tout : simulations, traitements
+                  et renvoie des résultats.
+                </p>
+                <Trace traceId="processus-query" :showLegend="false"/>
+              </div>
 
+            </div>
+            <h4>Intérêt de la REGEX</h4>
+            <p>
+              <span class="orange">L'intérêt d'établir une expression régulière pour un tel outil est de rendre plus prédictible le traitement
+              des simulations d'une part mais aussi, elle permet de répondre à la contrainte d'automatisation puisque
+                on peut envisager qu'une IA de type LLM fasse la transition entre le langage courant et le query.</span> C'est
+              une expérience que j'ai eu le temps de faire, par ailleurs, et les essais n'ont été que peu concluants (mai 2026).
+              Une conversation avec un ancien doctorant de <ColleagueHover name="calzone">Laurence</ColleagueHover> qui
+              travaille beaucoup avec des modèles d'IA non pas larges mais soit spécialisée soit ré-entrainée.
+              <span class="orange">On est
+                arrivé à la conclusion qu'il faudrait avoir un serveur MCP avec une IA spécialisée pour cette transition</span>
+              et ce n'est pas un objectif qui était atteignable pendant mon stage.
+            </p>
+            <h3>Plus de détails sur l'expression régulière</h3>
+            <h4>Définition de l'expression régulière</h4>
+            <div class="encadre-gris">
+              <h5>Définition de REGEX</h5>
+              <p>Une expression régulière (ou regular expression, REGEX) décrit un motif, un pattern que nous souhaitons
+                rechercher et localiser dans du texte, incluant des chiffres.</p>
+            </div>
+            <p>
+              La REGEX que j'ai établi est longue :
+            </p>
+            <span class="code-block">
+              ^(Pmax|Pmin|P|T|Tmin|Tmax|Inc|Dec)\((node|state|fp)\:(.+?)\)(?:\s*(<=|>=|<|>|=|==|!=|/)\s*(0(?:\.\d+)?|1(?:\.0+)?|\?|))?(?:\s*\[(.*?)\])?(?:\s*\[(.*?)\])?(?:\s*\[(.*?)\])?
+            </span>
+            <p>Elle peut cependant être résumé comme sur le schéma suivant : </p>
+            <Trace traceId="schema-query" :showLegend="false"/>
+            <p>
+              À expliquer de but en blanc, ce serait compliqué. Donc je vais la décrire morceau par morceau et expliquer
+              comment le morceau extrait est vérifié et validé. D'abord, pour découper et associer les informations
+              j'utilise le parser intégré de Python qui permet de passer une REGEX et une chaine de caractères pour
+              faire un <span class="code-inline">match</span> :
+              <span class="code-inline">match = re.match(Parser.QUERY_PATTERN, input.strip())</span>. QUERY_PATTERN c'est
+              la REGEX et input.strip() c'est la phrase passée à qui on enlève les espaces au début et à la fin. La variable
+              "match" est de type <span class="code-inline">Match</span> et va avoir ses propres fonctions notamment
+              <span class="code-inline">match.group(n)</span> qui permet de récupérer le n-ième groupe qui a été
+              associé.
+              <span class="blue">
+                Si aucun groupe n'a été trouvé, une exception est levée pour signaler que le query ne respecte pas
+                la REGEX.
+              </span>
+            </p>
+            <div class="side-by-side text-only">
+              <div class="text-content">
+                <h5>Type de Query (Query type)</h5>
+                <div class="side-by-side">
+                  <div class="text-content">
+                    <p>
+                      Le <b>type du query</b> (Query type sur la <TraceHover id="schema-query">trace 37</TraceHover>) extrait
+                      du query sous forme de <span class="code-inline">str</span>, sera associé au type
+                      <span class="code-inline">QueryType</span>, un enum qui liste le nom et la chaine de caractère associée.
+                      <span class="blue">Ainsi, si la chaine de caractère ne correspond à aucun type, cela lève une erreur
+                      et le programme s'arrête.</span>
+                    </p>
+                  </div>
+                  <div class="trace-content">
+                    <Trace traceId="querytype-enum"/>
+                  </div>
+                </div>
+                <h5>Type de cible (Target type)</h5>
+                <div class="side-by-side">
+                  <div class="trace-content">
+                    <Trace traceId="targettype-enum"/>
+                  </div>
+                  <div class="text-content">
+                    Le <b>type de cible</b> (Target type sur la <TraceHover id="schema-query">trace 37</TraceHover>)
+                    extrait sous forme de chaine de caractère du query, sera associé au type
+                    <span class="code-inline">TargetType</span>, un enum qui liste les noms et la chaine de caractères
+                    associée à chacun de ces noms. <span class="blue">Si la chaine de caractère extraite ne correspond à aucun de ces noms,
+                    une erreur est levée.</span>
+                  </div>
+                </div>
+                <h5>Noms de cible (Target name(s))</h5>
+                <p>
+                  Les noms de cibles doivent chacun être séparé par une virgule. Cette séparation permet d'appliquer
+                  la fonction <span class="code-inline">split(",")</span> pour séparer les noms dans une liste. Ceux-ci
+                  sont vérifiés lors des computations dans le programme.
+                </p>
+                <h5>Opérateur et valeur (Operator and value)</h5>
+                <p>
+                  Pour vérifier la validité de l'opérateur, celui-ci est associé à un enum de la même forme que ceux des
+                  traces <TraceHover id="querytype-enum">38</TraceHover> et <TraceHover id="targettype-enum">39</TraceHover>
+                  ci-dessus. <span class="green-blue">La valeur passée est, elle, vérifiée dans la fonction du FormulaChecker</span> pour établir si elle
+                  <span class="blue">respecte l'intervalle autorisé (entre 0 et 1) et adaptée au type de query.</span>
+                </p>
+              </div>
+              <hr class="separator-v">
+              <div class="text-content">
+                <h5>Contraintes logiques (Logical constraint)</h5>
+                <p>
+                  La "dissection" de la chaine de caractère qui est associée aux contraintes logiques se fait de la
+                  même manière que pour la séparation des noms de cible mais avec un autre caractère en paramètres :
+                  <span class="code-inline">split(" ")</span>. <span class="green-blue">Puis cette liste passe dans une fonction qui va
+                  permettre d'enlever les parenthèses de l'équation et qui fait des sous-tableaux avec les conditions
+                  imbriquées </span>(voir <a @click="subRoot=2">Utiliser des logigrammes, deuxième paragraphe</a>).
+                </p>
+                <h5>Mutations</h5>
+                <p>
+                  Les <InfoHover id="mutate">mutations</InfoHover> permettent de faire varier la simulation de manière
+                  contrôlée et de comparer ces résultats avec une autre simulation <span class="green-blue">(soit une autre mutation soit la
+                  mutation du "wild-type", une simulation sans mutation).</span> Ce paramètre est obligatoire dans le cadre des
+                  opérations qui comparent deux mutations. Les mutations sont composées d'un couple
+                  <span class="code-inline">node_name:state</span> et state est soit <b>ON</b> pour une activation soit <b>OFF</b> pour une
+                  désactivation.
+                </p>
+                <h5>Options</h5>
+                <p>
+                  <span class="orange">Les options sont des contraintes ou des indications de simulation supplémentaire permettant de raffiner
+                  le traitement des résultat.</span>
+                  Elles sont au nombre de 4 :
+                </p>
+                <ul>
+                  <li><p>
+                    Introduire un pourcentage minimum de différence, elle est passée en passant simplement :
+                    <span class="code-inline"><i>val</i>%</span> avec <i>val</i> un entier.
+                  </p></li>
+                  <li><p>
+                    Restreindre le nombre de digits après la virgule qui doivent être utilisés.
+                  </p></li>
+                  <li><p>
+                    Indiquer que la liste de noeuds passée est une combinaison (ils doivent tous être actifs en même temps).
+                  </p></li>
+                  <li><p>
+                    Évaluer une évolution non linéaire survenue pendant la simulation. Elle est sous-divisée en 4 paramètres
+                    qui sont chacun séparé par une virgule : <span class="code-inline">param:val,param2:val</span>.
+                  </p></li>
+                </ul>
+                <p>
+                  <span class="orange">Les options sont séparées par des espaces et la valeur qui est associée à celle-ci, comme pour les digits,
+                    sont accolées à l'option avec deux points</span> : <span class="code-inline">digits:3</span>.
+                </p>
+              </div>
+            </div>
+            <h4>Détection des options</h4>
+            <p>
+              Quand le programme détecte que les crochets des options ne sont pas vides, la classe qui découpe le query
+              se contente de découpé la chaine de caractères des options de la même manière que les mutations et les
+              options seront traitées juste avant que les computations commencent.
+              <span class="green-blue">Elles sont rangées dans des dictionnaires,
+              associées à la simulation qu'elles doivent influencer.</span>
+            </p>
           </div>
         </div>
 
