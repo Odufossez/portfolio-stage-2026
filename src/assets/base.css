@@ -15,7 +15,7 @@
   --curie-green-soft: rgba(76, 175, 80, 0.1);
   
   /* Layout */
-  --page-max-width: 900px;
+  --page-max-width: 1400px;
   --nav-height: 60px;
   --container-padding-top: 100px;
   --container-padding-bottom: 40px;
@@ -43,7 +43,7 @@ body {
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: 'Nunito Sans', Inter, -apple-system, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -360,6 +360,10 @@ body::after {
   margin: 0 2px;
 }
 
+ul li ol{
+  font-size: 17px;
+}
+
 ul.exemple, ol.exemple {
   display: block;
   list-style-type: none;
@@ -416,6 +420,17 @@ a {
 }
 
 /* UI Elements (Moved from main.css) */
+.separator-v {
+  border: 0;
+  width: 1px;
+  height: auto;
+  align-self: stretch;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(232, 128, 61, 0.5), rgba(0, 0, 0, 0));
+  margin: 0 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
 .separator {
   border: 0;
   height: 2px;
@@ -477,6 +492,11 @@ a {
   gap: 30px;
   align-items: center;
   margin-top: 15px;
+}
+
+/* Variante pour deux colonnes de texte côte à côte */
+.side-by-side.text-only {
+  align-items: flex-start;
 }
 
 .text-content {
@@ -565,10 +585,26 @@ a {
 }
 
 .sub-inner-details h4 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--curie-brown);
+  font-weight: 700;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--curie-box-border);
+  background: linear-gradient(90deg, var(--curie-orange), transparent) bottom / 40% 2px no-repeat;
+  display: inline-block;
+  letter-spacing: 0.01em;
+}
+
+.sub-inner-details h5 {
+  font-size: 1rem;
+  color: var(--curie-brown-soft);
   font-weight: 600;
+  font-style: italic;
   margin-bottom: 6px;
+  padding-left: 10px;
+  border-left: 2px dotted var(--curie-orange);
 }
 
 .sub-inner-details ul {
@@ -578,7 +614,6 @@ a {
 
 .sub-inner-details li {
   margin-bottom: 6px;
-  font-size: 0.92rem;
 }
 
 .inner-details h3 {
@@ -594,7 +629,6 @@ a {
 
 .inner-details li {
   margin-bottom: 8px;
-  font-size: 0.95rem;
 }
 
 .expand-enter-active,
@@ -612,6 +646,8 @@ a {
 
 /* Code Block Style */
 .code-block {
+  display: inline-block;
+  max-width: 100%;
   background-color: rgb(30 30 30 / 0.85);
   color: var(--curie-orange);
   font-family: 'Fira Code', 'Courier New', Courier, monospace;

@@ -26,7 +26,7 @@ const subRoot = ref(1)
     <div class="encadre-gris">
       <h3>Savoir-faire mobilisés</h3>
       <p>
-        <span class="blue">Vérifier les exceptions</span>,
+        <span class="blue">Gérer les exceptions</span>,
         <span class="purple">programmer orienté objet</span>,
         <span class="green">utiliser un Jupyter Notebook</span>,
         <span class="orange">respecter les standards</span>,
@@ -184,7 +184,7 @@ const subRoot = ref(1)
                     avec le dataframe de travail <span class="code-inline">work_df</span>;</p></li>
                   <li><p><b>Étape 3 : </b>à la fin de la boucle, on supprime les lignes qui contiennent des cellules
                     vides
-                    (valeur <span class="code-inline">na</span>) et on retourne le dataframe de travail.</p></li>
+                    (valeur <span class="code-inline">NaN</span>) et on retourne le dataframe de travail.</p></li>
                 </ul>
                 <p>
                   Deux points de cette fonction étaient intéressants algorithmiquement à traiter : la fusion des
@@ -214,10 +214,10 @@ const subRoot = ref(1)
                   d'espaces et
                   des parenthèses. Également, les membres qui étaient entourés par des parenthèses sont regroupés en
                   sous-listes.
-                  <span class="exemple">
+                </p>
+                <span class="exemple">
                     L'expression "A & ( B | ( C & D ) )" va être découpée : ['A', '&', ['B', '|', ['C', '&', 'D']]]
                   </span>
-                </p>
               </div>
             </div>
             <p>
@@ -330,11 +330,13 @@ const subRoot = ref(1)
                 </li>
               </ul>
               <p>
-                Ainsi, pour la logique du &-logique, on ne va garder que <b>la colonne A</b>. Pour la logique du |-logique,
-                on garde les trois colonnes. Mais il faut noter une chose importante : dans le cas du |-logique on se retrouve
+                Ainsi, pour la logique du &-logique, on ne va garder que <b>la colonne A</b>. Pour la logique du
+                |-logique,
+                on garde les trois colonnes. Mais il faut noter une chose importante : dans le cas du |-logique on se
+                retrouve
                 avec une ligne contenant une valeur vide car dans un des tableaux, il n'y avait de valeur pour B à cet
                 endroit. <span class="green-blue">C'est pour cette raison que l'on va retirer les lignes contenant
-                une valeur <span class="code-inline">na</span>.</span> J'ai prévu un second cas, qui permet de
+                une valeur <span class="code-inline">NaN</span>.</span> J'ai prévu un second cas, qui permet de
                 <span class="green-blue">garder les temps d'un des deux dataframes pour pouvoir récupérer les valeurs
                 manquantes</span>.
               </p>
@@ -343,11 +345,222 @@ const subRoot = ref(1)
 
           <div class="sub-inner-details" v-if="subRoot===4">
             <h3>Concevoir les fonctions de fusion</h3>
+            <div class="encadre-gris">
+              <i>J'explique le concept derrière les fonctions présentées dans cette sous-section dans la
+                <a @click="subRoot=3">sous-section précédente</a></i>
+            </div>
+            <p>
+              L'utilisation de dataframes de Pandas permet d'accéder à tout un tas de fonction très utiles pour
+              manipuler
+              ces objets. Cependant, elles ont des limitations qui m'ont obligé à écrire mes propres fonctions de fusion
+              de dataframes. Ce sont d'elles que je parle dans cette section.
+            </p>
+            <div class="side-by-side text-only">
+              <div class="text-content">
+                <h4>Logique de OU</h4>
+                <p>
+                  Dans cette section, je vais parler de la conception et de l'intérêt de la <b>fonction de merge
+                  personnalisée</b>
+                  que j'ai implémentée. La
+                  <TraceHover id="merge-or-fct">trace 30</TraceHover>
+                  est visionnable dans
+                  <router-link to="/traces-compilation">l'espace des traces</router-link>
+                  et présente le logigramme
+                  de la fonction <span class="code-inline">merge_or</span>.
+                </p>
+                <h5>Intérêt</h5>
+                <p>
+                  Pour rappel, la fonction <span class="code-inline">merge_or</span> permet de fusionner deux tableaux
+                  en
+                  suivant une logique de OU <b>en gardant toutes les colonnes</b>. La fonction Pandas qui s'en
+                  rapproche est <span class="code-inline">merge(how='outer')</span>. Celle-ci aurait créé des colonnes
+                  dupliquées, ce que je cherche à éviter. Je favorisais une fusion par <b>complétion</b> :
+                  <span class="green-blue">
+                    si la donnée est dans df1 alors on la garde, si elle n'y est pas (<span
+                      class="code-inline">NaN</span>),
+                    on va la chercher dans df2.
+                  </span>
+                </p>
+                <h5>Réalisation</h5>
+                <p>
+                  Bien que la
+                  <TraceHover id="merge-or-fct">trace 30</TraceHover>
+                  montre les différentes étapes de la
+                  fonction, je vais présenter ici certaines étapes clés. Elles porteront le même nom que dans le
+                  logigramme.
+                </p>
+                <p>
+                  Un point intéressant de cette fonction est</p>
+                <span class="code-block">result=df1_idx.combine_first(df2_idx).reset_index()</span>
+                <p><span class="light-blue">qui suit la
+                  transformation de la colonne <b>Time</b> en index pour que l'on puisse superposer les valeurs dessus.</span>
+                  En effet, il est possible que les valeurs de l'index 0 ne soient pas les mêmes pour les deux tableaux.
+                  Si on superposait par index sans avoir mis la colonne <b>Time</b> à la place, on aurait de grosses
+                  incohérences et de la perte d'informations. Cette ligne se décompose en deux parties :
+                  <span class="code-inline">combine_first</span> et <span class="code-inline">reset_index</span>.
+                </p>
+                <ul>
+                  <li><p><b class="green-blue">combine_first</b> réalise une fusion par alignement des index (le temps
+                    en l'occurrence).
+                    C'est
+                    elle qui agit comme une opération de <b>complétion</b>.</p></li>
+                  <li><p>
+                    <b class="green-blue">reset_index</b> extrait à nouveau le temps pour le remettre sous forme de
+                    colonne
+                    <span class="code-inline">Time</span>
+                  </p></li>
+                </ul>
 
+                <p>
+                  La seconde partie intéressante de cette fonction est la boucle qui suit. A noter que bien que
+                  sur la
+                  <TraceHover id="boucle-merge-or">trace 32</TraceHover>
+                  ci-dessous on ne puisse voir que la boucle,
+                  celle ci n'est exécutée <span class="blue"> que si le dataframes contenant les noeuds passé à la fonction n'est pas vide
+                      pour éviter des exceptions.</span>
+                </p>
+                <Trace traceId="boucle-merge-or"/>
+                <p>
+                  <span class="green-blue">La boucle se décompose en 4 grandes étapes</span> :
+                </p>
+                <ul>
+                  <li>
+                    <p><b>Filtrage</b> en ignorant la colonne du temps <span class="code-inline">Time</span></p>
+                  </li>
+                  <li><p><b>Tri</b> des colonnes, via la fonction <span class="code-inline">check_is_node</span>
+                    pour mettre les nodes dans une liste et les states dans une autre afin de les séparer</p></li>
+                  <li><p>
+                    <b>Reconstruction</b> du dataframe avec les nouvelles listes dans l'ordre et triées par ordre
+                    alphabétiques grâce à la méthode <span class="code-inline">sorted</span> sur l'avant-dernière ligne
+                  </p>
+                    <span
+                        class="code-block">ordered_cols = ['Time'] + sorted(node_cols) + <br> sorted(state_cols)</span>
+                  </li>
+                  <li><p>
+                    <b>Application</b> du tri sur le dataframe <span class="code-inline">results</span> sur la dernière
+                    ligne, <span class="code-inline">result = result[ordered_cols]</span>
+                  </p></li>
+                </ul>
+                <h5>Conclusion</h5>
+                <p>
+                  Mécaniquement, cette boucle va <b>contourner</b> <span class="light-blue">la logique de fusion aveugle de Pandas qui ne fait pas
+                  la différence entre deux colonnes qui ont le même nom</span>. <span class="green-blue">Sans cette logique, une colonne d'état qui n'a
+                  qu'un seul node, écraserait la colonne propre au node ou inversement.</span>
+                  <span class="green-blue">De plus, la logique de tri permet d'avoir une sortie standardisée des tableaux,</span>
+                  rendant plus simple la documentation et les tests.
+                </p>
+              </div>
+              <hr class="separator-v"/>
+              <div class="text-content">
+                <h4>Logique de ET</h4>
+                <p>
+                  Dans cette section, je vais parler de la conception et de l'intérêt de la fonction de merge
+                  personnalisée
+                  que j'ai implémentée. La
+                  <TraceHover id="merge-and-fct">trace 31</TraceHover>
+                  est visionnable dans
+                  <router-link to="/traces-compilation">l'espace des traces</router-link>
+                  et présente le logigramme de la
+                  fonction <span class="code-inline">merge_and</span>.
+                </p>
+                <h5>Intérêt</h5>
+                <p>
+                  Pour rappel, la fonction <span class="code-inline">merge_and</span> permet de fusionner deux tableaux
+                  en
+                  suivant une logique de ET, <b>ne gardant que les colonnes communes au deux dataframes passés en
+                  paramètres</b>.
+                  La fonction Pandas qui s'en rapproche est <span class="code-inline">merge(how='inner')</span>. Bien
+                  que
+                  celle-ci aurait pu suffire, j'applique une asymétrie de traitement aux noeuds et aux états. <span class="light-blue"> Utiliser
+                  la
+                  fonction merge de Pandas ne m'aurait pas permis de mettre en place cette asymétrie.</span>
+                </p>
+                <h5>Asymétrie du ET</h5>
+                <p>
+                  <span class="green-blue">En effet, la logique ne s'applique pas de manière uniforme sur toutes les colonnes des dataframes.</span>
+                  Les colonnes de nodes sont <b>toujours</b> gardées, qu'elles soient présentes dans les deux dataframes
+                  ou non. A contrario, si la colonne est un state, celle-ci ne sera gardée que si elle est présente dans
+                  les deux dataframes.
+                </p>
+                <h5>Réalisation</h5>
+                <p>
+                  Bien que la
+                  <TraceHover id="merge-and-fct">trace 31</TraceHover>
+                  montre les différentes étapes de la
+                  fonction, je vais présenter ici certaines étapes clés. Elles porteront le même nom que dans le
+                  logigramme.
+                </p>
+                <p>
+                  Un point intéressant de cette fonction est
+                </p>
+                <span class="code-block">
+                  all_source_cols = <br> set(df1.columns).union(set(df2.columns))
+                  <br>
+                  all_source_cols.remove('Time')
+                </span>
+                <p>
+                  elle crée un ensemble, un <span class="code-inline">set</span>, contenant tous les noms des colonnes
+                  présentes dans df1 <b>ou</b> dans df2 grâce à une <span class="code-inline">union</span> :
+                  <b class="light-blue">j'élimine directement les doublons de noms de colonnes.</b>
+                  Je retire la colonne <span class="code-inline">Time</span> car servant de clé de jointure, elle ne
+                  doit
+                  pas être traitée comme une variable dans la boucle qui suit.
+                </p>
+                <p>
+                  La boucle, seconde partie intéressante de cette fonction, est visible sur la
+                  <TraceHover id="boucle-merge-and">trace 33</TraceHover>
+                  ci-dessous. Celle-ci est toujours exécutée
+                  (contrairement à celle de la fonction <span class="code-inline">merge_or</span>)
+                </p>
+                <Trace traceId="boucle-merge-and"/>
+                <p class="green-blue">et elle se décompose
+                  en 3 grandes étapes :</p>
+                <ul>
+                  <li>
+                    <p>
+                      <b>La gestion des suffixes </b>: au début de la fonction, j'effectue un <span class="code-inline">merge</span>
+                      entre les deux dataframes :
+                      <Trace traceId="merge-and-suffixes" :showLegend="false"/>
+                      le programme vérifie ce suffixe pour savoir quelle source de données manipuler.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b>Le tri entre nodes et states </b>: comme pour la fonction <span
+                        class="code-inline">merge_or</span>,
+                      on trie les colonnes pour "ranger" les nodes ensemble et les states ensemble. Ce que l'on fait en
+                      plus,
+                      que j'ai mentionné précédemment, c'est la logique asymétrique. Celle-ci s'applique via la
+                      condition
+                      <span class="code-inline">if-else</span> :
+                    </p>
+                    <span class="code-block">if col in df1.columns and col in df2.columns:</span>
+                    <p>
+                      appliquée uniquement sur les colonnes states (partie <span class="code-inline">else</span> du
+                      <span class="code-inline">if is_node</span>.
+                    </p>
+                  </li>
+                  <li><p>
+                    <b>Le nettoyage final </b>: à chaque fois qu'une colonne est effectivement dans les deux dataframes,
+                    on enlève le suffixe de son nom pour avoir un tableau dont les noms de colonne sont homogènes.
+                  </p>
+                  <span class="code-block">merged = merged.rename(columns={m_name: col})</span>
+                  </li>
+                </ul>
+                <h5>Conclusion</h5>
+                <p>
+                  Ainsi la fonction <span class="code-inline">merge_and</span> permet de fusionner deux tableaux <span class="green-blue">en ajoutant
+                  des logiques supplémentaires plus avancées que le simple <span class="code-inline">merge(how='inner')</span></span>.
+                  <span class="green-blue">On évite les colonnes polluées par des suffixes, on permet une conservation différenciée avec la logique
+                  asymétrique et on ne perd pas d'information.</span>
+                </p>
+              </div>
+            </div>
           </div>
 
           <div class="sub-inner-details" v-if="subRoot===5">
             <h3>Utiliser une REGEX</h3>
+
           </div>
         </div>
 
@@ -581,6 +794,7 @@ const subRoot = ref(1)
         </div>
 
         <div v-if="activeRoot==='data-ttt'">
+
           application de masque
         </div>
 

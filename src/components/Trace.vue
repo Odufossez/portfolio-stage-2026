@@ -14,7 +14,7 @@
           </svg>
         </div>
       </div>
-      <div class="caption-container">
+      <div class="caption-container" v-if="displayLegend">
         <p class="caption-text">
           <template v-if="finalTrace.identification">
             <strong>Trace n°{{ finalTrace.identification }} :</strong>
@@ -100,13 +100,20 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 import { getTrace } from '@/data/traces';
 
 const props = defineProps({
   traceId: { type: String, required: false },
   image:   { type: String, required: false },
   caption: { type: String, required: false },
-  identification: { type: [Number, String], required: false }
+  identification: { type: [Number, String], required: false },
+  showLegend: { type: Boolean, default: true }
+});
+
+const route = useRoute();
+const displayLegend = computed(() => {
+  return props.showLegend || route.path === '/traces-compilation';
 });
 
 // ── State ──────────────────────────────────────────────
@@ -306,7 +313,7 @@ onUnmounted(() => {
   color: #5c4033;
   line-height: 1.4;
   font-weight: 500;
-  text-align: left;
+  text-align: justify;
 }
 
 /* ── Fullscreen overlay ── */

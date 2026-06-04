@@ -77,7 +77,7 @@ const handleMouseLeave = () => {
   z-index: 9999;
   transform: translate(-50%, -100%);
   pointer-events: none;
-  max-width: 90vw;
+  max-width: min(420px, 90vw);
   width: auto;
 }
 
@@ -86,6 +86,24 @@ const handleMouseLeave = () => {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
   background-color: #fff !important;
   border: 1px solid #e8803d !important;
+}
+
+/* Contraint la taille de l'image dans le popup hover */
+:deep(.floating-trace .trace-image) {
+  max-height: 34vh;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Empêche le zoom-overlay dans le hover (pas cliquable) */
+:deep(.floating-trace .zoom-overlay) {
+  display: none;
+}
+
+/* Réduit la légende dans le hover */
+:deep(.floating-trace .caption-text) {
+  font-size: 0.8rem;
 }
 
 /* Transitions */

@@ -38,26 +38,26 @@ export const tracesData = [
         image: new URL('@/assets/traces/parsing_logical_expression.jpeg', import.meta.url).href,
     },
     {
-        id:'branches-github',
+        id: 'branches-github',
         identification: 7,
         caption: 'Les branches se présente comme des extensions parallèles à une branche principale. Il est possible des les fusionner (repère rouge).',
         image: new URL('@/assets/traces/github_branches.jpeg', import.meta.url).href,
     },
     {
-        id:'branches-pymaboss',
+        id: 'branches-pymaboss',
         identification: 8,
         caption: 'Visualisation des branches dans le projet pyMaBoSS. On peut voir la branche temporal-logic que j\'ai créé pour ce projet.',
         image: new URL('@/assets/traces/pymaboss-branches.png', import.meta.url).href,
     },
     {
-        id:'screen-fork-pymaboss',
+        id: 'screen-fork-pymaboss',
         identification: 9,
-        caption: 'Capture d\'écran qui montre que mon dépôt appelé "pyMaboss" est un fork du déôt de Colomoto du même nom (cercle rouge). '+
-        'Le cercle jaune indique le bouton permettant de demander la fusion avec le dépôt originel. ',
+        caption: 'Capture d\'écran qui montre que mon dépôt appelé "pyMaboss" est un fork du déôt de Colomoto du même nom (cercle rouge). ' +
+            'Le cercle jaune indique le bouton permettant de demander la fusion avec le dépôt originel. ',
         image: new URL('@/assets/traces/screen_fork.png', import.meta.url).href,
     },
     {
-        id:'screen_push_fork',
+        id: 'screen_push_fork',
         identification: 10,
         caption: 'Capture d\'écran d\'une commande commit vers la fork et la branche que j\'ai crée pour pyMaboss.',
         image: new URL('@/assets/traces/screen_push_fork_branch.png', import.meta.url).href,
@@ -73,7 +73,7 @@ export const tracesData = [
         image: new URL('@/assets/traces/tests-exceptions.png', import.meta.url).href,
     },
     {
-        id:'custom-exception',
+        id: 'custom-exception',
         identification: 12,
         caption: "En programmation orientée objet, il est possible de créer des exceptions personnalisées par le biais de " +
             "l'héritage. Il suffit de faire hériter la ou les classes de 'Exception'. En Python, une classe mère est passée " +
@@ -83,7 +83,7 @@ export const tracesData = [
         image: new URL('@/assets/traces/custom-exception.png', import.meta.url).href,
     },
     {
-        id:'exemples-assertions',
+        id: 'exemples-assertions',
         identification: 13,
         caption: "En test unitaire, il est possible de vérifier qu'une équation logique est vraie. Le mot clé 'assert' permet de dire " +
             "que la logique qui va suivre doit être vraie. On peut donc vérifier que les membres de 'formula6' sont bien ceux que l'on " +
@@ -93,7 +93,7 @@ export const tracesData = [
     {
         id: 'screen-bouchon',
         identification: 14,
-        caption:"La classe FakeResult sert de bouchon (stub) pour simuler le comportement de la classe Result originale. " +
+        caption: "La classe FakeResult sert de bouchon (stub) pour simuler le comportement de la classe Result originale. " +
             "Au lieu de lancer de vraies simulations lourdes, elle fournit instantanément des données fixes et maîtrisées. " +
             "Les méthodes de A à E calquent exactement l'interface de la vraie classe. La fonction encadrée en rouge automatise " +
             "le chargement de ces faux résultats à partir de fichiers CSV pour faciliter l'écriture des tests.",
@@ -108,19 +108,19 @@ export const tracesData = [
         image: new URL('@/assets/traces/schedule_team_meeting.png', import.meta.url).href,
     },
     {
-        id:'journal-club',
+        id: 'journal-club',
         identification: 16,
         caption: 'Le mail envoyé par Victoria aux membres de l\'équipe pour informer de quel article elle va parler lors du prochain journal club qui avait lieu le 19 Mai.',
         image: new URL('@/assets/traces/journal-club.png', import.meta.url).href,
     },
     {
-        id:'cdc',
+        id: 'cdc',
         identification: 17,
-        caption:'Liste des fonctions désirées par l\'équipe qui doivent pouvoir être effectuées avec mon outil.',
+        caption: 'Liste des fonctions désirées par l\'équipe qui doivent pouvoir être effectuées avec mon outil.',
         image: new URL('@/assets/traces/cahier-des-charges.png', import.meta.url).href,
     },
     {
-        id:'agile-semaines',
+        id: 'agile-semaines',
         identification: 18,
         caption: 'Capture d\'écran de mon Notion sur laquelle on peut voir les tâches des semaines 3 et 4. Certaines de ces tâches' +
             'sont colorées pour indiquer une priorité: bleu, jaune ou rouge. En rouge c\'est toujours une fonctionnalité à mettre en place' +
@@ -131,7 +131,7 @@ export const tracesData = [
         image: new URL('@/assets/traces/semaines-3-4-agile.png', import.meta.url).href,
     },
     {
-        id:'decoupage-mcct',
+        id: 'decoupage-mcct',
         identification: 19,
         caption: 'Schéma de découpage de l\'outil MaBoSS_CoherencyCheckerTool (MCCT). L\'outil de est découpé en 4 grandes parties:' +
             ' Gérer des simulations, lire une question, renvoyer une réponse et être opensource. Chacune de ces parties regroupe une ou' +
@@ -214,6 +214,53 @@ export const tracesData = [
             "Pour un &-logique, on garde les colonnes qui sont dans les deux dataframes. Pour un |-logique, on garde les colonnes des deux " +
             "dataframes sans créer de doublons.",
         image: new URL('@/assets/traces/tableaux-log-exp.png', import.meta.url).href
+    },
+    {
+        id: 'merge-or-fct',
+        identification: 30,
+        caption: "Logigramme de la fonction pour fusionner deux tableaux sur une logique de OU. " +
+            "La fonction reçoit en entrée deux tableaux qui sont nettoyés (on enlève les espaces dans les noms de colonnes). " +
+            "Une première fusion est faite et si keep_time_df1 est vrai, alors on ne garde que les temps présents dans df1. " +
+            "Si le dataframes des noeuds n'est pas vide, on trie les colonnes par noeuds et state puis par ordre alphabétique. " +
+            "On termine par le retour du dataframe final, sans doublon et avec les bons temps.",
+        image: new URL('@/assets/traces/merge-or-fct.png', import.meta.url).href
+    },
+    {
+        id: 'merge-and-fct',
+        identification: 31,
+        caption: "Logigramme de la fonction pour fusionner deux tableaux sur une logique de ET. La fonction reçoit en " +
+            "entrée deux tableaux dont les temps sont arrondis et les espaces dans les noms de colonnes nettoyés. " +
+            "Une fusion interne (inner merge) est réalisée sur la colonne 'Time' pour ne conserver que les lignes ayant " +
+            "des temps communs. On parcourt ensuite l'ensemble des colonnes sources : tous les nœuds (nodes) identifiés " +
+            "sont conservés, tandis que les états (states) ne sont gardés que s'ils apparaissent dans les deux tableaux " +
+            "d'origine (logique ET). Après avoir renommé les colonnes filtrées, on trie le résultat par type d'entité " +
+            "(nodes puis states) et par ordre alphabétique. On termine par le retour du tableau final, dupliqué nettoyé " +
+            "et correctement ordonné.",
+        image: new URL('@/assets/traces/merge-and-fct.png', import.meta.url).href
+    },
+    {
+        id: 'boucle-merge-or',
+        identification: 32,
+        caption: "La boucle qui permet le tri des colonnes fusionnées dans la fonction merge_or. Elle filtre les colonnes " +
+        "en ignorant celle du temps, puis elle sépare les nodes des states et reconstruit le tout en ayant rangé les groupes " +
+            "par ordre alphabétique.",
+        image: new URL('@/assets/traces/boucle-merge-or.png', import.meta.url).href
+    },
+    {
+        id: 'boucle-merge-and',
+        identification: 33,
+        caption: "La boucle qui permet d'appliquer la logique sélective pour décider quelles données doivent être gardées. " +
+            "D'abord, la boucle vérifie si la colonne a été suffixée précédemment. Un suffixe signifie que cette colonne était en double, " +
+            "donc présente dans les deux dataframes. Ensuite, on sépare les nodes des states. Les nodes sont toujours gardés, les states ne sont " +
+            "gardés que si celui-ci était présent dans les deux dataframes. Enfin on nettoie les noms des suffixes.",
+        image: new URL('@/assets/traces/boucle-merge-and.png', import.meta.url).href
+    },
+    {
+        id: 'merge-and-suffixes',
+        identification: 34,
+        caption: "Capture d'écran de la fonction merge_and. Cette ligne fusionne les deux dataframes passés en paramètres " +
+            "en renommant les colonnes en ajoutant un suffixe lorsque celle-ci est dans les deux dataframes.",
+        image: new URL('@/assets/traces/merge-and-suffixes.png', import.meta.url).href
     }
 ];
 
