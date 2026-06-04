@@ -16,7 +16,9 @@ import ColleagueHover from "../components/ColleagueHover.vue";
         L'Institut Curie est une fondation privée à but non lucratif et premier centre français de lutte contre le cancer.
         Dans le cadre de sa mission de recherche contre le cancer, l'Institut Curie cherche à comprendre les mécanismes de
         celui-ci pour mieux le soigner. Dans cette optique, l'unité 1331 d'Oncologie Computationnelle s'intéresse aux mécanismes
-        moléculaires et cellulaires sous-jacents. C'est au sein de cette unité et dans l'équipe SYSBIO que j'ai effectué mon
+        moléculaires et cellulaires sous-jacents en combinant approches expérimentale et théorique, en réalisant une itération
+        entre expérimentations cliniques et biologiques et modélisation mathématiques.
+        C'est au sein de cette unité et dans l'équipe SYSBIO que j'ai effectué mon
         stage, encadré par <ColleagueHover name="stoll">Gautier Stoll</ColleagueHover> et
         <ColleagueHover name="calzone">Laurence Calzone</ColleagueHover>. Cette équipe se concentre sur le décryptage
         de ce qu'il se passe à l'intérieur et l'extérieur d'une cellule

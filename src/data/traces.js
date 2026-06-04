@@ -261,6 +261,14 @@ export const tracesData = [
         caption: "Capture d'écran de la fonction merge_and. Cette ligne fusionne les deux dataframes passés en paramètres " +
             "en renommant les colonnes en ajoutant un suffixe lorsque celle-ci est dans les deux dataframes.",
         image: new URL('@/assets/traces/merge-and-suffixes.png', import.meta.url).href
+    },
+    {
+        id: 'maboss_test-assertion',
+        identification: 35,
+        caption: "Exemple de rédaction pour une assertion dans MaBoSS_test. test_BRAF_ON est une simulation, " +
+            "BRAF_inhibition est une mutation, IC_CRC est un état initial, est ajouté également la mutation sur EGFR et " +
+            "on regarde s'il y a une augmentation (increase) d'au moins 1 digit.",
+        image: new URL('@/assets/traces/maboss_test-assertion.png', import.meta.url).href
     }
 ];
 

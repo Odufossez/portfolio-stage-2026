@@ -61,7 +61,7 @@ const subRoot = ref(1)
           <div>
             <h2>Application de l'algorithmie</h2>
             <p>
-              Dans cette rubrique, je vais vous présenter 3 savoir-faire que j'ai largement mobilisés pendant ce stage
+              Dans cette rubrique, je vais vous présenter 5 savoir-faire que j'ai largement mobilisés pendant ce stage
               dans le cadre de la conception d'algorithmes.
             </p>
           </div>
@@ -76,7 +76,7 @@ const subRoot = ref(1)
             <button class="sub-tab-item" :class="{active: subRoot === 4}" @click="subRoot=4">Fusionner des dataframes -
               Application
             </button>
-            <button class="sub-tab-item" :class="{active: subRoot === 5}" @click="subRoot=5">Utiliser une REGEX</button>
+            <button class="sub-tab-item" :class="{active: subRoot === 5}" @click="subRoot=5">Manipuler une REGEX</button>
 
           </div>
           <div class="sub-inner-details" v-if="subRoot === 1">
@@ -559,7 +559,38 @@ const subRoot = ref(1)
           </div>
 
           <div class="sub-inner-details" v-if="subRoot===5">
-            <h3>Utiliser une REGEX</h3>
+            <h3>Manipuler une REGEX</h3>
+            <div class="side-by-side text-only">
+              <h4>Contexte</h4>
+              <p>
+                Lors de la création de cet outil, j'ai dû choisir une méthode pour permettre à l'utilisateur de "poser sa
+                question" par rapport à la simulation. Je devais mettre en relation l'utilisateur, la simulation et l'outil
+                qui traite les données (<router-link to="/stage-enjeux">sic enjeux du stage</router-link>).
+                Il y avait plusieurs pistes, je pouvais reprendre le principe de
+                <InfoHover id="maboss_test">MaBoSS_test</InfoHover> qui utilise des tests unitaires pour faire ses évaluations
+                ou utiliser une autre logique. C'est la seconde option que j'ai choisie, pour plusieurs raisons :
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <b>La contrainte d'automatisation</b> : En plus d'offrir aux chercheur et chercheuses un outil pour
+                    tester leurs modèles, la projection d'insertion de cet outil dans une pipeline de construction, validation
+                    et optimisation de modèle apportait la contrainte de pouvoir automatiser d'une manière ou d'une autre
+                    l'interrogation du modèle, notamment possiblement par l'utilisation d'IA. MaBoSS_test ne répondant que
+                    très difficilement voire pas à cette contrainte, je risquais de perdre beaucoup de temps à créer de
+                    nouvelles couches plutôt que d'intégrer une logique d'autonomie au programme.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>La complexité d'usage de MaBoSS_test</b> : Pour effectuer une évaluation avec MaBoSS_test, le chercheur
+                    doit effectuer ses propres simulations pour les évaluer en appelant une fonction dans laquelle il passe
+                    ses modifications (une mutation par exemple). Une assertion d'exemple ci-dessous, sur la <b>trace 35</b> :
+                  </p>
+                  <Trace traceId="maboss_test-assertion"/>
+                </li>
+              </ul>
+            </div>
 
           </div>
         </div>

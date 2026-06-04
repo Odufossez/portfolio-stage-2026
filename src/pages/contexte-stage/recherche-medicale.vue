@@ -38,6 +38,9 @@ import SourcesSection from "@/components/SourcesSection.vue";
         La bioinformatique dans la recherche médicale permet de simuler des réactions de systèmes entiers en prenant en compte
         de nombreux paramètres externes et ainsi de potentiellement prévoir la réaction à un traitement.
       </p>
+      <p>
+        Celle-ci s'étend de l'analyse de données jusqu'à la construction de modèles.
+      </p>
     </div>
 
     <div class="styled-box">
@@ -45,7 +48,10 @@ import SourcesSection from "@/components/SourcesSection.vue";
       <p>
         Dans le cadre de mon stage, je fais de la bio-informatique structurale. C'est à dire, le pan de la bioinformatique qui traite
         de la reconstruction, de la prédiction ou de l'analyse de la structure 3D ou du repliement des macromolécules biologiques
-        (protéines, acides nucléiques), au moyen d'outils informatiques.
+        (protéines, acides nucléiques), au moyen d'outils informatiques. Dans mon cas, l'équipe effectue de la modélisation
+        mathématique de voies de signalisation ou de la construction de jumeaux numériques mécanistes, c'est à dire,
+        des cellules numériques qui imitent leur double biologiques en suivant des règles établies par les chercheurs permettant
+        ainsi de prédire l'impact d'un traitement sur la cellule.
       </p>
       <p>
         En effet, <InfoHover id="maboss">MaBoSS</InfoHover> est un outil de modélisation booléenne basé sur des simulations 
