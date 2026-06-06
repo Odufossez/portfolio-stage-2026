@@ -2,7 +2,7 @@
 Avril - Juin 2026
 
 ## Usage  
- 
+https://odufossez.github.io/portfolio-stage-2026/#/home 
 
 ## Contexte
 Ce site retrace une grande partie de ce que j'ai eu à faire pour mon stage de seconde année en tant qu'étudiant informatique.
@@ -15,7 +15,7 @@ de facteurs externes.
 April - June 2026
 
 ## Access the website
-
+https://odufossez.github.io/portfolio-stage-2026/#/home
 
 ## Context
 This site retraces much of what I had to do for my second-year internship as a computer science student.
