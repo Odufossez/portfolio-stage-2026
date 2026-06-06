@@ -148,7 +148,7 @@ const activeRoot = ref('team-meeting');
             LLMs à convertir des phrases issues de la littérature scientifique en query. Pour cela j'ai fait un prompt
             complet et structuré que j'ai donné à chacun des agents testés : <i>Gemini 3 flash et raisonnement</i>, <i>ChatGPT
             GPT-5.5</i>
-            et <i>Claude Sonnet 4.6</i>.<span class="pink">Enfin j'ai comparé les résultats sur 3 assertions plus ou moins longues et tiré
+            et <i>Claude Sonnet 4.6</i>.<span class="pink"> Enfin j'ai comparé les résultats sur 3 assertions plus ou moins longues et tiré
             des conclusions de cette expérience </span> (diapositives 21 à 32).
             <b class="pink">C'est une démarche très similaire aux démarches utilisées en recherche</b> que j'ai donc dû
             découvrir et

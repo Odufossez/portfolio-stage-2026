@@ -4,47 +4,72 @@ import BackButton from "@/components/BackButton.vue";
 </script>
 
 <template>
-<div class="page-container">
-  <BackButton to="/home" label="Retour à l'accueil"/>
+  <div class="page-container">
+    <BackButton to="/home" label="Retour à l'accueil"/>
 
-  <header class="page-header">
-    <h1>Synthèse du stage</h1>
-  </header>
+    <header class="page-header">
+      <h1>Synthèse du stage</h1>
+    </header>
 
-  <div class="styled-box">
-    <p>
-      Les savoir-faire mobilisés durant ce stage sont variés, tant dans le langage que dans leur application.
-    </p>
-    <ul>
-        <li class="todo"> rédiger les savoir faire</li>
-    </ul>
-    <p>
-      De manière générale, j'ai beaucoup pris en aisance dans la programmation Python. Bien que je ne sois pas parti de rien, j'ai
-      fortement progressé. De même concernant le traitement de données, je n'avais eu qu'une introduction à Pandas et avoir
-      pu l'utiliser dans un contexte extérieur à l'école et avec beaucoup des tableaux très grands m'ont permis de mieux saisir son intérêt
-      et ses subtilités.
-    </p>
-    <p>
-      De part mon passé en tant qu'apprenti dans l'informatique industrielle, j'avais déjà eu à mener un projet qui demandait
-      à ce que je m'organise de manière autonome pour le réaliser, j'ai donc repris ma méthodologie qui avait bien fonctionnée
-      déjà à l'époque et qui rappelle une logique de méthode agile.
-    </p>
-    <p>
-      J'ai réalisé ce stage entouré de personnes en master ou en doctorat et post-doctorat et il a été très plaisant de
-      réaliser que malgré notre
-      différence de niveau d'étude, j'avais beaucoup à leur apporter car même en étant bio-informaticiennes, elles n'avaient pas
-      les connaissances et les compétences que ma formation m'a amené à développer. Ainsi, j'avais autant à leur apporter qu'elles
-      à me montrer en quoi mes compétences allaient les aider.
-    </p>
-    <p><b>
-      Pour conclure, ce stage m'a fait découvrir une nouvelle manière de faire de l'informatique qui m'était jusqu'à lors
-      inconnue. Je trouve la bio-informatique passionnante et ce stage m'a ouvert une nouvelle voie d'orientation que je
-      n'aurais pas envisagé sans.
-    </b></p>
+    <div class="styled-box">
+      <p>
+        Les savoir-faire mobilisés durant ce stage sont variés, des compétences de code pur à la communication, j'ai
+        au à affiner de nombreux savoir-faire pendant ces 10 semaines :
+      </p>
+      <ul>
+        <li><p>
+          Les applications directes de l'algorithmie et des traitements de données,
+        </p></li>
+        <li><p>
+          L'importance et l'utilité des tests unitaires,
+        </p></li>
+        <li><p>
+          L'utilisation de Git pour la gestion de version et la découverte de certaines de ses fonctionnalités,
+        </p></li>
+        <li><p>
+          L'application d'une logique AGILE pour suivre le projet,
+        </p></li>
+        <li><p>
+          Communiquer en anglais sur mon outil et dans un environnement de recherche.
+        </p></li>
+      </ul>
+      <p>
+        De manière générale, j'ai beaucoup pris en aisance dans la programmation Python. Bien que je ne sois pas parti
+        de rien, j'ai
+        fortement progressé. De même concernant le traitement de données, je n'avais eu qu'une introduction à Pandas et
+        avoir
+        pu l'utiliser dans un contexte extérieur à l'école et avec beaucoup des tableaux très grands m'ont permis de
+        mieux saisir son intérêt
+        et ses subtilités.
+      </p>
+      <p>
+        De part mon passé en tant qu'apprenti dans l'informatique industrielle, j'avais déjà eu à mener un projet qui
+        demandait
+        à ce que je m'organise de manière autonome pour le réaliser, j'ai donc repris ma méthodologie qui avait bien
+        fonctionnée
+        déjà à l'époque et qui rappelle une logique de méthode agile.
+      </p>
+      <p>
+        J'ai réalisé ce stage entouré de personnes en master ou en doctorat et post-doctorat et il a été très plaisant
+        de
+        réaliser que malgré notre
+        différence de niveau d'étude, j'avais beaucoup à leur apporter car même en étant bio-informaticiennes, elles
+        n'avaient pas
+        les connaissances et les compétences que ma formation m'a amené à développer. Ainsi, j'avais autant à leur
+        apporter qu'elles
+        à me montrer en quoi mes compétences allaient les aider.
+      </p>
+      <p><b>
+        Pour conclure, ce stage m'a fait découvrir une nouvelle manière de faire de l'informatique qui m'était jusqu'à
+        lors
+        inconnue. Je trouve la bio-informatique passionnante et ce stage m'a ouvert une nouvelle voie d'orientation que
+        je
+        n'aurais pas envisagé sans.
+      </b></p>
+    </div>
+
+
   </div>
-
-
-</div>
 </template>
 
 <style scoped>

@@ -648,7 +648,7 @@ a {
 .code-block {
   display: inline-block;
   max-width: 100%;
-  background-color: rgb(30 30 30 / 0.85);
+  background-color: rgb(77 77 77);
   color: var(--curie-orange);
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
   padding: 1.25rem;

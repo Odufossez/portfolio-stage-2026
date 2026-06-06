@@ -181,7 +181,9 @@ export const tracesData = [
     {
         id: 'diagramme-formula-checker',
         identification: 25,
-        caption: "Diagramme d'exécution du FormulaChecker.",
+        caption: "Diagramme d'exécution du FormulaChecker. La phrase parsée et transformée en Formula est passée à la " +
+            "fonction qui évalue ses membres pour vérifier que toutes les conditions sont respectées. Si la Formula est " +
+            "correcte, la fonction ne renvoie rien et lève une erreur dans le cas contraire.",
         image: new URL('@/assets/traces/formula-checker-diagramme.png', import.meta.url).href,
     },
     {
@@ -202,7 +204,9 @@ export const tracesData = [
     {
         id: 'import-in-prog',
         identification: 28,
-        caption: "Lignes d'importation d'un module dans un programme.",
+        caption: "Lignes d'importation d'un module dans un programme. Pour importer le module temporal_logic, il n'est pas " +
+            "nécessaire d'importer maboss au préalable, ici je l'importe pour d'autres opérations. Importer temporal_logic " +
+            "en utilisant le mot clé 'as' permet de faire un alias.",
         image: new URL('@/assets/traces/import-in-prog.png', import.meta.url).href
     },
     {
@@ -283,20 +287,70 @@ export const tracesData = [
     {
         id: 'schema-query',
         identification: 37,
-        caption: "",
+        caption: "Le query peut-être décomposé comme sur le schéma de cette trace. Chaque bloc va avoir ses propres règles, " +
+            "ses propres contraintes et vont influer sur la façon dont se fait l'évaluation.",
         image: new URL('@/assets/traces/schema-query.png', import.meta.url).href
     },
     {
         id: 'querytype-enum',
         identification: 38,
-        caption: "",
+        caption: "Capture d'écran de la classe QueryType, qui est une enum associant le type du query avec une chaine de caractère. " +
+            "Lorsque le query est parsé, la chaine de caractère en résultant est associé avec le QueryType et lève une erreur si " +
+            "aucune concordance n'est trouvée.",
         image: new URL('@/assets/traces/querytype-enum.png', import.meta.url).href
     },
     {
         id: 'targettype-enum',
         identification: 39,
-        caption: "",
+        caption: "Capture d'écran de la classe TargetType, qui est une enum associant le type de cible avec une chaine de caractère. " +
+            "Lorsque le query est parsé, la chaine de caractère en résultant est associé avec le TargetType et lève une erreur si " +
+            "aucune concordance n'est trouvée.",
         image: new URL('@/assets/traces/targettype-enum.png', import.meta.url).href
+    },
+    {
+        id: 'extract-column-fct',
+        identification: 40,
+        caption: "Fonction permettant d'extraire la ou les colonnes cibles du dataframe df passé en paramètres. column_name est " +
+            "une chaine de caractère qui est le nom de la colonne à chercher ou à exclure si exclusion est true. Le paramètre " +
+            "is_state permet d'indiquer que la colonne est une colonne de state et donc le nom est adapté pour éviter de soulever " +
+            "d'erreur.",
+        image: new URL('@/assets/traces/extract-column-fct.png', import.meta.url).href
+    },
+    {
+        id: 'extract-line-fct',
+        identification: 41,
+        caption: "Fonction permettant d'extraire une ligne en fonction de son nom et du statut d'exclusion. Cette fonction " +
+            "n'est utilisée que dans le cas de computation sur des points fixes. Ce dataframe est composé d'une colonne 'State' " +
+            "avec un nom et toutes les autres colonnes sont des nodes dont la valeur pour cette ligne est 1 ou 0 (actif ou inactif)." +
+            " Ainsi, l'instruction permet de récupérer toutes les lignes où le nom du node respecte la condition de statut.",
+        image: new URL('@/assets/traces/extract-line-fct.png', import.meta.url).href
+    },
+    {
+        id: 'construction-mask',
+        identification: 42,
+        caption: "La construction d'un masque permet d'appliquer la condition de conservation à toutes les lignes et toutes les " +
+            "colonnes du dataframe en une seule instruction, sans avoir à faire de boucle. Deux mots-clés sont importants dans la construction " +
+            "du masque sur cette trace : 'any' et 'all'. Avec 'any', on garde la ligne si au moins une colonne répond au critère. Avec 'all', toutes " +
+            "les colonnes doivent valider la condition pour que la ligne soit gardée. " +
+            "Pour appliquer le masque : df = df[mask].copy()",
+        image: new URL('@/assets/traces/construction-mask.png', import.meta.url).href
+    },
+    {
+        id: 'format-nodes-table',
+        identification: 43,
+        caption: "Un dataframe utilisé pour le calcul des probabilités d'un node ou d'un state d'être actif a le format de cette trace. " +
+            "Ici, les noms sont des nodes, si c'était une table de state, elle aurait le même format avec d'autres noms. L'index ce sont " +
+            "des timecodes, celui-ci est transformé en colonne 'Time' au début du traitement.",
+        image: new URL('@/assets/traces/format-nodes-table.png', import.meta.url).href
+    },
+    {
+        id: 'format-fp-table',
+        identification: 44,
+        caption: "Un dataframe utilisé pour le calcul de probabilités sur un point fixe a le format de cette trace. " +
+            "La colonne 'Proba' est la probabilité de ce state d'être actif. La colonne 'state' c'est le state correspondant. " +
+            "Toutes les autres colonnes ce sont les nodes du model dont la valeur varie d'une ligne à l'autre en fonction de si " +
+            "ce node est actif ou non dans le state.",
+        image: new URL('@/assets/traces/format-fp-table.png', import.meta.url).href
     }
 ];
 
