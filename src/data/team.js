@@ -10,7 +10,7 @@ export const teamData = [
     id: 'calzone',
     name: "Laurence CALZONE",
     description: "Ingénieure en recherche et ma co-tutrice pendant ce stage.",
-    photo: new URL('@/assets/team/calzone.webp', import.meta.url).href,
+    photo: new URL('@/assets/team/calzone.png', import.meta.url).href,
     relationship: "tutor"
   },
   {
